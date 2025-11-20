@@ -4,8 +4,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { useTranslations } from "next-intl";
 
 export function Blog() {
+  const t = useTranslations('Blog');
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -55,7 +57,7 @@ export function Blog() {
             viewport={{ once: true }}
             className="text-heading sm:text-heading md:text-display font-medium text-midnight"
           >
-            Blog
+            {t('heading')}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -64,9 +66,7 @@ export function Blog() {
             viewport={{ once: true }}
             className="mt-3 md:mt-4 text-body md:text-body-lg text-gray-500 max-w-2xl mx-auto leading-relaxed px-4"
           >
-            See how PayAI shines by enabling AI Agent collaboration. <br/> Note that
-            the scenarios described below are for illustration purposes and have
-            not happened (yet).
+            {t('description')}
           </motion.p>
         </motion.div>
 
@@ -138,7 +138,7 @@ export function Blog() {
                     target="_blank"
                     className="text-primary hover:underline font-normal"
                   >
-                    Read More
+                    {t('readMore')}
                   </a>
                 </motion.p>
               </CardContent>
@@ -197,7 +197,7 @@ export function Blog() {
                     target="_blank"
                     className="text-primary hover:underline font-normal"
                   >
-                    Read More
+                    {t('readMore')}
                   </a>
                 </motion.p>
               </CardContent>
@@ -263,7 +263,7 @@ export function Blog() {
                     target="_blank"
                     className="text-primary hover:underline font-normal"
                   >
-                    Read More
+                    {t('readMore')}
                   </a>
                 </motion.p>
               </CardContent>

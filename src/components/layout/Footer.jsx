@@ -1,12 +1,16 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { Twitter, Github, Linkedin, Send, BookText, ChartCandlestick } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
+import { useTranslations } from "next-intl";
+
 export function Footer() {
+  const t = useTranslations('Footer');
+  const tNav = useTranslations('Navbar');
   const socialLinks = [
     {
       title: "Twitter",
@@ -33,11 +37,11 @@ export function Footer() {
   ].filter((l) => !!l.href);
 
   const quickLinks = [
-    { label: "Home", href: "#home" },
-    { label: "Airdrops", href: "#airdrops" },
-    { label: "Blog", href: "#blog" },
-    { label: "FAQ", href: "#faq" },
-    { label: "Submit Airdrop", href: "/submit-airdrop" },
+    { label: tNav('home'), href: "#home" },
+    { label: tNav('airdrops'), href: "#airdrops" },
+    { label: tNav('blog'), href: "#blog" },
+    { label: tNav('faq'), href: "#faq" },
+    { label: t('submitAirdrop'), href: "/submit-airdrop" },
   ];
 
   const containerVariants = {
@@ -98,7 +102,7 @@ export function Footer() {
                 viewport={{ once: true }}
                 className="mt-4 text-body text-gray-600 max-w-xs"
               >
-                The most trusted place in web3 to find the latest airdrop campaigns.
+                {t('description')}
               </motion.p>
 
               {/* Social */}
@@ -143,7 +147,7 @@ export function Footer() {
                 viewport={{ once: true }}
                 className="text-body font-medium text-midnight tracking-wide mb-4"
               >
-                Quick Links
+                {t('quickLinks')}
               </motion.h4>
               <ul className="space-y-3 text-body text-gray-600">
                 {quickLinks.map((item, index) => (
@@ -176,7 +180,7 @@ export function Footer() {
                 viewport={{ once: true }}
                 className="text-body font-medium text-midnight tracking-wide mb-4"
               >
-                Legal
+                {t('legal')}
               </motion.h4>
               <ul className="space-y-3 text-body text-gray-600">
                 <motion.li
@@ -195,7 +199,7 @@ export function Footer() {
                       target="_blank"
                       rel="noreferrer noopener"
                     >
-                      Privacy Policy
+                      {t('privacyPolicy')}
                     </Link>
                   </motion.div>
                 </motion.li>
@@ -215,7 +219,7 @@ export function Footer() {
                       target="_blank"
                       rel="noreferrer noopener"
                     >
-                      Terms of Service
+                      {t('termsOfService')}
                     </Link>
                   </motion.div>
                 </motion.li>

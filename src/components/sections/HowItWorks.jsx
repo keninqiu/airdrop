@@ -6,11 +6,13 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { RxChevronRight } from "react-icons/rx";
+import { useTranslations } from "next-intl";
 
 export const HowItWorks = (props) => {
+  const t = useTranslations('HowItWorks');
   const { tagline, heading, buttons, features } = {
     ...props,
-    ...HowItWorksDefaults,
+    ...HowItWorksDefaults(t),
   };
 
   return (
@@ -37,7 +39,7 @@ export const HowItWorks = (props) => {
             {heading}
           </h2>
           <p className="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto md:text-xl mb-8">
-            We make it easy for you to discover and participate in the best crypto airdrops.
+            {t('description')}
           </p>
           <div className="flex flex-wrap items-center gap-4 justify-center">
             {buttons.map((button, index) => (
@@ -119,10 +121,10 @@ export const HowItWorks = (props) => {
         >
           <div className="bg-gray-50 rounded-2xl p-8 md:p-12 border border-gray-200">
             <h4 className="text-midnight text-xl font-bold mb-4 md:text-2xl">
-              Ready to start your airdrop journey?
+              {t('cta.heading')}
             </h4>
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              Join millions of airdrop hunters and start earning free crypto today.
+              {t('cta.description')}
             </p>
             <motion.div
               whileHover={{ scale: 1.02, y: -2 }}
@@ -135,7 +137,7 @@ export const HowItWorks = (props) => {
                   window.open(process.env.NEXT_PUBLIC_GITHUB_URL, "_blank")
                 }
               >
-                Start Hunting Now →
+                {t('cta.button')} →
               </Button>
             </motion.div>
           </div>
@@ -145,9 +147,9 @@ export const HowItWorks = (props) => {
   );
 };
 
-export const HowItWorksDefaults = {
-  tagline: "How It Works",
-  heading: "Start Earning Crypto in 3 Steps",
+export const HowItWorksDefaults = (t) => ({
+  tagline: t('tagline'),
+  heading: t('heading'),
   buttons: [
     {
       title: "Start Farming",
@@ -168,27 +170,24 @@ export const HowItWorksDefaults = {
         emoji: "🔍",
         alt: "Step 1 icon",
       },
-      heading: "Browse Airdrops",
-      description:
-        "Use our advanced filters to easily search through airdrop opportunities and find ones that match your interests.",
+      heading: t('step1.heading'),
+      description: t('step1.description'),
     },
     {
       icon: {
         emoji: "📝",
         alt: "Step 2 icon",
       },
-      heading: "Select and Participate",
-      description:
-        "Choose a crypto airdrop campaign, follow the step-by-step guide provided, and start participating right away.",
+      heading: t('step2.heading'),
+      description: t('step2.description'),
     },
     {
       icon: {
         emoji: "💰",
         alt: "Step 3 icon",
       },
-      heading: "Claim Tokens",
-      description:
-        "Stay updated with real-time alerts about airdrop eligibility checks and claim your free crypto tokens.",
+      heading: t('step3.heading'),
+      description: t('step3.description'),
     },
   ],
-};
+});

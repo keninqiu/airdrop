@@ -2,7 +2,8 @@
 
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 import { Pointer, Book } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -112,6 +113,7 @@ function InfinitePartnerScroll() {
 }
 
 export function Header() {
+  const t = useTranslations('Header');
   return (
     <section
       id="home"
@@ -138,7 +140,7 @@ export function Header() {
                 transition={{ duration: 0.4, delay: 0.2 }}
                 className="block"
               >
-                The Best Crypto Airdrops.
+                {t('title')}
               </motion.span>
             </motion.h1>
           </div>
@@ -155,7 +157,7 @@ export function Header() {
               }}
               className="mt-4 md:mt-6 text-lg md:text-body-lg text-gray-600 leading-relaxed md:leading-relaxed font-medium"
             >
-              Discover the latest Crypto Airdrops and Airdrop Farming opportunities. Presenting curated Airdrops since 2017.
+              {t('subtitle')}
             </motion.p>
 
             <motion.div
@@ -179,7 +181,7 @@ export function Header() {
                   href="#airdrops"
                 >
                   <Pointer className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                  Browse Airdrops
+                  {t('browseAirdrops')}
                 </Link>
               </motion.div>
 
@@ -193,7 +195,7 @@ export function Header() {
                   href="/submit-airdrop"
                 >
                   <Book className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                  List Airdrop
+                  {t('listAirdrop')}
                 </Link>
               </motion.div>
 
@@ -221,7 +223,7 @@ export function Header() {
               transition={{ duration: 0.4, delay: 0.4 }}
               className="text-body md:text-body-lg text-gray-600 mb-6 md:mb-8 font-medium text-center"
             >
-              Trusted by well-known crypto brands
+              {t('trustedBy')}
             </motion.p>
             <motion.div
               initial={{ opacity: 0 }}

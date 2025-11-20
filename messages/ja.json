@@ -1,0 +1,93 @@
+{
+    "Navbar": {
+        "home": "ホーム",
+        "airdrops": "エアドロップ",
+        "blog": "ブログ",
+        "faq": "よくある質問",
+        "about": "約"
+    },
+    "Header": {
+        "title": "最高の暗号資産エアドロップ。",
+        "subtitle": "最新の暗号資産エアドロップとエアドロップファーミングの機会を発見してください。2017年から厳選されたエアドロップを紹介しています。",
+        "browseAirdrops": "エアドロップを閲覧",
+        "listAirdrop": "エアドロップをリスト",
+        "trustedBy": "有名な暗号資産ブランドから信頼されています"
+    },
+    "Footer": {
+        "description": "最新のエアドロップキャンペーンを見つけるためのWeb3で最も信頼できる場所。",
+        "quickLinks": "クイックリンク",
+        "legal": "法的",
+        "privacyPolicy": "プライバシーポリシー",
+        "termsOfService": "利用規約",
+        "submitAirdrop": "エアドロップを送信"
+    },
+    "HomePage": {
+        "title": "エアドロッププラットフォームへようこそ",
+        "subtitle": "暗号資産の世界で最高のエアドロップを見つけましょう。"
+    },
+    "LanguageSwitcher": {
+        "label": "言語"
+    },
+    "HowItWorks": {
+        "tagline": "How It Works",
+        "heading": "Start Earning Crypto in 3 Steps",
+        "description": "We make it easy for you to discover and participate in the best crypto airdrops.",
+        "step1": {
+            "heading": "Browse Airdrops",
+            "description": "Use our advanced filters to easily search through airdrop opportunities and find ones that match your interests."
+        },
+        "step2": {
+            "heading": "Select and Participate",
+            "description": "Choose a crypto airdrop campaign, follow the step-by-step guide provided, and start participating right away."
+        },
+        "step3": {
+            "heading": "Claim Tokens",
+            "description": "Stay updated with real-time alerts about airdrop eligibility checks and claim your free crypto tokens."
+        },
+        "cta": {
+            "heading": "Ready to start your airdrop journey?",
+            "description": "Join millions of airdrop hunters and start earning free crypto today.",
+            "button": "Start Hunting Now"
+        }
+    },
+    "Blog": {
+        "heading": "Blog",
+        "description": "See how PayAI shines by enabling AI Agent collaboration.",
+        "readMore": "Read More"
+    },
+    "FAQ": {
+        "heading": "Frequently Asked Questions",
+        "description": "Got questions? We've got answers.",
+        "q1": {
+            "question": "What is a crypto airdrop?",
+            "answer": "A crypto airdrop is a marketing strategy used by blockchain startups to distribute free tokens to wallet addresses. It's a way to generate awareness and build a community."
+        },
+        "q2": {
+            "question": "How do I participate in airdrops?",
+            "answer": "To participate, you usually need a crypto wallet (like MetaMask or Phantom). Each airdrop has specific requirements, such as following social media accounts, joining a Telegram group, or interacting with a protocol."
+        },
+        "q3": {
+            "question": "Are airdrops free?",
+            "answer": "Most airdrops are free to join, but some might require you to pay transaction fees (gas fees) if you need to interact with a smart contract. Always do your own research."
+        },
+        "q4": {
+            "question": "How do I claim my tokens?",
+            "answer": "After the airdrop campaign ends, the project will usually announce a claim date. You'll need to connect your wallet to their official website to claim your tokens."
+        },
+        "q5": {
+            "question": "Is it safe to participate in airdrops?",
+            "answer": "While many airdrops are legitimate, there are also scams. Never share your private keys or seed phrase. Be cautious of projects asking for money to claim an airdrop."
+        }
+    },
+    "AirdropList": {
+        "heading": "Featured Airdrops",
+        "description": "Handpicked for their value and potential, don’t miss out on these quality airdrops.",
+        "viewAll": "View All Airdrops",
+        "value": "Value",
+        "status": {
+            "Active": "Active",
+            "Upcoming": "Upcoming",
+            "Ended": "Ended"
+        }
+    }
+}

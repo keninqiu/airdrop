@@ -3,8 +3,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { ArrowRight, CheckCircle, Clock, Flame } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 const airdrops = [
     {
@@ -63,7 +64,7 @@ const airdrops = [
     },
 ];
 
-const AirdropCard = ({ airdrop }) => {
+const AirdropCard = ({ airdrop, t }) => {
     return (
         <motion.div
             whileHover={{ y: -5 }}
@@ -80,13 +81,13 @@ const AirdropCard = ({ airdrop }) => {
                 </div>
                 <span
                     className={`px-3 py-1 rounded-full text-xs font-medium ${airdrop.status === "Active"
-                            ? "bg-green-100 text-green-700"
-                            : airdrop.status === "Upcoming"
-                                ? "bg-blue-100 text-blue-700"
-                                : "bg-gray-100 text-gray-600"
+                        ? "bg-green-100 text-green-700"
+                        : airdrop.status === "Upcoming"
+                            ? "bg-blue-100 text-blue-700"
+                            : "bg-gray-100 text-gray-600"
                         }`}
                 >
-                    {airdrop.status}
+                    {t(`status.${airdrop.status}`)}
                 </span>
             </div>
 
@@ -95,7 +96,7 @@ const AirdropCard = ({ airdrop }) => {
 
             <div className="flex items-center justify-between pt-4 border-t border-gray-100">
                 <div className="flex flex-col">
-                    <span className="text-xs text-gray-400">Value</span>
+                    <span className="text-xs text-gray-400">{t('value')}</span>
                     <span className="text-sm font-medium text-gray-900">{airdrop.value}</span>
                 </div>
                 <Link
@@ -110,23 +111,24 @@ const AirdropCard = ({ airdrop }) => {
 };
 
 export function AirdropList() {
+    const t = useTranslations('AirdropList');
     return (
         <section id="airdrops" className="py-16 bg-gray-50/50">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col md:flex-row md:items-end justify-between mb-10">
                     <div>
                         <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-4">
-                            Featured Airdrops
+                            {t('heading')}
                         </h2>
                         <p className="text-lg text-gray-600 max-w-2xl">
-                            Handpicked for their value and potential, don’t miss out on these quality airdrops.
+                            {t('description')}
                         </p>
                     </div>
                     <Link
                         href="/airdrops"
                         className="hidden md:inline-flex items-center text-primary font-medium hover:text-primary-700 transition-colors mt-4 md:mt-0"
                     >
-                        View All Airdrops <ArrowRight className="w-4 h-4 ml-2" />
+                        {t('viewAll')} <ArrowRight className="w-4 h-4 ml-2" />
                     </Link>
                 </div>
 
@@ -139,7 +141,7 @@ export function AirdropList() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.4, delay: index * 0.1 }}
                         >
-                            <AirdropCard airdrop={airdrop} />
+                            <AirdropCard airdrop={airdrop} t={t} />
                         </motion.div>
                     ))}
                 </div>
@@ -149,7 +151,7 @@ export function AirdropList() {
                         href="/airdrops"
                         className="inline-flex items-center justify-center px-6 py-3 border border-gray-200 rounded-full text-gray-700 font-medium hover:bg-gray-50 transition-colors"
                     >
-                        View All Airdrops
+                        {t('viewAll')}
                     </Link>
                 </div>
             </div>

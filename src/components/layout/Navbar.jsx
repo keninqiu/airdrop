@@ -1,13 +1,15 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { Link, usePathname } from "@/i18n/routing";
 import { Menu, X, Book, Github } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import LanguageSwitcher from "../LanguageSwitcher";
+import { useTranslations } from "next-intl";
 
 export function Navbar() {
+  const t = useTranslations('Navbar');
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
@@ -97,7 +99,7 @@ export function Navbar() {
                 onClick={(e) => handleNavClick(e, "home")}
                 className="text-body font-normal text-gray-700 hover:text-gray-900 transition-colors"
               >
-                Home
+                {t('home')}
               </Link>
             </motion.div>
             <motion.div
@@ -110,7 +112,7 @@ export function Navbar() {
                 onClick={(e) => handleNavClick(e, "airdrops")}
                 className="text-body font-normal text-gray-700 hover:text-gray-900 transition-colors"
               >
-                Airdrops
+                {t('airdrops')}
               </Link>
             </motion.div>
             <motion.div
@@ -123,7 +125,7 @@ export function Navbar() {
                 onClick={(e) => handleNavClick(e, "blog")}
                 className="text-body font-normal text-gray-700 hover:text-gray-900 transition-colors"
               >
-                Blog
+                {t('blog')}
               </Link>
             </motion.div>
             <motion.div
@@ -136,13 +138,14 @@ export function Navbar() {
                 onClick={(e) => handleNavClick(e, "faq")}
                 className="text-body font-normal text-gray-700 hover:text-gray-900 transition-colors"
               >
-                FAQ
+                {t('faq')}
               </Link>
             </motion.div>
           </nav>
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center space-x-3">
+            <LanguageSwitcher />
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -216,7 +219,7 @@ export function Navbar() {
                   onClick={(e) => handleNavClick(e, "home")}
                   className="block py-2 text-body font-normal text-gray-900 hover:text-gray-600"
                 >
-                  Home
+                  {t('home')}
                 </Link>
               </motion.div>
               <motion.div
@@ -229,7 +232,7 @@ export function Navbar() {
                   onClick={(e) => handleNavClick(e, "airdrops")}
                   className="block py-2 text-body font-normal text-gray-900 hover:text-gray-600"
                 >
-                  Airdrops
+                  {t('airdrops')}
                 </Link>
               </motion.div>
               <motion.div
@@ -242,7 +245,7 @@ export function Navbar() {
                   onClick={(e) => handleNavClick(e, "blog")}
                   className="block py-2 text-body font-normal text-gray-900 hover:text-gray-600"
                 >
-                  Blog
+                  {t('blog')}
                 </Link>
               </motion.div>
               <motion.div
@@ -255,10 +258,13 @@ export function Navbar() {
                   onClick={(e) => handleNavClick(e, "faq")}
                   className="block py-2 text-body font-normal text-gray-900 hover:text-gray-600"
                 >
-                  FAQ
+                  {t('faq')}
                 </Link>
               </motion.div>
               <div className="pt-4 flex flex-col space-y-2">
+                <div className="px-2">
+                  <LanguageSwitcher />
+                </div>
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}

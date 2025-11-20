@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import {
     Accordion,
     AccordionContent,
@@ -10,31 +11,27 @@ import {
 } from "@/components/ui/accordion";
 
 export function FAQ() {
+    const t = useTranslations('FAQ');
     const faqs = [
         {
-            question: "What is a crypto airdrop?",
-            answer:
-                "A crypto airdrop is a marketing strategy used by blockchain startups to distribute free tokens to wallet addresses. It's a way to generate awareness and build a community.",
+            question: t('q1.question'),
+            answer: t('q1.answer'),
         },
         {
-            question: "How do I participate in airdrops?",
-            answer:
-                "To participate, you usually need a crypto wallet (like MetaMask or Phantom). Each airdrop has specific requirements, such as following social media accounts, joining a Telegram group, or interacting with a protocol.",
+            question: t('q2.question'),
+            answer: t('q2.answer'),
         },
         {
-            question: "Are airdrops free?",
-            answer:
-                "Most airdrops are free to join, but some might require you to pay transaction fees (gas fees) if you need to interact with a smart contract. Always do your own research.",
+            question: t('q3.question'),
+            answer: t('q3.answer'),
         },
         {
-            question: "How do I claim my tokens?",
-            answer:
-                "After the airdrop campaign ends, the project will usually announce a claim date. You'll need to connect your wallet to their official website to claim your tokens.",
+            question: t('q4.question'),
+            answer: t('q4.answer'),
         },
         {
-            question: "Is it safe to participate in airdrops?",
-            answer:
-                "While many airdrops are legitimate, there are also scams. Never share your private keys or seed phrase. Be cautious of projects asking for money to claim an airdrop.",
+            question: t('q5.question'),
+            answer: t('q5.answer'),
         },
     ];
 
@@ -49,10 +46,10 @@ export function FAQ() {
                     className="text-center mb-12"
                 >
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                        Frequently Asked Questions
+                        {t('heading')}
                     </h2>
                     <p className="text-lg text-gray-600">
-                        Got questions? We've got answers.
+                        {t('description')}
                     </p>
                 </motion.div>
 
