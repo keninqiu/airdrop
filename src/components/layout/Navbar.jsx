@@ -77,8 +77,8 @@ export function Navbar() {
               className="flex items-center space-x-2"
             >
               <Image
-                src="/horizontal-lockup.svg"
-                alt="PayAI Logo"
+                src="/logo.png"
+                alt="AirdropScan Logo"
                 width={120}
                 height={32}
                 className="h-24 w-auto"

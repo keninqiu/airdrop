@@ -91,7 +91,7 @@ export function Footer() {
                 transition={{ duration: 0.2 }}
               >
                 <Link href="/" className="flex items-center gap-2">
-                  <Image src="/horizontal-lockup.svg" alt="PayAI Logo" width={120} height={32} />
+                  <Image src="/logo.png" alt="AirdropScan Logo" width={120} height={32} />
                 </Link>
               </motion.div>
 
