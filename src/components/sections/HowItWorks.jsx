@@ -37,8 +37,7 @@ export const HowItWorks = (props) => {
             {heading}
           </h2>
           <p className="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto md:text-xl mb-8">
-            A decentralized protocol enabling seamless agent-to-agent
-            transactions through smart contracts and distributed infrastructure.
+            We make it easy for you to discover and participate in the best crypto airdrops.
           </p>
           <div className="flex flex-wrap items-center gap-4 justify-center">
             {buttons.map((button, index) => (
@@ -120,11 +119,10 @@ export const HowItWorks = (props) => {
         >
           <div className="bg-gray-50 rounded-2xl p-8 md:p-12 border border-gray-200">
             <h4 className="text-midnight text-xl font-bold mb-4 md:text-2xl">
-              Ready to build the future of AI collaboration?
+              Ready to start your airdrop journey?
             </h4>
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              Join the decentralized agent economy where trust is built into the
-              protocol and opportunities are limitless.
+              Join millions of airdrop hunters and start earning free crypto today.
             </p>
             <motion.div
               whileHover={{ scale: 1.02, y: -2 }}
@@ -137,7 +135,7 @@ export const HowItWorks = (props) => {
                   window.open(process.env.NEXT_PUBLIC_GITHUB_URL, "_blank")
                 }
               >
-                Start Building Now →
+                Start Hunting Now →
               </Button>
             </motion.div>
           </div>
@@ -149,66 +147,48 @@ export const HowItWorks = (props) => {
 
 export const HowItWorksDefaults = {
   tagline: "How It Works",
-  heading: "Contract-Based Exchange for AI Agents",
+  heading: "Start Earning Crypto in 3 Steps",
   buttons: [
     {
-      title: "Learn More",
+      title: "Start Farming",
       variant: "secondary",
-      onClick: () => window.open(process.env.NEXT_PUBLIC_DOCS_URL, "_blank"),
+      onClick: () => window.location.href = "#airdrops",
     },
     {
-      title: "Get Started",
+      title: "List Airdrop",
       variant: "link",
       size: "link",
       iconRight: <RxChevronRight />,
-      onClick: () => window.open(process.env.NEXT_PUBLIC_GITHUB_URL, "_blank"),
+      onClick: () => window.location.href = "/submit-airdrop",
     },
   ],
   features: [
     {
       icon: {
-        emoji: "📝",
+        emoji: "🔍",
         alt: "Step 1 icon",
       },
-      heading: "Agent Advertises Services",
+      heading: "Browse Airdrops",
       description:
-        "A Seller Agent publishes their service offerings to IPFS, making them discoverable in the decentralized marketplace.",
+        "Use our advanced filters to easily search through airdrop opportunities and find ones that match your interests.",
     },
     {
       icon: {
-        emoji: "💼",
+        emoji: "📝",
         alt: "Step 2 icon",
       },
-      heading: "Buyer Makes Offer",
+      heading: "Select and Participate",
       description:
-        "A Buyer Agent submits offers via IPFS and notifies the Seller through libp2p, Twitter, or other communication channels.",
+        "Choose a crypto airdrop campaign, follow the step-by-step guide provided, and start participating right away.",
     },
     {
       icon: {
-        emoji: "✅",
+        emoji: "💰",
         alt: "Step 3 icon",
       },
-      heading: "Agreement Signed",
+      heading: "Claim Tokens",
       description:
-        "The Seller Agent reviews and accepts the offer, cryptographically signing the agreement with their private key.",
-    },
-    {
-      icon: {
-        emoji: "🔒",
-        alt: "Step 4 icon",
-      },
-      heading: "Funds Escrowed",
-      description:
-        "With a signed agreement, the Buyer Agent securely escrows payment on Solana and notifies the Seller to begin work.",
-    },
-    {
-      icon: {
-        emoji: "🚀",
-        alt: "Step 5 icon",
-      },
-      heading: "Work Delivered & Payment Released",
-      description:
-        "The Seller completes and delivers the work. Upon verification, the Buyer releases payment from escrow automatically.",
+        "Stay updated with real-time alerts about airdrop eligibility checks and claim your free crypto tokens.",
     },
   ],
 };

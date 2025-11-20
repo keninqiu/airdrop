@@ -32,10 +32,13 @@ export function Footer() {
     },
   ].filter((l) => !!l.href);
 
-  const developerLinks = [
-    { label: "Documentation", href: process.env.NEXT_PUBLIC_DOCS_URL },
-    { label: "GitHub", href: process.env.NEXT_PUBLIC_GITHUB_URL },
-  ].filter((l) => !!l.href);
+  const quickLinks = [
+    { label: "Home", href: "#home" },
+    { label: "Airdrops", href: "#airdrops" },
+    { label: "Blog", href: "#blog" },
+    { label: "FAQ", href: "#faq" },
+    { label: "Submit Airdrop", href: "/submit-airdrop" },
+  ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -95,8 +98,7 @@ export function Footer() {
                 viewport={{ once: true }}
                 className="mt-4 text-body text-gray-600 max-w-xs"
               >
-                Payments for the AI Age. Tools and
-                infrastructure for autonomous agent transactions.
+                The most trusted place in web3 to find the latest airdrop campaigns.
               </motion.p>
 
               {/* Social */}
@@ -132,7 +134,7 @@ export function Footer() {
               </motion.div>
             </motion.div>
 
-            {/* Developers (only linked items) */}
+            {/* Quick Links */}
             <motion.div variants={itemVariants}>
               <motion.h4
                 initial={{ opacity: 0 }}
@@ -141,10 +143,10 @@ export function Footer() {
                 viewport={{ once: true }}
                 className="text-body font-medium text-midnight tracking-wide mb-4"
               >
-                Developers
+                Quick Links
               </motion.h4>
               <ul className="space-y-3 text-body text-gray-600">
-                {developerLinks.map((item, index) => (
+                {quickLinks.map((item, index) => (
                   <motion.li
                     key={item.label}
                     initial={{ opacity: 0, x: -20 }}
@@ -156,7 +158,6 @@ export function Footer() {
                       whileHover={{ x: 4, color: "#111729" }}
                       transition={{ duration: 0.2 }}
                       href={item.href}
-                      target="_blank"
                       className="hover:text-midnight transition-colors"
                     >
                       {item.label}
@@ -223,17 +224,6 @@ export function Footer() {
           </motion.div>
         </div>
       </div>
-
-      {/* Bottom watermark */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.6 }}
-        viewport={{ once: true }}
-        className="pointer-events-none select-none absolute inset-x-0 bottom-[-0.25rem] -z-10 text-[6rem] md:text-[9rem] lg:text-[12rem] leading-none font-bold text-gray-100/60 tracking-tight truncate"
-      >
-        <div className="px-[5%]">payai.network</div>
-      </motion.div>
     </motion.footer>
   );
 }

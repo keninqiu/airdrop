@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X, Book, Github } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
@@ -9,6 +10,8 @@ import Image from "next/image";
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,8 +40,12 @@ export function Navbar() {
   };
 
   const handleNavClick = (e, targetId) => {
-    e.preventDefault();
-    smoothScrollTo(targetId);
+    if (isHomePage) {
+      e.preventDefault();
+      smoothScrollTo(targetId);
+    }
+    // If not home page, let the Link handle navigation to /#targetId
+
     // Close mobile menu if open
     if (isMobileMenuOpen) {
       setIsMobileMenuOpen(false);
@@ -50,9 +57,8 @@ export function Navbar() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.1, ease: [0.25, 0.25, 0, 1] }}
-      className={`sticky top-0 z-50 w-full py-4 transition-all duration-300 ${
-        isScrolled ? "shadow-sm" : ""
-      }`}
+      className={`sticky top-0 z-50 w-full py-4 transition-all duration-300 ${isScrolled ? "shadow-sm" : ""
+        }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -87,7 +93,7 @@ export function Navbar() {
               transition={{ duration: 0.4, delay: 0.2 }}
             >
               <Link
-                href="#home"
+                href="/#home"
                 onClick={(e) => handleNavClick(e, "home")}
                 className="text-body font-normal text-gray-700 hover:text-gray-900 transition-colors"
               >
@@ -100,11 +106,11 @@ export function Navbar() {
               transition={{ duration: 0.4, delay: 0.25 }}
             >
               <Link
-                href="#features"
-                onClick={(e) => handleNavClick(e, "features")}
+                href="/#airdrops"
+                onClick={(e) => handleNavClick(e, "airdrops")}
                 className="text-body font-normal text-gray-700 hover:text-gray-900 transition-colors"
               >
-                Features
+                Airdrops
               </Link>
             </motion.div>
             <motion.div
@@ -113,11 +119,24 @@ export function Navbar() {
               transition={{ duration: 0.4, delay: 0.3 }}
             >
               <Link
-                href="#blog"
+                href="/#blog"
                 onClick={(e) => handleNavClick(e, "blog")}
                 className="text-body font-normal text-gray-700 hover:text-gray-900 transition-colors"
               >
                 Blog
+              </Link>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.35 }}
+            >
+              <Link
+                href="/#faq"
+                onClick={(e) => handleNavClick(e, "faq")}
+                className="text-body font-normal text-gray-700 hover:text-gray-900 transition-colors"
+              >
+                FAQ
               </Link>
             </motion.div>
           </nav>
@@ -127,33 +146,15 @@ export function Navbar() {
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4, delay: 0.35 }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Link
-                href={process.env.NEXT_PUBLIC_GITHUB_URL || "#"}
-                target="_blank"
-                className="inline-flex items-center justify-center bg-white/70 text-gray-800 px-5 py-2 text-body font-normal border border-gray-200 rounded-full transition-colors hover:bg-white"
-              >
-                <Github className="w-4 h-4 mr-2" />
-                Github
-              </Link>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.4, delay: 0.4 }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               <Link
-                href={process.env.NEXT_PUBLIC_DOCS_URL || "#"}
-                target="_blank"
+                href="/submit-airdrop"
                 className="inline-flex items-center justify-center bg-primary hover:bg-primary-700 text-white px-5 py-2 text-body font-normal rounded-full transition-colors"
               >
-                <Book className="w-4 h-4 mr-2" />
-                Docs
+                Submit Airdrop
               </Link>
             </motion.div>
           </div>
@@ -211,7 +212,7 @@ export function Navbar() {
                 transition={{ duration: 0.3, delay: 0.1 }}
               >
                 <Link
-                  href="#home"
+                  href="/#home"
                   onClick={(e) => handleNavClick(e, "home")}
                   className="block py-2 text-body font-normal text-gray-900 hover:text-gray-600"
                 >
@@ -224,11 +225,11 @@ export function Navbar() {
                 transition={{ duration: 0.3, delay: 0.15 }}
               >
                 <Link
-                  href="#features"
-                  onClick={(e) => handleNavClick(e, "features")}
+                  href="/#airdrops"
+                  onClick={(e) => handleNavClick(e, "airdrops")}
                   className="block py-2 text-body font-normal text-gray-900 hover:text-gray-600"
                 >
-                  Features
+                  Airdrops
                 </Link>
               </motion.div>
               <motion.div
@@ -237,40 +238,37 @@ export function Navbar() {
                 transition={{ duration: 0.3, delay: 0.2 }}
               >
                 <Link
-                  href="#blog"
+                  href="/#blog"
                   onClick={(e) => handleNavClick(e, "blog")}
                   className="block py-2 text-body font-normal text-gray-900 hover:text-gray-600"
                 >
                   Blog
                 </Link>
               </motion.div>
-              <div className="pt-4 flex flex-col space-y-2">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: 0.25 }}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.3, delay: 0.25 }}
+              >
+                <Link
+                  href="/#faq"
+                  onClick={(e) => handleNavClick(e, "faq")}
+                  className="block py-2 text-body font-normal text-gray-900 hover:text-gray-600"
                 >
-                  <Link
-                    href={process.env.NEXT_PUBLIC_GITHUB_URL || "#"}
-                    target="_blank"
-                    className="inline-flex items-center justify-center bg-white/70 text-gray-800 px-5 py-2 text-body font-normal border border-gray-200 rounded-full transition-colors hover:bg-white w-full"
-                  >
-                    <Github className="w-4 h-4 mr-2" />
-                    Github
-                  </Link>
-                </motion.div>
+                  FAQ
+                </Link>
+              </motion.div>
+              <div className="pt-4 flex flex-col space-y-2">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: 0.3 }}
                 >
                   <Link
-                    href={process.env.NEXT_PUBLIC_DOCS_URL || "#"}
-                    target="_blank"
+                    href="/submit-airdrop"
                     className="inline-flex items-center justify-center bg-primary hover:bg-primary-700 text-white px-5 py-2 text-body font-normal rounded-full transition-colors w-full"
                   >
-                    <Book className="w-4 h-4 mr-2" />
-                    Docs
+                    Submit Airdrop
                   </Link>
                 </motion.div>
               </div>

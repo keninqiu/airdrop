@@ -138,7 +138,7 @@ export function Header() {
                 transition={{ duration: 0.4, delay: 0.2 }}
                 className="block"
               >
-                Solana-first, multi-network x402 facilitator.
+                The Best Crypto Airdrops.
               </motion.span>
             </motion.h1>
           </div>
@@ -155,7 +155,7 @@ export function Header() {
               }}
               className="mt-4 md:mt-6 text-lg md:text-body-lg text-gray-600 leading-relaxed md:leading-relaxed font-medium"
             >
-              Try x402 payments against a live merchant today. Get 100% of your payment refunded.
+              Discover the latest Crypto Airdrops and Airdrop Farming opportunities. Presenting curated Airdrops since 2017.
             </motion.p>
 
             <motion.div
@@ -175,12 +175,11 @@ export function Header() {
                 transition={{ duration: 0.2 }}
               >
                 <Link
-                  className="inline-flex items-center justify-center  bg-[#FFFFFF]/70 text-gray-800 px-6 py-3 text-body font-normal border border-gray-200 rounded-full transition-colors hover:bg-[#FFFFFF] min-h-[44px]"
-                  href={process.env.NEXT_PUBLIC_WEBSITE_URL_X402_ECHO || "#"}
-                  target="_blank"
+                  className="inline-flex items-center justify-center bg-primary hover:bg-primary-700 text-white px-6 py-3 text-body font-normal rounded-full transition-colors min-h-[44px]"
+                  href="#airdrops"
                 >
                   <Pointer className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                  Try x402
+                  Browse Airdrops
                 </Link>
               </motion.div>
 
@@ -190,12 +189,11 @@ export function Header() {
                 transition={{ duration: 0.2 }}
               >
                 <Link
-                  className="inline-flex items-center justify-center bg-primary hover:bg-primary-700 text-white px-6 py-3 text-body font-normal rounded-full transition-colors min-h-[44px]"
-                  href={process.env.NEXT_PUBLIC_WEBSITE_URL_X402_FACILITATOR || "#"}
-                  target="_blank"
+                  className="inline-flex items-center justify-center  bg-[#FFFFFF]/70 text-gray-800 px-6 py-3 text-body font-normal border border-gray-200 rounded-full transition-colors hover:bg-[#FFFFFF] min-h-[44px]"
+                  href="/submit-airdrop"
                 >
                   <Book className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                  Facilitator
+                  List Airdrop
                 </Link>
               </motion.div>
 
@@ -223,7 +221,7 @@ export function Header() {
               transition={{ duration: 0.4, delay: 0.4 }}
               className="text-body md:text-body-lg text-gray-600 mb-6 md:mb-8 font-medium text-center"
             >
-              Ecosystem & Partners
+              Trusted by well-known crypto brands
             </motion.p>
             <motion.div
               initial={{ opacity: 0 }}
