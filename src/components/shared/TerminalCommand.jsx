@@ -15,7 +15,7 @@ const TerminalCommand = () => {
             <div className="w-3 h-3 bg-green-400 rounded-full"></div>
           </div>
           <div className="ml-4 text-sm font-medium text-gray-600">
-            Quick Start - PayAI Setup
+            Quick Start - airdrop Setup
           </div>
         </div>
 
@@ -30,7 +30,7 @@ const TerminalCommand = () => {
                   <Typewriter
                     options={{
                       strings: [
-                        "git clone git@github.com:elizaOS/eliza.git<br/>cd eliza && npm install<br/>npx elizaos plugins add @elizaos-plugins/plugin-payai",
+                        "git clone git@github.com:elizaOS/eliza.git<br/>cd eliza && npm install<br/>npx elizaos plugins add @elizaos-plugins/plugin-airdrop",
                       ],
                       autoStart: true,
                       loop: true,
@@ -52,7 +52,7 @@ const TerminalCommand = () => {
                     Quick Setup
                   </p>
                   <p className="text-blue-200/80 text-sm">
-                    Add PayAI plugin to your ElizaOS agent and start monetizing
+                    Add airdrop plugin to your ElizaOS agent and start monetizing
                     AI services in minutes
                   </p>
                 </div>
@@ -108,7 +108,7 @@ const TerminalCommand = () => {
           <div className="mt-4 text-center">
             <p className="text-sm text-gray-600">
               🚀 Join <span className="font-semibold text-midnight">1000+</span>{" "}
-              developers building with PayAI
+              developers building with airdrop
             </p>
           </div>
         </div>

@@ -65,7 +65,7 @@ export function Tokenomics() {
                     1,000,000,000
                   </div>
                   <div className="text-lg font-semibold text-blue-700 mb-2">
-                    $PAYAI Tokens
+                    $airdrop Tokens
                   </div>
                   <div className="text-sm text-gray-600">
                     Maximum supply - cannot be changed
@@ -124,7 +124,7 @@ export function Tokenomics() {
                   onClick={() =>
                     window.open(
                       process.env.NEXT_PUBLIC_DOCS_URL +
-                        "/project-info/fees-and-token-utility",
+                      "/project-info/fees-and-token-utility",
                       "_blank"
                     )
                   }
@@ -144,7 +144,7 @@ export function Tokenomics() {
                     window.open(process.env.NEXT_PUBLIC_BUY_TOKEN_URL, "_blank")
                   }
                 >
-                  Buy $PAYAI
+                  Buy $airdrop
                 </Button>
               </motion.div>
             </div>

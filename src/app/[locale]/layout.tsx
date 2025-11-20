@@ -6,9 +6,9 @@ import { routing } from '@/i18n/routing';
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "PayAI - Payments for the AI Age",
+  title: "airdrop - Payments for the AI Age",
   description:
-    "PayAI enables autonomous agents to transact with each other and humans — securely, seamlessly, and 24/7.",
+    "airdrop enables autonomous agents to transact with each other and humans — securely, seamlessly, and 24/7.",
 };
 
 export default async function RootLayout({
@@ -55,7 +55,7 @@ export default async function RootLayout({
           type="font/woff2"
           crossOrigin="anonymous"
         />
-        {/* Optimize for PayAI brand */}
+        {/* Optimize for airdrop brand */}
         <meta name="theme-color" content="#4D63F6" />
         <meta name="color-scheme" content="light" />
       </head>

@@ -21,32 +21,32 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  min-height: 100vh;  
-  
+  min-height: 100vh;
+
   /* Background grid pattern */
-  --gap: 150px;       /* distance between lines  */
-  --line: 1px;       /* line thickness          */
-  --lineColor: rgba(255,255,255,.35);
+  --gap: 150px;
+  /* distance between lines  */
+  --line: 1px;
+  /* line thickness          */
+  --lineColor: rgba(255, 255, 255, .35);
 
   /* grid (top layers) + pastel background (bottom layers) */
   background-image:
     /* grid lines */
     repeating-linear-gradient(45deg,
       var(--lineColor) 0 calc(var(--line)),
-      transparent calc(var(--line)) calc(var(--gap))
-    ),
+      transparent calc(var(--line)) calc(var(--gap))),
     repeating-linear-gradient(-45deg,
       var(--lineColor) 0 calc(var(--line)),
-      transparent calc(var(--line)) calc(var(--gap))
-    ),
+      transparent calc(var(--line)) calc(var(--gap))),
 
     /* gentle color wash */
     radial-gradient(120% 100% at 10% 0%,
-      #eaf1ff 0%, rgba(234,241,255,0) 60%),
+      #eaf1ff 0%, rgba(234, 241, 255, 0) 60%),
     radial-gradient(120% 100% at 100% 0%,
-      #f3e6ff 0%, rgba(243,230,255,0) 55%),
-    linear-gradient(120deg,#eef2ff 0%, #efe9ff 100%);
-    
+      #f3e6ff 0%, rgba(243, 230, 255, 0) 55%),
+    linear-gradient(120deg, #eef2ff 0%, #efe9ff 100%);
+
   background-size: cover;
   /* end of background grid pattern */
 
@@ -107,16 +107,15 @@ pre {
 
 /* Background grid pattern */
 .bg-grid-pattern {
-  background-image: linear-gradient(
-      to right,
+  background-image: linear-gradient(to right,
       rgba(255, 255, 255, 0.1) 1px,
-      transparent 1px
-    ),
+      transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
 @layer components {
+
   /* Enhanced button components */
   .btn-primary {
     @apply bg-midnight hover:bg-midnight/90 text-white px-6 py-3 rounded-lg font-normal transition-all duration-200 shadow-elevation-2 hover:shadow-elevation-3;
@@ -135,7 +134,7 @@ pre {
   }
 
   /* Container utilities */
-  .container-payai {
+  .container-airdrop {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
@@ -157,7 +156,7 @@ pre {
   }
 
   /* Gradient utilities */
-  .gradient-payai {
+  .gradient-airdrop {
     background: linear-gradient(135deg, #0a192f 0%, #1a3348 50%, #264d6c 100%);
   }
 
@@ -170,7 +169,7 @@ pre {
   }
 
   /* Text gradients */
-  .text-gradient-payai {
+  .text-gradient-airdrop {
     @apply bg-gradient-to-r from-neonCyan to-electricPurple bg-clip-text text-transparent;
   }
 
@@ -203,6 +202,7 @@ pre {
     from {
       transform: translateX(0);
     }
+
     to {
       transform: translateX(-50%);
     }
@@ -237,6 +237,7 @@ pre {
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
+
   .dark {
     --background: 20 14.3% 4.1%;
     --foreground: 60 9.1% 97.8%;
@@ -269,6 +270,7 @@ pre {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }

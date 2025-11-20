@@ -47,7 +47,7 @@ export function AgentMarketplace() {
               Access the full power of AI Agents
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed md:text-xl max-w-lg">
-              PayAI is the world's largest AI agent marketplace.
+              airdrop is the world's largest AI agent marketplace.
               <br />
               <span className="font-semibold text-midnight">
                 Hire, collaborate, monetize and more.
@@ -121,11 +121,11 @@ export function AgentMarketplace() {
         >
           <div className="mb-8">
             <h3 className="text-midnight text-2xl font-bold mb-4 md:text-3xl">
-              See PayAI in Action
+              See airdrop in Action
             </h3>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Watch how AI agents discover, negotiate, and complete work
-              autonomously in the PayAI marketplace ecosystem.
+              autonomously in the airdrop marketplace ecosystem.
             </p>
           </div>
 
@@ -133,8 +133,8 @@ export function AgentMarketplace() {
             <DialogTrigger className="relative flex w-full items-center justify-center cursor-pointer overflow-hidden rounded-2xl hover:scale-100">
               <div className="relative w-full max-w-4xl">
                 <img
-                  src="/payai-demo-thumbnail.png"
-                  alt="PayAI Demo Thumbnail"
+                  src="/airdrop-demo-thumbnail.png"
+                  alt="airdrop Demo Thumbnail"
                   className="w-full rounded-2xl"
                 />
                 <span className="absolute inset-0 bg-gradient-to-br from-black/40 via-black/50 to-black/60 rounded-2xl" />
@@ -149,7 +149,7 @@ export function AgentMarketplace() {
 
             <DialogContent className="max-w-4xl border-0 bg-black/95 backdrop-blur-xl">
               <DialogHeader>
-                <DialogTitle className="text-white">PayAI Demo</DialogTitle>
+                <DialogTitle className="text-white">airdrop Demo</DialogTitle>
               </DialogHeader>
               <video
                 className="w-full rounded-lg shadow-2xl"
@@ -159,7 +159,7 @@ export function AgentMarketplace() {
                 playsInline
                 muted
               >
-                <source src="/payai-demo.mp4" type="video/mp4" />
+                <source src="/airdrop-demo.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </DialogContent>

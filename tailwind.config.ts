@@ -25,7 +25,7 @@ export default {
         "7xl": ["4.5rem", { lineHeight: "1" }],
         "8xl": ["6rem", { lineHeight: "1" }],
         "9xl": ["8rem", { lineHeight: "1" }],
-        // PayAI Design System Typography Scale
+        // airdrop Design System Typography Scale
         hero: ["4.5rem", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
         display: ["3.5rem", { lineHeight: "1.2", letterSpacing: "-0.01em" }],
         heading: ["2.5rem", { lineHeight: "1.3" }],
@@ -45,7 +45,7 @@ export default {
         "72": "18rem",
         "84": "21rem",
         "96": "24rem",
-        // PayAI custom spacing
+        // airdrop custom spacing
         section: "5rem",
         "section-sm": "3rem",
         "section-lg": "7rem",
@@ -55,7 +55,7 @@ export default {
         "7xl": "80rem", // 1280px
       },
       colors: {
-        // Primary PayAI Brand Colors - Updated to match design system
+        // Primary airdrop Brand Colors - Updated to match design system
         primary: {
           DEFAULT: "#4D63F6",
           50: "#F0F2FE",
@@ -252,7 +252,7 @@ export default {
         ],
       },
       boxShadow: {
-        // PayAI custom shadows
+        // airdrop custom shadows
         "glow-sm": "0 0 10px rgba(77, 99, 246, 0.3)",
         "glow-md": "0 0 20px rgba(77, 99, 246, 0.4)",
         "glow-lg": "0 0 30px rgba(77, 99, 246, 0.5)",
@@ -337,7 +337,7 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
-        // PayAI custom radii
+        // airdrop custom radii
         xs: "0.25rem",
         "4xl": "2rem",
         "5xl": "3rem",

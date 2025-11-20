@@ -126,7 +126,7 @@ const FEATURES = [
     statusIcon: Sparkles,
     title: "Test X402 Payments, Zero Cost",
     description:
-      "Run real X402 transactions against a live merchant—for free. Get 100% of your payment refunded, with PayAI covering the network fees.",
+      "Run real X402 transactions against a live merchant—for free. Get 100% of your payment refunded, with airdrop covering the network fees.",
     type: "terminal",
     primaryCta: {
       label: "Try Now",
@@ -322,17 +322,17 @@ function RenderVisual({ feature }) {
               </button>
             </DialogTrigger>
             <DialogContent className="max-w-4xl p-0 overflow-hidden bg-black border-gray-800">
-              <DialogTitle className="sr-only">PayAI Demo Video</DialogTitle>
+              <DialogTitle className="sr-only">airdrop Demo Video</DialogTitle>
               <DialogDescription className="sr-only">
-                Demonstration video of PayAI features and workflow
+                Demonstration video of airdrop features and workflow
               </DialogDescription>
               <DialogClose className="absolute right-4 top-4 z-10 rounded-full bg-white/90 hover:bg-white p-2 transition-colors">
                 <X className="h-4 w-4 text-gray-900" />
                 <span className="sr-only">Close</span>
               </DialogClose>
               <video
-                src="/payai-demo.mp4"
-                poster="/payai-demo-thumbnail.png"
+                src="/airdrop-demo.mp4"
+                poster="/airdrop-demo-thumbnail.png"
                 controls
                 autoPlay
                 className="w-full h-auto"
@@ -442,11 +442,10 @@ function FeatureCard({ feature, index }) {
                     {/* Status Badge below title */}
                     <div className="mb-6 w-fit">
                       <div
-                        className={`${
-                          feature.status === "LIVE"
-                            ? "bg-purple-100 text-purple-700 border-purple-200"
-                            : "bg-gray-100 text-gray-600 border-gray-200"
-                        } border px-3 py-1.5 rounded-lg text-caption font-normal flex items-center gap-1.5 w-fit`}
+                        className={`${feature.status === "LIVE"
+                          ? "bg-purple-100 text-purple-700 border-purple-200"
+                          : "bg-gray-100 text-gray-600 border-gray-200"
+                          } border px-3 py-1.5 rounded-lg text-caption font-normal flex items-center gap-1.5 w-fit`}
                       >
                         <feature.statusIcon className="w-3 h-3" />
                         {feature.status}

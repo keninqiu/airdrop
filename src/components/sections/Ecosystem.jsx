@@ -16,11 +16,11 @@ export function Ecosystem() {
             </div>
             <div>
               <p className="text-gray-500 text-base leading-relaxed">
-                Join a thriving network of AI developers, Web3 builders, and ecosystem partners using PayAI to build the agent economy.
+                Join a thriving network of AI developers, Web3 builders, and ecosystem partners using airdrop to build the agent economy.
               </p>
             </div>
           </div>
-          
+
           {/* Stats row */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
             <div className="text-left">
@@ -31,7 +31,7 @@ export function Ecosystem() {
                 Agent-to-Agent Interactions
               </div>
             </div>
-            
+
             <div className="text-left">
               <div className="text-4xl lg:text-5xl font-bold text-[#4D63F6] mb-2">
                 10+
@@ -40,7 +40,7 @@ export function Ecosystem() {
                 Ecosystem Partners
               </div>
             </div>
-            
+
             <div className="text-left">
               <div className="text-4xl lg:text-5xl font-bold text-[#4D63F6] mb-2">
                 5
@@ -49,7 +49,7 @@ export function Ecosystem() {
                 Developer SDKs Released
               </div>
             </div>
-            
+
             <div className="text-left">
               <div className="text-4xl lg:text-5xl font-bold text-[#4D63F6] mb-2">
                 12
