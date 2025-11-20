@@ -7,62 +7,7 @@ import { Link } from "@/i18n/routing";
 import { ArrowRight, CheckCircle, Clock, Flame } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-const airdrops = [
-    {
-        id: 1,
-        name: "Solana",
-        logo: "/partners/Solana.svg",
-        value: "$150",
-        status: "Active",
-        type: "Featured",
-        description: "Participate in the Solana ecosystem airdrop.",
-    },
-    {
-        id: 2,
-        name: "Raydium",
-        logo: "/partners/raydium.svg",
-        value: "$50",
-        status: "Active",
-        type: "DeFi",
-        description: "Trade on Raydium to be eligible.",
-    },
-    {
-        id: 3,
-        name: "Pumpfun",
-        logo: "/partners/pumpfun.svg",
-        value: "Unknown",
-        status: "Upcoming",
-        type: "Meme",
-        description: "Join the Pumpfun community early.",
-    },
-    {
-        id: 4,
-        name: "Coinbase",
-        logo: "/partners/coinbase.svg",
-        value: "$20",
-        status: "Active",
-        type: "Exchange",
-        description: "Learn and earn with Coinbase.",
-    },
-    {
-        id: 5,
-        name: "Polygon",
-        logo: "/partners/Polygon.svg",
-        value: "$10",
-        status: "Ended",
-        type: "Layer 2",
-        description: "Polygon zkEVM saga.",
-    },
-    {
-        id: 6,
-        name: "Sei",
-        logo: "/partners/Sei.svg",
-        value: "$500",
-        status: "Active",
-        type: "Layer 1",
-        description: "Sei Network atlantic rewards.",
-    },
-];
+import { airdrops } from "@/lib/airdrops";
 
 const AirdropCard = ({ airdrop, t }) => {
     return (
@@ -100,7 +45,7 @@ const AirdropCard = ({ airdrop, t }) => {
                     <span className="text-sm font-medium text-gray-900">{airdrop.value}</span>
                 </div>
                 <Link
-                    href={`/airdrop/${airdrop.id}`}
+                    href={`/airdrops/${airdrop.id}`}
                     className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors"
                 >
                     <ArrowRight className="w-4 h-4" />
