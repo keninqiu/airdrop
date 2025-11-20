@@ -202,8 +202,6 @@ export function Header() {
             </motion.div>
           </div>
         </div>
-
-
       </div>
     </section>
   );
