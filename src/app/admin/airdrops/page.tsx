@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { getAirdrops, createAirdrop, updateAirdrop, deleteAirdrop } from "@/actions/admin-actions";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -259,7 +260,14 @@ export default function AirdropsPage() {
                         <CardContent className="p-4">
                             <div className="flex items-start justify-between mb-2">
                                 <div className="flex items-center gap-2">
-                                    <img src={airdrop.logo} alt="" className="w-8 h-8" />
+                                    <div className="relative w-8 h-8">
+                                        <Image
+                                            src={airdrop.logo}
+                                            alt={airdrop.translations.find((t) => t.locale === "en")?.name || "Airdrop logo"}
+                                            fill
+                                            className="object-contain"
+                                        />
+                                    </div>
                                     <div>
                                         <h3 className="font-semibold">
                                             {airdrop.translations.find((t) => t.locale === "en")?.name}

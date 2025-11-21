@@ -1,10 +1,10 @@
 'use client';
 
-import { useLocale, useTranslations } from 'next-intl';
+import { useLocale } from 'next-intl';
 import { usePathname, useRouter } from '@/i18n/routing';
 import { useState, useTransition, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, Globe } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 
 const languages = [
     { code: 'en', name: 'English', flag: '🇺🇸' },
@@ -19,7 +19,7 @@ const languages = [
 ];
 
 export default function LanguageSwitcher() {
-    const t = useTranslations('LanguageSwitcher');
+
     const locale = useLocale();
     const router = useRouter();
     const pathname = usePathname();

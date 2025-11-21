@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { getPosts, createPost, updatePost, deletePost } from "@/actions/admin-actions";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -222,7 +223,14 @@ export default function PostsPage() {
                 {posts.map((post) => (
                     <Card key={post.id}>
                         <CardContent className="p-4">
-                            <img src={post.image} alt="" className="w-full h-40 object-cover rounded mb-3" />
+                            <div className="relative w-full h-40 mb-3">
+                                <Image
+                                    src={post.image}
+                                    alt={post.translations.find((t) => t.locale === "en")?.title || "Post image"}
+                                    fill
+                                    className="object-cover rounded"
+                                />
+                            </div>
                             <h3 className="font-semibold mb-1">
                                 {post.translations.find((t) => t.locale === "en")?.title}
                             </h3>
