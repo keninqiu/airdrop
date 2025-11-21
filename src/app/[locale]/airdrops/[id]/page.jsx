@@ -1,16 +1,15 @@
 import React from "react";
 import { notFound } from "next/navigation";
-import { useTranslations } from "next-intl";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { airdrops } from "@/lib/airdrops";
+import { getAirdropById } from "@/services/airdrop-service";
 import Image from "next/image";
-import { CheckCircle, Clock, Flame, ArrowLeft, ExternalLink } from "lucide-react";
+import { ArrowLeft, ExternalLink } from "lucide-react";
 import { Link } from "@/i18n/routing";
 
 export default async function AirdropDetailsPage({ params }) {
-    const { id } = await params;
-    const airdrop = airdrops.find((a) => a.id === parseInt(id));
+    const { id, locale } = await params;
+    const airdrop = await getAirdropById(parseInt(id), locale);
 
     if (!airdrop) {
         notFound();
@@ -54,8 +53,8 @@ export default async function AirdropDetailsPage({ params }) {
                                         </h1>
                                         <div className="flex items-center gap-3">
                                             <span className={`px-3 py-1 rounded-full text-sm font-medium ${airdrop.status === "Active" ? "bg-green-100 text-green-700" :
-                                                    airdrop.status === "Upcoming" ? "bg-blue-100 text-blue-700" :
-                                                        "bg-gray-100 text-gray-600"
+                                                airdrop.status === "Upcoming" ? "bg-blue-100 text-blue-700" :
+                                                    "bg-gray-100 text-gray-600"
                                                 }`}>
                                                 {airdrop.status}
                                             </span>

@@ -1,0 +1,30 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Airdrop {
+  id           Int      @id @default(autoincrement())
+  logo         String
+  value        String
+  status       String   // Active, Upcoming, Ended
+  type         String   // Featured, DeFi, Meme, Exchange, Layer 2, Layer 1
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  translations AirdropTranslation[]
+}
+
+model AirdropTranslation {
+  id          Int      @id @default(autoincrement())
+  airdropId   Int
+  locale      String
+  name        String
+  description String   @db.Text
+  airdrop     Airdrop  @relation(fields: [airdropId], references: [id], onDelete: Cascade)
+
+  @@unique([airdropId, locale])
+}

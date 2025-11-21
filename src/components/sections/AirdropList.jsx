@@ -7,8 +7,6 @@ import { Link } from "@/i18n/routing";
 import { ArrowRight, CheckCircle, Clock, Flame } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-import { airdrops } from "@/lib/airdrops";
-
 const AirdropCard = ({ airdrop, t }) => {
     return (
         <motion.div
@@ -55,7 +53,7 @@ const AirdropCard = ({ airdrop, t }) => {
     );
 };
 
-export function AirdropList() {
+export function AirdropList({ airdrops = [] }) {
     const t = useTranslations('AirdropList');
     return (
         <section id="airdrops" className="py-16 bg-gray-50/50">

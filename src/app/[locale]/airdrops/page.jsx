@@ -1,11 +1,13 @@
-"use client";
-
 import React from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { AirdropList } from "@/components/sections/AirdropList";
+import { getAirdrops } from "@/services/airdrop-service";
 
-export default function AirdropsPage() {
+export default async function AirdropsPage({ params }) {
+    const { locale } = await params;
+    const airdrops = await getAirdrops(locale);
+
     return (
         <div className="min-h-screen flex flex-col">
             <Navbar />
@@ -15,7 +17,7 @@ export default function AirdropsPage() {
                     <p className="text-lg text-gray-600 mb-8">
                         Browse our complete list of crypto airdrops and farming opportunities.
                     </p>
-                    <AirdropList />
+                    <AirdropList airdrops={airdrops} />
                 </div>
             </main>
             <Footer />
