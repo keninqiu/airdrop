@@ -5,11 +5,15 @@
         "blog": "ブログ",
         "faq": "よくある質問",
         "about": "約",
-        "submitAirdrop": "Submit Airdrop"
+        "submitAirdrop": "エアドロップを送信"
+    },
+    "Metadata": {
+        "title": "Airdrop Scan - 検証済みの暗号資産エアドロップを発見。高速",
+        "description": "最新の仮想通貨エアドロップとエアドロップファーミングの機会を発見しましょう。厳選されたエアドロップを紹介し、一歩先を行くお手伝いをします。"
     },
     "Header": {
         "title": "最高の暗号資産エアドロップ。",
-        "subtitle": "最新の暗号資産エアドロップとエアドロップファーミングの機会を発見してください。2017年から厳選されたエアドロップを紹介しています。",
+        "subtitle": "最新の仮想通貨エアドロップとエアドロップファーミングの機会を発見しましょう。厳選されたエアドロップを紹介し、一歩先を行くお手伝いをします。",
         "browseAirdrops": "エアドロップを閲覧",
         "listAirdrop": "エアドロップをリスト",
         "trustedBy": "有名な暗号資産ブランドから信頼されています"
@@ -30,84 +34,84 @@
         "label": "言語"
     },
     "HowItWorks": {
-        "tagline": "How It Works",
-        "heading": "Start Earning Crypto in 3 Steps",
-        "description": "We make it easy for you to discover and participate in the best crypto airdrops.",
+        "tagline": "使い方",
+        "heading": "3つのステップで暗号資産を稼ぎ始めよう",
+        "description": "最高の暗号資産エアドロップを見つけて参加するのを簡単にします。",
         "step1": {
-            "heading": "Browse Airdrops",
-            "description": "Use our advanced filters to easily search through airdrop opportunities and find ones that match your interests."
+            "heading": "エアドロップを閲覧",
+            "description": "高度なフィルターを使用して、エアドロップの機会を簡単に検索し、興味に合ったものを見つけます。"
         },
         "step2": {
-            "heading": "Select and Participate",
-            "description": "Choose a crypto airdrop campaign, follow the step-by-step guide provided, and start participating right away."
+            "heading": "選択して参加",
+            "description": "暗号資産エアドロップキャンペーンを選択し、提供されたステップバイステップガイドに従って、すぐに参加を開始します。"
         },
         "step3": {
-            "heading": "Claim Tokens",
-            "description": "Stay updated with real-time alerts about airdrop eligibility checks and claim your free crypto tokens."
+            "heading": "トークンを請求",
+            "description": "エアドロップの適格性チェックに関するリアルタイムのアラートで最新情報を入手し、無料の暗号資産トークンを請求します。"
         },
         "cta": {
-            "heading": "Ready to start your airdrop journey?",
-            "description": "Join millions of airdrop hunters and start earning free crypto today.",
-            "button": "Start Hunting Now"
+            "heading": "エアドロップの旅を始める準備はできましたか？",
+            "description": "数百万人のエアドロップハンターに参加して、今日から無料の暗号資産を稼ぎ始めましょう。",
+            "button": "今すぐハントを開始"
         }
     },
     "Blog": {
-        "heading": "Blog",
-        "description": "See how airdrop shines by enabling AI Agent collaboration.",
-        "readMore": "Read More"
+        "heading": "ブログ",
+        "description": "AIエージェントのコラボレーションを可能にすることで、エアドロップがどのように輝くかをご覧ください。",
+        "readMore": "続きを読む"
     },
     "FAQ": {
-        "heading": "Frequently Asked Questions",
-        "description": "Got questions? We've got answers.",
+        "heading": "よくある質問",
+        "description": "質問がありますか？回答があります。",
         "q1": {
-            "question": "What is a crypto airdrop?",
-            "answer": "A crypto airdrop is a marketing strategy used by blockchain startups to distribute free tokens to wallet addresses. It's a way to generate awareness and build a community."
+            "question": "暗号資産エアドロップとは何ですか？",
+            "answer": "暗号資産エアドロップは、ブロックチェーンスタートアップがウォレットアドレスに無料のトークンを配布するために使用するマーケティング戦略です。認知度を高め、コミュニティを構築する方法です。"
         },
         "q2": {
-            "question": "How do I participate in airdrops?",
-            "answer": "To participate, you usually need a crypto wallet (like MetaMask or Phantom). Each airdrop has specific requirements, such as following social media accounts, joining a Telegram group, or interacting with a protocol."
+            "question": "エアドロップに参加するにはどうすればよいですか？",
+            "answer": "参加するには、通常、暗号資産ウォレット（MetaMaskやPhantomなど）が必要です。各エアドロップには、ソーシャルメディアアカウントのフォロー、Telegramグループへの参加、プロトコルとの対話など、特定の要件があります。"
         },
         "q3": {
-            "question": "Are airdrops free?",
-            "answer": "Most airdrops are free to join, but some might require you to pay transaction fees (gas fees) if you need to interact with a smart contract. Always do your own research."
+            "question": "エアドロップは無料ですか？",
+            "answer": "ほとんどのエアドロップは無料で参加できますが、スマートコントラクトと対話する必要がある場合は、取引手数料（ガス代）を支払う必要がある場合があります。常に自分で調査してください。"
         },
         "q4": {
-            "question": "How do I claim my tokens?",
-            "answer": "After the airdrop campaign ends, the project will usually announce a claim date. You'll need to connect your wallet to their official website to claim your tokens."
+            "question": "トークンを請求するにはどうすればよいですか？",
+            "answer": "エアドロップキャンペーン終了後、プロジェクトは通常、請求日を発表します。トークンを請求するには、ウォレットを公式ウェブサイトに接続する必要があります。"
         },
         "q5": {
-            "question": "Is it safe to participate in airdrops?",
-            "answer": "While many airdrops are legitimate, there are also scams. Never share your private keys or seed phrase. Be cautious of projects asking for money to claim an airdrop."
+            "question": "エアドロップに参加するのは安全ですか？",
+            "answer": "多くのエアドロップは正当ですが、詐欺もあります。秘密鍵やシードフレーズを決して共有しないでください。エアドロップを請求するためにお金を要求するプロジェクトには注意してください。"
         }
     },
     "AirdropList": {
-        "heading": "Featured Airdrops",
-        "description": "Handpicked for their value and potential, don’t miss out on these quality airdrops.",
-        "viewAll": "View All Airdrops",
-        "value": "Value",
+        "heading": "注目のエアドロップ",
+        "description": "価値と可能性のために厳選された、これらの質の高いエアドロップをお見逃しなく。",
+        "viewAll": "すべてのエアドロップを表示",
+        "value": "価値",
         "status": {
-            "Active": "Active",
-            "Upcoming": "Upcoming",
-            "Ended": "Ended"
+            "Active": "アクティブ",
+            "Upcoming": "今後",
+            "Ended": "終了"
         }
     },
     "SubmitAirdrop": {
-        "title": "List Your Airdrop",
-        "subtitle": "Reach millions of crypto enthusiasts and grow your community.",
-        "cardTitle": "Airdrop Details",
-        "cardDescription": "Fill out the form below to submit your airdrop for review.",
+        "title": "エアドロップをリストする",
+        "subtitle": "数百万人の暗号資産愛好家にリーチし、コミュニティを成長させましょう。",
+        "cardTitle": "エアドロップの詳細",
+        "cardDescription": "以下のフォームに記入して、エアドロップを審査のために送信してください。",
         "labels": {
-            "projectName": "Project Name",
-            "websiteUrl": "Website URL",
-            "description": "Description",
-            "estimatedValue": "Estimated Value",
-            "endDate": "End Date",
-            "submitButton": "Submit Airdrop"
+            "projectName": "プロジェクト名",
+            "websiteUrl": "ウェブサイトURL",
+            "description": "説明",
+            "estimatedValue": "推定価値",
+            "endDate": "終了日",
+            "submitButton": "エアドロップを送信"
         },
         "placeholders": {
-            "projectName": "e.g. Solana",
+            "projectName": "例: Solana",
             "websiteUrl": "https://...",
-            "description": "Describe your airdrop campaign...",
+            "description": "エアドロップキャンペーンについて説明してください...",
             "estimatedValue": "$100"
         }
     }

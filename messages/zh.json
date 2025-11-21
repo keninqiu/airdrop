@@ -5,11 +5,15 @@
         "blog": "博客",
         "faq": "常见问题",
         "about": "关于",
-        "submitAirdrop": "Submit Airdrop"
+        "submitAirdrop": "提交空投"
+    },
+    "Metadata": {
+        "title": "Airdrop Scan - 发现经过验证的加密空投。快速",
+        "description": "发现最新的加密货币空投和空投耕作机会。我们要介绍精心策划的空投，助您保持领先。"
     },
     "Header": {
         "title": "最好的加密空投。",
-        "subtitle": "发现最新的加密空投和空投耕作机会。自2017年以来呈现精选空投。",
+        "subtitle": "发现最新的加密货币空投和空投耕作机会。我们要介绍精心策划的空投，助您保持领先。",
         "browseAirdrops": "浏览空投",
         "listAirdrop": "列出空投",
         "trustedBy": "受知名加密品牌信任"
@@ -30,84 +34,84 @@
         "label": "语言"
     },
     "HowItWorks": {
-        "tagline": "How It Works",
-        "heading": "Start Earning Crypto in 3 Steps",
-        "description": "We make it easy for you to discover and participate in the best crypto airdrops.",
+        "tagline": "工作原理",
+        "heading": "只需3步即可开始赚取加密货币",
+        "description": "我们让您轻松发现并参与最佳的加密空投。",
         "step1": {
-            "heading": "Browse Airdrops",
-            "description": "Use our advanced filters to easily search through airdrop opportunities and find ones that match your interests."
+            "heading": "浏览空投",
+            "description": "使用我们的高级筛选器轻松搜索空投机会，找到符合您兴趣的项目。"
         },
         "step2": {
-            "heading": "Select and Participate",
-            "description": "Choose a crypto airdrop campaign, follow the step-by-step guide provided, and start participating right away."
+            "heading": "选择并参与",
+            "description": "选择一个加密空投活动，按照提供的分步指南立即开始参与。"
         },
         "step3": {
-            "heading": "Claim Tokens",
-            "description": "Stay updated with real-time alerts about airdrop eligibility checks and claim your free crypto tokens."
+            "heading": "领取代币",
+            "description": "通过关于空投资格检查的实时提醒保持更新，并领取您的免费加密代币。"
         },
         "cta": {
-            "heading": "Ready to start your airdrop journey?",
-            "description": "Join millions of airdrop hunters and start earning free crypto today.",
-            "button": "Start Hunting Now"
+            "heading": "准备好开始您的空投之旅了吗？",
+            "description": "加入数百万空投猎人的行列，今天就开始赚取免费加密货币。",
+            "button": "立即开始狩猎"
         }
     },
     "Blog": {
-        "heading": "Blog",
-        "description": "See how airdrop shines by enabling AI Agent collaboration.",
-        "readMore": "Read More"
+        "heading": "博客",
+        "description": "了解空投如何通过启用AI代理协作而大放异彩。",
+        "readMore": "阅读更多"
     },
     "FAQ": {
-        "heading": "Frequently Asked Questions",
-        "description": "Got questions? We've got answers.",
+        "heading": "常见问题",
+        "description": "有问题？我们有答案。",
         "q1": {
-            "question": "What is a crypto airdrop?",
-            "answer": "A crypto airdrop is a marketing strategy used by blockchain startups to distribute free tokens to wallet addresses. It's a way to generate awareness and build a community."
+            "question": "什么是加密空投？",
+            "answer": "加密空投是区块链初创公司用来向钱包地址分发免费代币的一种营销策略。这是一种提高知名度和建立社区的方式。"
         },
         "q2": {
-            "question": "How do I participate in airdrops?",
-            "answer": "To participate, you usually need a crypto wallet (like MetaMask or Phantom). Each airdrop has specific requirements, such as following social media accounts, joining a Telegram group, or interacting with a protocol."
+            "question": "我如何参与空投？",
+            "answer": "要参与，您通常需要一个加密钱包（如MetaMask或Phantom）。每个空投都有特定的要求，例如关注社交媒体账户、加入Telegram群组或与协议交互。"
         },
         "q3": {
-            "question": "Are airdrops free?",
-            "answer": "Most airdrops are free to join, but some might require you to pay transaction fees (gas fees) if you need to interact with a smart contract. Always do your own research."
+            "question": "空投是免费的吗？",
+            "answer": "大多数空投都是免费参与的，但如果您需要与智能合约交互，某些空投可能需要您支付交易费（Gas费）。请务必自行研究。"
         },
         "q4": {
-            "question": "How do I claim my tokens?",
-            "answer": "After the airdrop campaign ends, the project will usually announce a claim date. You'll need to connect your wallet to their official website to claim your tokens."
+            "question": "我如何领取我的代币？",
+            "answer": "空投活动结束后，项目方通常会宣布领取日期。您需要将钱包连接到他们的官方网站以领取您的代币。"
         },
         "q5": {
-            "question": "Is it safe to participate in airdrops?",
-            "answer": "While many airdrops are legitimate, there are also scams. Never share your private keys or seed phrase. Be cautious of projects asking for money to claim an airdrop."
+            "question": "参与空投安全吗？",
+            "answer": "虽然许多空投是合法的，但也存在骗局。切勿分享您的私钥或助记词。警惕那些要求付费才能领取空投的项目。"
         }
     },
     "AirdropList": {
-        "heading": "Featured Airdrops",
-        "description": "Handpicked for their value and potential, don’t miss out on these quality airdrops.",
-        "viewAll": "View All Airdrops",
-        "value": "Value",
+        "heading": "精选空投",
+        "description": "因其价值和潜力而被精心挑选，不要错过这些优质空投。",
+        "viewAll": "查看所有空投",
+        "value": "价值",
         "status": {
-            "Active": "Active",
-            "Upcoming": "Upcoming",
-            "Ended": "Ended"
+            "Active": "进行中",
+            "Upcoming": "即将开始",
+            "Ended": "已结束"
         }
     },
     "SubmitAirdrop": {
-        "title": "List Your Airdrop",
-        "subtitle": "Reach millions of crypto enthusiasts and grow your community.",
-        "cardTitle": "Airdrop Details",
-        "cardDescription": "Fill out the form below to submit your airdrop for review.",
+        "title": "列出您的空投",
+        "subtitle": "触达数百万加密爱好者并发展您的社区。",
+        "cardTitle": "空投详情",
+        "cardDescription": "填写下面的表格以提交您的空投进行审核。",
         "labels": {
-            "projectName": "Project Name",
-            "websiteUrl": "Website URL",
-            "description": "Description",
-            "estimatedValue": "Estimated Value",
-            "endDate": "End Date",
-            "submitButton": "Submit Airdrop"
+            "projectName": "项目名称",
+            "websiteUrl": "网站链接",
+            "description": "描述",
+            "estimatedValue": "预估价值",
+            "endDate": "结束日期",
+            "submitButton": "提交空投"
         },
         "placeholders": {
-            "projectName": "e.g. Solana",
+            "projectName": "例如 Solana",
             "websiteUrl": "https://...",
-            "description": "Describe your airdrop campaign...",
+            "description": "描述您的空投活动...",
             "estimatedValue": "$100"
         }
     }

@@ -7,9 +7,13 @@
         "about": "About",
         "submitAirdrop": "Submit Airdrop"
     },
+    "Metadata": {
+        "title": "Airdrop Scan - Discover Verified Crypto Airdrops. Fast",
+        "description": "Discover the latest Crypto Airdrops and Airdrop Farming opportunities. Presenting carefully curated Airdrops to help you stay ahead."
+    },
     "Header": {
         "title": "The Best Crypto Airdrops.",
-        "subtitle": "Discover the latest Crypto Airdrops and Airdrop Farming opportunities. Presenting curated Airdrops since 2017.",
+        "subtitle": "Discover the latest Crypto Airdrops and Airdrop Farming opportunities. Presenting carefully curated Airdrops to help you stay ahead.",
         "browseAirdrops": "Browse Airdrops",
         "listAirdrop": "List Airdrop",
         "trustedBy": "Trusted by well-known crypto brands"

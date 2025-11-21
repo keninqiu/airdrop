@@ -1,15 +1,23 @@
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { getMessages, getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import "./globals.css";
 
-export const metadata: Metadata = {
-  title: "airdrop - Payments for the AI Age",
-  description:
-    "airdrop enables autonomous agents to transact with each other and humans — securely, seamlessly, and 24/7.",
-};
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'Metadata' });
+
+  return {
+    title: t('title'),
+    description: t('description')
+  };
+}
 
 export default async function RootLayout({
   children,

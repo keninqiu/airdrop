@@ -5,11 +5,15 @@
         "blog": "Blog",
         "faq": "FAQ",
         "about": "Sobre",
-        "submitAirdrop": "Submit Airdrop"
+        "submitAirdrop": "Enviar Airdrop"
+    },
+    "Metadata": {
+        "title": "Airdrop Scan - Descubra Airdrops de Criptomoedas Verificados. Rápido",
+        "description": "Descubra os últimos Airdrops de criptomoedas e oportunidades de Airdrop Farming. Apresentamos Airdrops cuidadosamente selecionados para ajudar você a ficar à frente."
     },
     "Header": {
         "title": "Os melhores airdrops de criptomoedas.",
-        "subtitle": "Descubra os últimos airdrops de criptomoedas e oportunidades de farming. Apresentando airdrops curados desde 2017.",
+        "subtitle": "Descubra os últimos Airdrops de criptomoedas e oportunidades de Airdrop Farming. Apresentamos Airdrops cuidadosamente selecionados para ajudar você a ficar à frente.",
         "browseAirdrops": "Navegar Airdrops",
         "listAirdrop": "Listar Airdrop",
         "trustedBy": "Confiado por marcas de cripto conhecidas"
@@ -30,84 +34,84 @@
         "label": "Idioma"
     },
     "HowItWorks": {
-        "tagline": "How It Works",
-        "heading": "Start Earning Crypto in 3 Steps",
-        "description": "We make it easy for you to discover and participate in the best crypto airdrops.",
+        "tagline": "Como Funciona",
+        "heading": "Comece a Ganhar Cripto em 3 Passos",
+        "description": "Facilitamos a descoberta e participação nos melhores airdrops de criptomoedas.",
         "step1": {
-            "heading": "Browse Airdrops",
-            "description": "Use our advanced filters to easily search through airdrop opportunities and find ones that match your interests."
+            "heading": "Navegar Airdrops",
+            "description": "Use nossos filtros avançados para pesquisar facilmente oportunidades de airdrop e encontrar aquelas que correspondem aos seus interesses."
         },
         "step2": {
-            "heading": "Select and Participate",
-            "description": "Choose a crypto airdrop campaign, follow the step-by-step guide provided, and start participating right away."
+            "heading": "Selecionar e Participar",
+            "description": "Escolha uma campanha de airdrop de criptomoedas, siga o guia passo a passo fornecido e comece a participar imediatamente."
         },
         "step3": {
-            "heading": "Claim Tokens",
-            "description": "Stay updated with real-time alerts about airdrop eligibility checks and claim your free crypto tokens."
+            "heading": "Reivindicar Tokens",
+            "description": "Mantenha-se atualizado com alertas em tempo real sobre verificações de elegibilidade de airdrop e reivindique seus tokens de criptomoedas gratuitos."
         },
         "cta": {
-            "heading": "Ready to start your airdrop journey?",
-            "description": "Join millions of airdrop hunters and start earning free crypto today.",
-            "button": "Start Hunting Now"
+            "heading": "Pronto para começar sua jornada de airdrop?",
+            "description": "Junte-se a milhões de caçadores de airdrops e comece a ganhar criptomoedas grátis hoje.",
+            "button": "Começar a Caçar Agora"
         }
     },
     "Blog": {
         "heading": "Blog",
-        "description": "See how airdrop shines by enabling AI Agent collaboration.",
-        "readMore": "Read More"
+        "description": "Veja como o airdrop brilha ao permitir a colaboração de Agentes de IA.",
+        "readMore": "Ler Mais"
     },
     "FAQ": {
-        "heading": "Frequently Asked Questions",
-        "description": "Got questions? We've got answers.",
+        "heading": "Perguntas Frequentes",
+        "description": "Tem perguntas? Nós temos respostas.",
         "q1": {
-            "question": "What is a crypto airdrop?",
-            "answer": "A crypto airdrop is a marketing strategy used by blockchain startups to distribute free tokens to wallet addresses. It's a way to generate awareness and build a community."
+            "question": "O que é um airdrop de criptomoedas?",
+            "answer": "Um airdrop de criptomoedas é uma estratégia de marketing usada por startups de blockchain para distribuir tokens gratuitos para endereços de carteira. É uma maneira de gerar conscientização e construir uma comunidade."
         },
         "q2": {
-            "question": "How do I participate in airdrops?",
-            "answer": "To participate, you usually need a crypto wallet (like MetaMask or Phantom). Each airdrop has specific requirements, such as following social media accounts, joining a Telegram group, or interacting with a protocol."
+            "question": "Como participo de airdrops?",
+            "answer": "Para participar, você geralmente precisa de uma carteira de criptomoedas (como MetaMask ou Phantom). Cada airdrop tem requisitos específicos, como seguir contas de mídia social, entrar em um grupo do Telegram ou interagir com um protocolo."
         },
         "q3": {
-            "question": "Are airdrops free?",
-            "answer": "Most airdrops are free to join, but some might require you to pay transaction fees (gas fees) if you need to interact with a smart contract. Always do your own research."
+            "question": "Os airdrops são gratuitos?",
+            "answer": "A maioria dos airdrops é gratuita para participar, mas alguns podem exigir que você pague taxas de transação (taxas de gás) se precisar interagir com um contrato inteligente. Sempre faça sua própria pesquisa."
         },
         "q4": {
-            "question": "How do I claim my tokens?",
-            "answer": "After the airdrop campaign ends, the project will usually announce a claim date. You'll need to connect your wallet to their official website to claim your tokens."
+            "question": "Como reivindico meus tokens?",
+            "answer": "Após o término da campanha de airdrop, o projeto geralmente anunciará uma data de reivindicação. Você precisará conectar sua carteira ao site oficial deles para reivindicar seus tokens."
         },
         "q5": {
-            "question": "Is it safe to participate in airdrops?",
-            "answer": "While many airdrops are legitimate, there are also scams. Never share your private keys or seed phrase. Be cautious of projects asking for money to claim an airdrop."
+            "question": "É seguro participar de airdrops?",
+            "answer": "Embora muitos airdrops sejam legítimos, também existem golpes. Nunca compartilhe suas chaves privadas ou frase semente. Tenha cuidado com projetos que pedem dinheiro para reivindicar um airdrop."
         }
     },
     "AirdropList": {
-        "heading": "Featured Airdrops",
-        "description": "Handpicked for their value and potential, don’t miss out on these quality airdrops.",
-        "viewAll": "View All Airdrops",
-        "value": "Value",
+        "heading": "Airdrops em Destaque",
+        "description": "Escolhidos a dedo por seu valor e potencial, não perca esses airdrops de qualidade.",
+        "viewAll": "Ver Todos os Airdrops",
+        "value": "Valor",
         "status": {
-            "Active": "Active",
-            "Upcoming": "Upcoming",
-            "Ended": "Ended"
+            "Active": "Ativo",
+            "Upcoming": "Em Breve",
+            "Ended": "Encerrado"
         }
     },
     "SubmitAirdrop": {
-        "title": "List Your Airdrop",
-        "subtitle": "Reach millions of crypto enthusiasts and grow your community.",
-        "cardTitle": "Airdrop Details",
-        "cardDescription": "Fill out the form below to submit your airdrop for review.",
+        "title": "Liste seu Airdrop",
+        "subtitle": "Alcance milhões de entusiastas de cripto e aumente sua comunidade.",
+        "cardTitle": "Detalhes do Airdrop",
+        "cardDescription": "Preencha o formulário abaixo para enviar seu airdrop para análise.",
         "labels": {
-            "projectName": "Project Name",
-            "websiteUrl": "Website URL",
-            "description": "Description",
-            "estimatedValue": "Estimated Value",
-            "endDate": "End Date",
-            "submitButton": "Submit Airdrop"
+            "projectName": "Nome do Projeto",
+            "websiteUrl": "URL do Site",
+            "description": "Descrição",
+            "estimatedValue": "Valor Estimado",
+            "endDate": "Data de Término",
+            "submitButton": "Enviar Airdrop"
         },
         "placeholders": {
-            "projectName": "e.g. Solana",
+            "projectName": "ex. Solana",
             "websiteUrl": "https://...",
-            "description": "Describe your airdrop campaign...",
+            "description": "Descreva sua campanha de airdrop...",
             "estimatedValue": "$100"
         }
     }

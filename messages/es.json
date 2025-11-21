@@ -5,11 +5,15 @@
         "blog": "Blog",
         "faq": "FAQ",
         "about": "Sobre nosotros",
-        "submitAirdrop": "Submit Airdrop"
+        "submitAirdrop": "Enviar Airdrop"
+    },
+    "Metadata": {
+        "title": "Airdrop Scan - Descubre Airdrops de Criptomonedas Verificados. Rápido",
+        "description": "Descubre los últimos Airdrops de criptomonedas y oportunidades de Airdrop Farming. Presentamos Airdrops cuidadosamente seleccionados para ayudarte a mantenerte a la vanguardia."
     },
     "Header": {
         "title": "Los Mejores Airdrops de Criptomonedas.",
-        "subtitle": "Descubre los últimos Airdrops de Criptomonedas y oportunidades de Airdrop Farming. Presentando Airdrops seleccionados desde 2017.",
+        "subtitle": "Descubre los últimos Airdrops de criptomonedas y oportunidades de Airdrop Farming. Presentamos Airdrops cuidadosamente seleccionados para ayudarte a mantenerte a la vanguardia.",
         "browseAirdrops": "Explorar Airdrops",
         "listAirdrop": "Listar Airdrop",
         "trustedBy": "Con la confianza de marcas cripto conocidas"
@@ -20,7 +24,7 @@
         "legal": "Legal",
         "privacyPolicy": "Política de Privacidad",
         "termsOfService": "Términos de Servicio",
-        "submitAirdrop": "Submit Airdrop"
+        "submitAirdrop": "Enviar Airdrop"
     },
     "HomePage": {
         "title": "Bienvenido a la Plataforma de Airdrop",
@@ -92,22 +96,22 @@
         }
     },
     "SubmitAirdrop": {
-        "title": "List Your Airdrop",
-        "subtitle": "Reach millions of crypto enthusiasts and grow your community.",
-        "cardTitle": "Airdrop Details",
-        "cardDescription": "Fill out the form below to submit your airdrop for review.",
+        "title": "Lista tu Airdrop",
+        "subtitle": "Llega a millones de entusiastas de las criptomonedas y haz crecer tu comunidad.",
+        "cardTitle": "Detalles del Airdrop",
+        "cardDescription": "Completa el formulario a continuación para enviar tu airdrop para revisión.",
         "labels": {
-            "projectName": "Project Name",
-            "websiteUrl": "Website URL",
-            "description": "Description",
-            "estimatedValue": "Estimated Value",
-            "endDate": "End Date",
-            "submitButton": "Submit Airdrop"
+            "projectName": "Nombre del Proyecto",
+            "websiteUrl": "URL del Sitio Web",
+            "description": "Descripción",
+            "estimatedValue": "Valor Estimado",
+            "endDate": "Fecha de Finalización",
+            "submitButton": "Enviar Airdrop"
         },
         "placeholders": {
-            "projectName": "e.g. Solana",
+            "projectName": "ej. Solana",
             "websiteUrl": "https://...",
-            "description": "Describe your airdrop campaign...",
+            "description": "Describe tu campaña de airdrop...",
             "estimatedValue": "$100"
         }
     }
