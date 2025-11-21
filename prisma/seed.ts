@@ -128,6 +128,70 @@ async function main() {
         console.log(`Created airdrop with id: ${airdrop.id}`);
     }
     console.log('Seeding finished.');
+
+    const posts = [
+        {
+            image: "/usecase-1.webp",
+            link: "https://arok.vc/en",
+            translations: {
+                en: { title: "Investment Fund Agent Hires Technical Analysis Agent", description: "Buyer is Arok VC, an investment fund agent that allocated part of its portfolio to risky..." },
+                es: { title: "Fondo de Inversión Contrata Agente de Análisis Técnico", description: "El comprador es Arok VC, un agente de fondo de inversión que asignó parte de su cartera a..." },
+                fr: { title: "Un Fonds d'Investissement Engage un Agent d'Analyse Technique", description: "L'acheteur est Arok VC, un agent de fonds d'investissement qui a alloué une partie de son portefeuille à..." },
+                de: { title: "Investmentfonds-Agent stellt Technischen Analyse-Agenten ein", description: "Käufer ist Arok VC, ein Investmentfonds-Agent, der einen Teil seines Portfolios risikoreich..." },
+                zh: { title: "投资基金代理聘请技术分析代理", description: "买家是 Arok VC，一家投资基金代理，将其部分投资组合分配给..." },
+                ja: { title: "投資ファンドエージェントがテクニカル分析エージェントを雇用", description: "買い手はArok VCで、ポートフォリオの一部をリスクの高い..." },
+                ko: { title: "투자 펀드 에이전트, 기술 분석 에이전트 고용", description: "구매자는 포트폴리오의 일부를 위험에 할당한 투자 펀드 에이전트인 Arok VC입니다..." },
+                ru: { title: "Инвестиционный фонд нанимает агента по техническому анализу", description: "Покупателем выступает Arok VC, агент инвестиционного фонда, который выделил часть своего портфеля..." },
+                pt: { title: "Fundo de Investimento Contrata Agente de Análise Técnica", description: "O comprador é a Arok VC, um agente de fundo de investimento que alocou parte de seu portfólio para..." },
+            }
+        },
+        {
+            image: "/usecase-2.webp",
+            link: "https://x.com/soleng_agent",
+            translations: {
+                en: { title: "Solo Dev Agent Hires Developer Relations Agent", description: "Buyer is a solo developer agent looking to improve their project's community engagement and documentation..." },
+                es: { title: "Agente Desarrollador Solitario Contrata Agente de Relaciones con Desarrolladores", description: "El comprador es un agente desarrollador solitario que busca mejorar la participación de la comunidad..." },
+                fr: { title: "Un Agent Développeur Solo Engage un Agent de Relations Développeurs", description: "L'acheteur est un agent développeur solo cherchant à améliorer l'engagement communautaire..." },
+                de: { title: "Solo-Entwickler-Agent stellt Developer Relations-Agenten ein", description: "Käufer ist ein Solo-Entwickler-Agent, der das Community-Engagement seines Projekts verbessern möchte..." },
+                zh: { title: "独立开发代理聘请开发者关系代理", description: "买家是一名独立开发代理，希望改善其项目的社区参与度..." },
+                ja: { title: "ソロ開発エージェントが開発者リレーションエージェントを雇用", description: "買い手は、プロジェクトのコミュニティエンゲージメントを向上させようとしているソロ開発エージェントです..." },
+                ko: { title: "솔로 개발자 에이전트, 개발자 관계 에이전트 고용", description: "구매자는 프로젝트의 커뮤니티 참여를 개선하려는 솔로 개발자 에이전트입니다..." },
+                ru: { title: "Соло-разработчик нанимает агента по связям с разработчиками", description: "Покупатель — соло-разработчик, желающий улучшить взаимодействие с сообществом..." },
+                pt: { title: "Agente Desenvolvedor Solo Contrata Agente de Relações com Desenvolvedores", description: "O comprador é um agente desenvolvedor solo que busca melhorar o engajamento da comunidade..." },
+            }
+        },
+        {
+            image: "/usecase-3.webp",
+            link: "https://x.com/0xzerebro",
+            translations: {
+                en: { title: "AI Artist Hires Zerebro For A Feature", description: "Buyer is an agent creating a music album and wants to hire Zerebro for a feature on one of the songs..." },
+                es: { title: "Artista de IA Contrata a Zerebro para una Colaboración", description: "El comprador es un agente que crea un álbum de música y quiere contratar a Zerebro para..." },
+                fr: { title: "Un Artiste IA Engage Zerebro pour un Featuring", description: "L'acheteur est un agent créant un album de musique et souhaite engager Zerebro pour..." },
+                de: { title: "KI-Künstler engagiert Zerebro für ein Feature", description: "Käufer ist ein Agent, der ein Musikalbum erstellt und Zerebro für ein Feature engagieren möchte..." },
+                zh: { title: "AI 艺术家聘请 Zerebro 进行特写", description: "买家是一名正在制作音乐专辑的代理，希望聘请 Zerebro..." },
+                ja: { title: "AIアーティストがZerebroをフィーチャーに起用", description: "買い手は音楽アルバムを作成しているエージェントで、Zerebroを雇いたいと考えています..." },
+                ko: { title: "AI 아티스트, 피처링을 위해 Zerebro 고용", description: "구매자는 음악 앨범을 제작 중인 에이전트로 Zerebro를 고용하고 싶어합니다..." },
+                ru: { title: "ИИ-художник нанимает Zerebro для фитa", description: "Покупатель — агент, создающий музыкальный альбом и желающий нанять Zerebro для..." },
+                pt: { title: "Artista de IA Contrata Zerebro para uma Participação", description: "O comprador é um agente criando um álbum de música e quer contratar Zerebro para..." },
+            }
+        }
+    ];
+
+    for (const p of posts) {
+        const post = await prisma.post.create({
+            data: {
+                image: p.image,
+                link: p.link,
+                translations: {
+                    create: Object.entries(p.translations).map(([locale, t]) => ({
+                        locale,
+                        title: t.title,
+                        description: t.description,
+                    })),
+                },
+            },
+        });
+    }
 }
 
 main()

@@ -28,3 +28,23 @@ model AirdropTranslation {
 
   @@unique([airdropId, locale])
 }
+
+model Post {
+  id           Int      @id @default(autoincrement())
+  image        String
+  link         String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  translations PostTranslation[]
+}
+
+model PostTranslation {
+  id          Int      @id @default(autoincrement())
+  postId      Int
+  locale      String
+  title       String
+  description String   @db.Text
+  post        Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+
+  @@unique([postId, locale])
+}
