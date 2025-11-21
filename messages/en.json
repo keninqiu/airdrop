@@ -50,7 +50,9 @@
             "heading": "Ready to start your airdrop journey?",
             "description": "Join millions of airdrop hunters and start earning free crypto today.",
             "button": "Start Hunting Now"
-        }
+        },
+        "startFarming": "Start Farming",
+        "listAirdrop": "List Airdrop"
     },
     "Blog": {
         "heading": "Blog",

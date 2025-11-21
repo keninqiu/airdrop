@@ -53,7 +53,9 @@
             "heading": "Pronto para começar sua jornada de airdrop?",
             "description": "Junte-se a milhões de caçadores de airdrops e comece a ganhar criptomoedas grátis hoje.",
             "button": "Começar a Caçar Agora"
-        }
+        },
+        "startFarming": "Começar Farming",
+        "listAirdrop": "Listar Airdrop"
     },
     "Blog": {
         "heading": "Blog",

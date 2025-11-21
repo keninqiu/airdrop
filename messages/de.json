@@ -53,7 +53,9 @@
             "heading": "Bereit für Ihre Airdrop-Reise?",
             "description": "Schließen Sie sich Millionen von Airdrop-Jägern an und verdienen Sie noch heute kostenlose Krypto.",
             "button": "Jetzt Jagd starten"
-        }
+        },
+        "startFarming": "Farming starten",
+        "listAirdrop": "Airdrop listen"
     },
     "Blog": {
         "heading": "Blog",

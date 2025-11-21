@@ -53,7 +53,9 @@
             "heading": "¿Listo para comenzar tu viaje de airdrop?",
             "description": "Únete a millones de cazadores de airdrops y comienza a ganar cripto gratis hoy.",
             "button": "Empieza a Cazar Ahora"
-        }
+        },
+        "startFarming": "Empieza a cultivar",
+        "listAirdrop": "Listar Airdrop"
     },
     "Blog": {
         "heading": "Blog",

@@ -152,12 +152,12 @@ export const HowItWorksDefaults = (t) => ({
   heading: t('heading'),
   buttons: [
     {
-      title: "Start Farming",
+      title: t('startFarming'),
       variant: "secondary",
       onClick: () => window.location.href = "#airdrops",
     },
     {
-      title: "List Airdrop",
+      title: t('listAirdrop'),
       variant: "link",
       size: "link",
       iconRight: <RxChevronRight />,

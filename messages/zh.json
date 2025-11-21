@@ -53,7 +53,9 @@
             "heading": "准备好开始您的空投之旅了吗？",
             "description": "加入数百万空投猎人的行列，今天就开始赚取免费加密货币。",
             "button": "立即开始狩猎"
-        }
+        },
+        "startFarming": "开始耕作",
+        "listAirdrop": "列出空投"
     },
     "Blog": {
         "heading": "博客",

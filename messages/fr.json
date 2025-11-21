@@ -53,7 +53,9 @@
             "heading": "Prêt à commencer votre voyage airdrop ?",
             "description": "Rejoignez des millions de chasseurs d'airdrops et commencez à gagner des cryptos gratuits dès aujourd'hui.",
             "button": "Commencer la chasse maintenant"
-        }
+        },
+        "startFarming": "Commencer le farming",
+        "listAirdrop": "Lister un Airdrop"
     },
     "Blog": {
         "heading": "Blog",
@@ -64,7 +66,7 @@
         "heading": "Foire aux questions",
         "description": "Vous avez des questions ? Nous avons des réponses.",
         "q1": {
-            "question": "Qu'est-ce qu'un airdrop crypto ?",
+            "question": "Qu'est-ce un airdrop crypto ?",
             "answer": "Un airdrop crypto est une stratégie marketing utilisée par les startups blockchain pour distribuer des jetons gratuits aux adresses de portefeuille. C'est un moyen de générer de la notoriété et de construire une communauté."
         },
         "q2": {
