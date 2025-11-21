@@ -1,0 +1,254 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { getPosts, createPost, updatePost, deletePost } from "@/actions/admin-actions";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
+type Post = {
+    id: number;
+    image: string;
+    link: string;
+    translations: Array<{
+        id: number;
+        locale: string;
+        title: string;
+        description: string;
+    }>;
+};
+
+const LOCALES = ["en", "es", "fr", "de", "zh", "ja", "ko", "ru", "pt"];
+
+export default function PostsPage() {
+    const [posts, setPosts] = useState<Post[]>([]);
+    const [loading, setLoading] = useState(true);
+    const [showForm, setShowForm] = useState(false);
+    const [editingPost, setEditingPost] = useState<Post | null>(null);
+    const [formData, setFormData] = useState({
+        image: "",
+        link: "",
+        translations: LOCALES.map((locale) => ({
+            locale,
+            title: "",
+            description: "",
+        })),
+    });
+
+    useEffect(() => {
+        loadPosts();
+    }, []);
+
+    const loadPosts = async () => {
+        try {
+            const data = await getPosts();
+            setPosts(data as Post[]);
+        } catch (error) {
+            console.error("Failed to load posts:", error);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        try {
+            if (editingPost) {
+                await updatePost(editingPost.id, formData);
+            } else {
+                await createPost(formData);
+            }
+            setShowForm(false);
+            setEditingPost(null);
+            resetForm();
+            loadPosts();
+        } catch (error) {
+            console.error("Failed to save post:", error);
+            alert("Failed to save post");
+        }
+    };
+
+    const resetForm = () => {
+        setFormData({
+            image: "",
+            link: "",
+            translations: LOCALES.map((locale) => ({
+                locale,
+                title: "",
+                description: "",
+            })),
+        });
+    };
+
+    const handleEdit = (post: Post) => {
+        setEditingPost(post);
+        setFormData({
+            image: post.image,
+            link: post.link,
+            translations: LOCALES.map((locale) => {
+                const existing = post.translations.find((t) => t.locale === locale);
+                return {
+                    locale,
+                    title: existing?.title || "",
+                    description: existing?.description || "",
+                };
+            }),
+        });
+        setShowForm(true);
+    };
+
+    const handleDelete = async (id: number) => {
+        if (!confirm("Are you sure you want to delete this post?")) return;
+
+        try {
+            await deletePost(id);
+            loadPosts();
+        } catch (error) {
+            console.error("Failed to delete post:", error);
+            alert("Failed to delete post");
+        }
+    };
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+
+    return (
+        <div className="space-y-6">
+            <div className="flex justify-between items-center">
+                <h2 className="text-3xl font-bold text-gray-900">Posts</h2>
+                <Button
+                    onClick={() => {
+                        setShowForm(true);
+                        setEditingPost(null);
+                        resetForm();
+                    }}
+                >
+                    Add Post
+                </Button>
+            </div>
+
+            {showForm && (
+                <Card>
+                    <CardHeader>
+                        <CardTitle>{editingPost ? "Edit Post" : "Add New Post"}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <form onSubmit={handleSubmit} className="space-y-4">
+                            <div className="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label className="block text-sm font-medium mb-1">Image URL</label>
+                                    <input
+                                        type="text"
+                                        value={formData.image}
+                                        onChange={(e) => setFormData({ ...formData, image: e.target.value })}
+                                        required
+                                        className="w-full px-3 py-2 border rounded-md"
+                                        placeholder="/usecase-1.webp"
+                                    />
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-medium mb-1">Link</label>
+                                    <input
+                                        type="url"
+                                        value={formData.link}
+                                        onChange={(e) => setFormData({ ...formData, link: e.target.value })}
+                                        required
+                                        className="w-full px-3 py-2 border rounded-md"
+                                        placeholder="https://example.com"
+                                    />
+                                </div>
+                            </div>
+
+                            <div className="border-t pt-4">
+                                <h3 className="font-semibold mb-3">Translations</h3>
+                                <div className="space-y-4">
+                                    {formData.translations.map((translation, index) => (
+                                        <div key={translation.locale} className="border p-4 rounded-md">
+                                            <h4 className="font-medium mb-2">{translation.locale.toUpperCase()}</h4>
+                                            <div className="space-y-2">
+                                                <div>
+                                                    <label className="block text-sm mb-1">Title</label>
+                                                    <input
+                                                        type="text"
+                                                        value={translation.title}
+                                                        onChange={(e) => {
+                                                            const newTranslations = [...formData.translations];
+                                                            newTranslations[index].title = e.target.value;
+                                                            setFormData({ ...formData, translations: newTranslations });
+                                                        }}
+                                                        required
+                                                        className="w-full px-3 py-2 border rounded-md"
+                                                    />
+                                                </div>
+                                                <div>
+                                                    <label className="block text-sm mb-1">Description</label>
+                                                    <textarea
+                                                        value={translation.description}
+                                                        onChange={(e) => {
+                                                            const newTranslations = [...formData.translations];
+                                                            newTranslations[index].description = e.target.value;
+                                                            setFormData({ ...formData, translations: newTranslations });
+                                                        }}
+                                                        required
+                                                        className="w-full px-3 py-2 border rounded-md"
+                                                        rows={2}
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
+                            <div className="flex gap-2">
+                                <Button type="submit">Save</Button>
+                                <Button
+                                    type="button"
+                                    variant="outline"
+                                    onClick={() => {
+                                        setShowForm(false);
+                                        setEditingPost(null);
+                                    }}
+                                >
+                                    Cancel
+                                </Button>
+                            </div>
+                        </form>
+                    </CardContent>
+                </Card>
+            )}
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {posts.map((post) => (
+                    <Card key={post.id}>
+                        <CardContent className="p-4">
+                            <img src={post.image} alt="" className="w-full h-40 object-cover rounded mb-3" />
+                            <h3 className="font-semibold mb-1">
+                                {post.translations.find((t) => t.locale === "en")?.title}
+                            </h3>
+                            <p className="text-sm text-gray-500 mb-3 line-clamp-2">
+                                {post.translations.find((t) => t.locale === "en")?.description}
+                            </p>
+                            <a
+                                href={post.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-sm text-blue-600 hover:underline block mb-3"
+                            >
+                                {post.link}
+                            </a>
+                            <div className="flex gap-2">
+                                <Button size="sm" variant="outline" onClick={() => handleEdit(post)}>
+                                    Edit
+                                </Button>
+                                <Button size="sm" variant="outline" onClick={() => handleDelete(post.id)}>
+                                    Delete
+                                </Button>
+                            </div>
+                        </CardContent>
+                    </Card>
+                ))}
+            </div>
+        </div>
+    );
+}

@@ -3,3 +3,9 @@ Rename or delete prisma.config.ts if you are not using it, as it seems to be int
 Run the following command in your terminal to generate the client:
 bash
 npx prisma generate
+
+
+
+
+
+Discover the latest Crypto Airdrops and Airdrop Farming opportunities.Presenting carefully curated Airdrops to help you stay ahead.
