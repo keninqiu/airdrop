@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 
 export function Blog({ posts = [] }) {
   const t = useTranslations('Blog');
@@ -88,35 +89,39 @@ export function Blog({ posts = [] }) {
             >
               <Card className="h-full overflow-hidden border border-gray-100 bg-white rounded-2xl shadow-sm transition-all duration-500 hover:shadow-xl hover:border-gray-200">
                 <div className="relative w-full overflow-hidden aspect-[4/3]">
-                  <motion.img
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
-                    src={post.image}
-                    alt={post.title}
-                    className="absolute inset-0 size-full object-cover"
-                  />
-                  <motion.a
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    whileTap={{ scale: 0.95 }}
-                    transition={{ duration: 0.2 }}
-                    href={post.link}
-                    target="_blank"
-                    className="absolute bottom-3 right-3 grid place-items-center size-10 md:size-12 rounded-full bg-primary text-white shadow-lg ring-4 md:ring-8 ring-white min-h-[44px] min-w-[44px]"
-                    aria-label={`Open ${post.title}`}
-                  >
-                    <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6" />
-                  </motion.a>
+                  <Link href={`/blog/${post.id}`}>
+                    <motion.img
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ duration: 0.6, ease: "easeOut" }}
+                      src={post.image}
+                      alt={post.title}
+                      className="absolute inset-0 size-full object-cover cursor-pointer"
+                    />
+                  </Link>
+                  <Link href={`/blog/${post.id}`}>
+                    <motion.div
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      whileTap={{ scale: 0.95 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute bottom-3 right-3 grid place-items-center size-10 md:size-12 rounded-full bg-primary text-white shadow-lg ring-4 md:ring-8 ring-white min-h-[44px] min-w-[44px] cursor-pointer"
+                      aria-label={`Read ${post.title}`}
+                    >
+                      <ArrowUpRight className="w-5 h-5 md:w-6 md:h-6" />
+                    </motion.div>
+                  </Link>
                 </div>
                 <CardContent className="px-5 py-5 md:px-6 md:py-6">
-                  <motion.h3
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                    viewport={{ once: true }}
-                    className="text-midnight text-subheading md:text-subheading font-normal leading-snug mb-3"
-                  >
-                    {post.title}
-                  </motion.h3>
+                  <Link href={`/blog/${post.id}`}>
+                    <motion.h3
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      transition={{ duration: 0.5, delay: 0.2 }}
+                      viewport={{ once: true }}
+                      className="text-midnight text-subheading md:text-subheading font-normal leading-snug mb-3 cursor-pointer hover:text-primary transition-colors"
+                    >
+                      {post.title}
+                    </motion.h3>
+                  </Link>
                   <motion.p
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
@@ -125,13 +130,12 @@ export function Blog({ posts = [] }) {
                     className="text-body md:text-body-lg text-gray-600 leading-relaxed"
                   >
                     {post.description}{" "}
-                    <a
-                      href={post.link}
-                      target="_blank"
+                    <Link
+                      href={`/blog/${post.id}`}
                       className="text-primary hover:underline font-normal"
                     >
                       {t('readMore')}
-                    </a>
+                    </Link>
                   </motion.p>
                 </CardContent>
               </Card>

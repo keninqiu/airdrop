@@ -21,3 +21,23 @@ export async function getPosts(locale: string) {
         };
     });
 }
+
+export async function getPostById(id: number, locale: string) {
+    const post = await db.post.findUnique({
+        where: { id },
+        include: {
+            translations: {
+                where: { locale },
+            },
+        },
+    });
+
+    if (!post) return null;
+
+    const translation = post.translations[0] || {};
+    return {
+        ...post,
+        title: translation.title || 'Untitled',
+        description: translation.description || '',
+    };
+}
