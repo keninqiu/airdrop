@@ -66,7 +66,7 @@ export async function updateUser(
 ) {
     await checkAdmin();
 
-    const updateData: any = { ...data };
+    const updateData = { ...data };
 
     if (data.password) {
         updateData.password = await bcrypt.hash(data.password, 10);
