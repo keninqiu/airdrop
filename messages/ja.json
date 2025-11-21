@@ -4,7 +4,8 @@
         "airdrops": "エアドロップ",
         "blog": "ブログ",
         "faq": "よくある質問",
-        "about": "約"
+        "about": "約",
+        "submitAirdrop": "Submit Airdrop"
     },
     "Header": {
         "title": "最高の暗号資産エアドロップ。",
@@ -88,6 +89,26 @@
             "Active": "Active",
             "Upcoming": "Upcoming",
             "Ended": "Ended"
+        }
+    },
+    "SubmitAirdrop": {
+        "title": "List Your Airdrop",
+        "subtitle": "Reach millions of crypto enthusiasts and grow your community.",
+        "cardTitle": "Airdrop Details",
+        "cardDescription": "Fill out the form below to submit your airdrop for review.",
+        "labels": {
+            "projectName": "Project Name",
+            "websiteUrl": "Website URL",
+            "description": "Description",
+            "estimatedValue": "Estimated Value",
+            "endDate": "End Date",
+            "submitButton": "Submit Airdrop"
+        },
+        "placeholders": {
+            "projectName": "e.g. Solana",
+            "websiteUrl": "https://...",
+            "description": "Describe your airdrop campaign...",
+            "estimatedValue": "$100"
         }
     }
 }

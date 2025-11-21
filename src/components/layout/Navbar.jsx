@@ -157,7 +157,7 @@ export function Navbar() {
                 href="/submit-airdrop"
                 className="inline-flex items-center justify-center bg-primary hover:bg-primary-700 text-white px-5 py-2 text-body font-normal rounded-full transition-colors"
               >
-                Submit Airdrop
+                {t('submitAirdrop')}
               </Link>
             </motion.div>
           </div>
