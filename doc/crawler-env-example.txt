@@ -1,0 +1,18 @@
+# Crawler Environment Variables
+
+# Enable/disable the crawler
+CRAWLER_ENABLED=false
+
+# Cron schedule (default: every 6 hours)
+# Format: minute hour day month weekday
+# Examples:
+# - "0 */6 * * *" = Every 6 hours
+# - "0 0 * * *" = Daily at midnight
+# - "0 */2 * * *" = Every 2 hours
+CRAWLER_INTERVAL="0 */6 * * *"
+
+# Auto-publish crawled airdrops (true) or require admin approval (false)
+CRAWLER_AUTO_PUBLISH=false
+
+# Batch size for processing
+CRAWLER_BATCH_SIZE=10

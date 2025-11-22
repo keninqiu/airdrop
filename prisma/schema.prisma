@@ -38,6 +38,10 @@ model Airdrop {
   campaign_end   DateTime?
   campaign_requirement String? @db.Text
   blockchain     String? @db.Text
+  source         String? // Where the airdrop was found
+  external_id    String? @unique // ID from source system
+  approved       Boolean @default(false) // Admin approval status
+  crawled_at     DateTime? // When it was crawled
   createdAt      DateTime     @default(now())
   updatedAt      DateTime     @updatedAt
   translations   AirdropTranslation[]
