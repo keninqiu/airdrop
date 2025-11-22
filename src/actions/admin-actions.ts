@@ -111,6 +111,11 @@ export async function createAirdrop(data: {
     website_url?: string;
     campaign_url?: string;
     whitepaper_url?: string;
+    reward_model?: string;
+    reward_amount?: string;
+    campaign_start?: string;
+    campaign_end?: string;
+    campaign_requirement?: string;
     translations: Array<{
         locale: string;
         name: string;
@@ -128,6 +133,11 @@ export async function createAirdrop(data: {
             website_url: data.website_url,
             campaign_url: data.campaign_url,
             whitepaper_url: data.whitepaper_url,
+            reward_model: data.reward_model as any,
+            reward_amount: data.reward_amount,
+            campaign_start: data.campaign_start ? new Date(data.campaign_start) : null,
+            campaign_end: data.campaign_end ? new Date(data.campaign_end) : null,
+            campaign_requirement: data.campaign_requirement,
             translations: {
                 create: data.translations,
             },
@@ -149,6 +159,11 @@ export async function updateAirdrop(
         website_url?: string;
         campaign_url?: string;
         whitepaper_url?: string;
+        reward_model?: string;
+        reward_amount?: string;
+        campaign_start?: string;
+        campaign_end?: string;
+        campaign_requirement?: string;
         translations?: Array<{
             locale: string;
             name: string;
@@ -160,9 +175,21 @@ export async function updateAirdrop(
 
     const { translations, ...airdropData } = data;
 
+    // Convert reward_model to enum and dates if present
+    const updateData: any = { ...airdropData };
+    if (data.reward_model) {
+        updateData.reward_model = data.reward_model;
+    }
+    if (data.campaign_start) {
+        updateData.campaign_start = new Date(data.campaign_start);
+    }
+    if (data.campaign_end) {
+        updateData.campaign_end = new Date(data.campaign_end);
+    }
+
     const airdrop = await prisma.airdrop.update({
         where: { id },
-        data: airdropData,
+        data: updateData,
     });
 
     if (translations) {

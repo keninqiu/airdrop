@@ -15,6 +15,11 @@ type Airdrop = {
     website_url?: string | null;
     campaign_url?: string | null;
     whitepaper_url?: string | null;
+    reward_model?: string | null;
+    reward_amount?: string | null;
+    campaign_start?: Date | null;
+    campaign_end?: Date | null;
+    campaign_requirement?: string | null;
     translations: Array<{
         id: number;
         locale: string;
@@ -38,6 +43,11 @@ export default function AirdropsPage() {
         website_url: "",
         campaign_url: "",
         whitepaper_url: "",
+        reward_model: "",
+        reward_amount: "",
+        campaign_start: "",
+        campaign_end: "",
+        campaign_requirement: "",
         translations: LOCALES.map((locale) => ({
             locale,
             name: "",
@@ -87,6 +97,11 @@ export default function AirdropsPage() {
             website_url: "",
             campaign_url: "",
             whitepaper_url: "",
+            reward_model: "",
+            reward_amount: "",
+            campaign_start: "",
+            campaign_end: "",
+            campaign_requirement: "",
             translations: LOCALES.map((locale) => ({
                 locale,
                 name: "",
@@ -105,6 +120,11 @@ export default function AirdropsPage() {
             website_url: airdrop.website_url || "",
             campaign_url: airdrop.campaign_url || "",
             whitepaper_url: airdrop.whitepaper_url || "",
+            reward_model: airdrop.reward_model || "",
+            reward_amount: airdrop.reward_amount || "",
+            campaign_start: airdrop.campaign_start ? new Date(airdrop.campaign_start).toISOString().slice(0, 16) : "",
+            campaign_end: airdrop.campaign_end ? new Date(airdrop.campaign_end).toISOString().slice(0, 16) : "",
+            campaign_requirement: airdrop.campaign_requirement || "",
             translations: LOCALES.map((locale) => {
                 const existing = airdrop.translations.find((t) => t.locale === locale);
                 return {
@@ -278,6 +298,79 @@ export default function AirdropsPage() {
                                         className="w-full px-3 py-2 border rounded-md"
                                         placeholder="https://whitepaper.example.com"
                                     />
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-medium mb-1">Reward Model</label>
+                                    <select
+                                        value={formData.reward_model}
+                                        onChange={(e) => setFormData({ ...formData, reward_model: e.target.value })}
+                                        className="w-full px-3 py-2 border rounded-md"
+                                    >
+                                        <option value="">Select reward model</option>
+                                        <option value="per_wallet">Per Wallet (Fixed reward per eligible wallet)</option>
+                                        <option value="reward_pool">Reward Pool (Total amount split among participants)</option>
+                                        <option value="hybrid">Hybrid (Both per wallet and reward pool)</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-medium mb-1">Reward Amount</label>
+                                    <input
+                                        type="text"
+                                        value={formData.reward_amount}
+                                        onChange={(e) => setFormData({ ...formData, reward_amount: e.target.value })}
+                                        className="w-full px-3 py-2 border rounded-md"
+                                        placeholder="e.g., 100 USDT, 0.5 ETH, $1000"
+                                    />
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-medium mb-1">Campaign Start Date</label>
+                                    <input
+                                        type="datetime-local"
+                                        value={formData.campaign_start}
+                                        onChange={(e) => setFormData({ ...formData, campaign_start: e.target.value })}
+                                        className="w-full px-3 py-2 border rounded-md"
+                                    />
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-medium mb-1">Campaign End Date</label>
+                                    <input
+                                        type="datetime-local"
+                                        value={formData.campaign_end}
+                                        onChange={(e) => setFormData({ ...formData, campaign_end: e.target.value })}
+                                        className="w-full px-3 py-2 border rounded-md"
+                                    />
+                                </div>
+                                <div className="col-span-2">
+                                    <label className="block text-sm font-medium mb-1">Campaign Requirements</label>
+                                    <div className="space-y-2">
+                                        <div className="flex flex-wrap gap-2 mb-2">
+                                            {["Trade", "KYC", "Deposit", "X (Twitter)", "Discord", "Telegram", "Hold Tokens", "Referral", "Other"].map((req) => (
+                                                <label key={req} className="inline-flex items-center">
+                                                    <input
+                                                        type="checkbox"
+                                                        checked={formData.campaign_requirement?.split(",").map(r => r.trim()).includes(req) || false}
+                                                        onChange={(e) => {
+                                                            const current = formData.campaign_requirement ? formData.campaign_requirement.split(",").map(r => r.trim()) : [];
+                                                            if (e.target.checked) {
+                                                                setFormData({ ...formData, campaign_requirement: [...current, req].join(", ") });
+                                                            } else {
+                                                                setFormData({ ...formData, campaign_requirement: current.filter(r => r !== req).join(", ") });
+                                                            }
+                                                        }}
+                                                        className="mr-1"
+                                                    />
+                                                    <span className="text-sm">{req}</span>
+                                                </label>
+                                            ))}
+                                        </div>
+                                        <textarea
+                                            value={formData.campaign_requirement}
+                                            onChange={(e) => setFormData({ ...formData, campaign_requirement: e.target.value })}
+                                            className="w-full px-3 py-2 border rounded-md"
+                                            rows={2}
+                                            placeholder="Or enter custom requirements (comma-separated)"
+                                        />
+                                    </div>
                                 </div>
                             </div>
 
