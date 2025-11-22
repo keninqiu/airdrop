@@ -108,6 +108,9 @@ export async function createAirdrop(data: {
     value: string;
     status: string;
     type: string;
+    website_url?: string;
+    campaign_url?: string;
+    whitepaper_url?: string;
     translations: Array<{
         locale: string;
         name: string;
@@ -122,6 +125,9 @@ export async function createAirdrop(data: {
             value: data.value,
             status: data.status,
             type: data.type,
+            website_url: data.website_url,
+            campaign_url: data.campaign_url,
+            whitepaper_url: data.whitepaper_url,
             translations: {
                 create: data.translations,
             },
@@ -140,6 +146,9 @@ export async function updateAirdrop(
         value?: string;
         status?: string;
         type?: string;
+        website_url?: string;
+        campaign_url?: string;
+        whitepaper_url?: string;
         translations?: Array<{
             locale: string;
             name: string;

@@ -18,14 +18,17 @@ model User {
 }
 
 model Airdrop {
-  id           Int      @id @default(autoincrement())
-  logo         String
-  value        String
-  status       String   // Active, Upcoming, Ended
-  type         String   // Featured, DeFi, Meme, Exchange, Layer 2, Layer 1
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
-  translations AirdropTranslation[]
+  id            Int      @id @default(autoincrement())
+  logo          String
+  value         String
+  status        String   // Active, Upcoming, Ended
+  type          String   // Featured, DeFi, Meme, Exchange, Layer 2, Layer 1
+  website_url   String?
+  campaign_url  String?
+  whitepaper_url String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  translations  AirdropTranslation[]
 }
 
 model AirdropTranslation {

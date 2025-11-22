@@ -12,6 +12,9 @@ type Airdrop = {
     value: string;
     status: string;
     type: string;
+    website_url?: string | null;
+    campaign_url?: string | null;
+    whitepaper_url?: string | null;
     translations: Array<{
         id: number;
         locale: string;
@@ -32,6 +35,9 @@ export default function AirdropsPage() {
         value: "",
         status: "Active",
         type: "Featured",
+        website_url: "",
+        campaign_url: "",
+        whitepaper_url: "",
         translations: LOCALES.map((locale) => ({
             locale,
             name: "",
@@ -78,6 +84,9 @@ export default function AirdropsPage() {
             value: "",
             status: "Active",
             type: "Featured",
+            website_url: "",
+            campaign_url: "",
+            whitepaper_url: "",
             translations: LOCALES.map((locale) => ({
                 locale,
                 name: "",
@@ -93,6 +102,9 @@ export default function AirdropsPage() {
             value: airdrop.value,
             status: airdrop.status,
             type: airdrop.type,
+            website_url: airdrop.website_url || "",
+            campaign_url: airdrop.campaign_url || "",
+            whitepaper_url: airdrop.whitepaper_url || "",
             translations: LOCALES.map((locale) => {
                 const existing = airdrop.translations.find((t) => t.locale === locale);
                 return {
@@ -144,16 +156,60 @@ export default function AirdropsPage() {
                     <CardContent>
                         <form onSubmit={handleSubmit} className="space-y-4">
                             <div className="grid grid-cols-2 gap-4">
-                                <div>
-                                    <label className="block text-sm font-medium mb-1">Logo URL</label>
-                                    <input
-                                        type="text"
-                                        value={formData.logo}
-                                        onChange={(e) => setFormData({ ...formData, logo: e.target.value })}
-                                        required
-                                        className="w-full px-3 py-2 border rounded-md"
-                                        placeholder="/partners/example.svg"
-                                    />
+                                <div className="col-span-2">
+                                    <label className="block text-sm font-medium mb-1">Logo</label>
+                                    <div className="space-y-2">
+                                        <input
+                                            type="text"
+                                            value={formData.logo}
+                                            onChange={(e) => setFormData({ ...formData, logo: e.target.value })}
+                                            required
+                                            className="w-full px-3 py-2 border rounded-md"
+                                            placeholder="/partners/example.svg or https://example.com/logo.png"
+                                        />
+                                        <div className="flex items-center gap-2">
+                                            <input
+                                                type="file"
+                                                accept="image/*"
+                                                onChange={async (e) => {
+                                                    const file = e.target.files?.[0];
+                                                    if (file) {
+                                                        try {
+                                                            const formData = new FormData();
+                                                            formData.append("file", file);
+
+                                                            const response = await fetch("/api/upload", {
+                                                                method: "POST",
+                                                                body: formData,
+                                                            });
+
+                                                            if (response.ok) {
+                                                                const data = await response.json();
+                                                                setFormData((prev) => ({ ...prev, logo: data.url }));
+                                                            } else {
+                                                                alert("Failed to upload file");
+                                                            }
+                                                        } catch (error) {
+                                                            console.error("Upload error:", error);
+                                                            alert("Failed to upload file");
+                                                        }
+                                                    }
+                                                }}
+                                                className="text-sm"
+                                            />
+                                            <span className="text-xs text-gray-500">Or upload an image (max 5MB)</span>
+                                        </div>
+                                        {formData.logo && (
+                                            <div className="relative w-16 h-16 border rounded p-1">
+                                                <Image
+                                                    src={formData.logo}
+                                                    alt="Logo preview"
+                                                    fill
+                                                    className="object-contain"
+                                                />
+                                            </div>
+                                        )}
+                                    </div>
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium mb-1">Value</label>
@@ -192,6 +248,36 @@ export default function AirdropsPage() {
                                         <option value="Layer 2">Layer 2</option>
                                         <option value="Layer 1">Layer 1</option>
                                     </select>
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-medium mb-1">Website URL</label>
+                                    <input
+                                        type="url"
+                                        value={formData.website_url}
+                                        onChange={(e) => setFormData({ ...formData, website_url: e.target.value })}
+                                        className="w-full px-3 py-2 border rounded-md"
+                                        placeholder="https://example.com"
+                                    />
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-medium mb-1">Campaign URL</label>
+                                    <input
+                                        type="url"
+                                        value={formData.campaign_url}
+                                        onChange={(e) => setFormData({ ...formData, campaign_url: e.target.value })}
+                                        className="w-full px-3 py-2 border rounded-md"
+                                        placeholder="https://campaign.example.com"
+                                    />
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-medium mb-1">Whitepaper URL</label>
+                                    <input
+                                        type="url"
+                                        value={formData.whitepaper_url}
+                                        onChange={(e) => setFormData({ ...formData, whitepaper_url: e.target.value })}
+                                        className="w-full px-3 py-2 border rounded-md"
+                                        placeholder="https://whitepaper.example.com"
+                                    />
                                 </div>
                             </div>
 

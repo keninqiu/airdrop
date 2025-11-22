@@ -135,17 +135,61 @@ export default function PostsPage() {
                     </CardHeader>
                     <CardContent>
                         <form onSubmit={handleSubmit} className="space-y-4">
-                            <div className="grid grid-cols-2 gap-4">
+                            <div className="grid grid-cols-1 gap-4">
                                 <div>
-                                    <label className="block text-sm font-medium mb-1">Image URL</label>
-                                    <input
-                                        type="text"
-                                        value={formData.image}
-                                        onChange={(e) => setFormData({ ...formData, image: e.target.value })}
-                                        required
-                                        className="w-full px-3 py-2 border rounded-md"
-                                        placeholder="/usecase-1.webp"
-                                    />
+                                    <label className="block text-sm font-medium mb-1">Image</label>
+                                    <div className="space-y-2">
+                                        <input
+                                            type="text"
+                                            value={formData.image}
+                                            onChange={(e) => setFormData({ ...formData, image: e.target.value })}
+                                            required
+                                            className="w-full px-3 py-2 border rounded-md"
+                                            placeholder="/usecase-1.webp or https://example.com/image.jpg"
+                                        />
+                                        <div className="flex items-center gap-2">
+                                            <input
+                                                type="file"
+                                                accept="image/*"
+                                                onChange={async (e) => {
+                                                    const file = e.target.files?.[0];
+                                                    if (file) {
+                                                        try {
+                                                            const formData = new FormData();
+                                                            formData.append("file", file);
+
+                                                            const response = await fetch("/api/upload", {
+                                                                method: "POST",
+                                                                body: formData,
+                                                            });
+
+                                                            if (response.ok) {
+                                                                const data = await response.json();
+                                                                setFormData((prev) => ({ ...prev, image: data.url }));
+                                                            } else {
+                                                                alert("Failed to upload file");
+                                                            }
+                                                        } catch (error) {
+                                                            console.error("Upload error:", error);
+                                                            alert("Failed to upload file");
+                                                        }
+                                                    }
+                                                }}
+                                                className="text-sm"
+                                            />
+                                            <span className="text-xs text-gray-500">Or upload an image (max 5MB)</span>
+                                        </div>
+                                        {formData.image && (
+                                            <div className="relative w-full h-32 border rounded p-1">
+                                                <Image
+                                                    src={formData.image}
+                                                    alt="Image preview"
+                                                    fill
+                                                    className="object-cover rounded"
+                                                />
+                                            </div>
+                                        )}
+                                    </div>
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium mb-1">Link</label>
