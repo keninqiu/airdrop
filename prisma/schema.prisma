@@ -37,6 +37,7 @@ model Airdrop {
   campaign_start DateTime?
   campaign_end   DateTime?
   campaign_requirement String? @db.Text
+  blockchain     String? @db.Text
   createdAt      DateTime     @default(now())
   updatedAt      DateTime     @updatedAt
   translations   AirdropTranslation[]

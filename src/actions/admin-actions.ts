@@ -116,6 +116,7 @@ export async function createAirdrop(data: {
     campaign_start?: string;
     campaign_end?: string;
     campaign_requirement?: string;
+    blockchain?: string;
     translations: Array<{
         locale: string;
         name: string;
@@ -138,6 +139,7 @@ export async function createAirdrop(data: {
             campaign_start: data.campaign_start ? new Date(data.campaign_start) : null,
             campaign_end: data.campaign_end ? new Date(data.campaign_end) : null,
             campaign_requirement: data.campaign_requirement,
+            blockchain: data.blockchain,
             translations: {
                 create: data.translations,
             },
@@ -164,6 +166,7 @@ export async function updateAirdrop(
         campaign_start?: string;
         campaign_end?: string;
         campaign_requirement?: string;
+        blockchain?: string;
         translations?: Array<{
             locale: string;
             name: string;

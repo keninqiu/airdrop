@@ -5,6 +5,7 @@ import Image from "next/image";
 import { getPosts, createPost, updatePost, deletePost } from "@/actions/admin-actions";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { RichTextEditor } from "@/components/admin/RichTextEditor";
 
 type Post = {
     id: number;
@@ -227,16 +228,14 @@ export default function PostsPage() {
                                                 </div>
                                                 <div>
                                                     <label className="block text-sm mb-1">Description</label>
-                                                    <textarea
+                                                    <RichTextEditor
                                                         value={translation.description}
-                                                        onChange={(e) => {
+                                                        onChange={(value) => {
                                                             const newTranslations = [...formData.translations];
-                                                            newTranslations[index].description = e.target.value;
+                                                            newTranslations[index].description = value;
                                                             setFormData({ ...formData, translations: newTranslations });
                                                         }}
-                                                        required
-                                                        className="w-full px-3 py-2 border rounded-md"
-                                                        rows={2}
+                                                        placeholder="Enter description..."
                                                     />
                                                 </div>
                                             </div>

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { getAirdrops, createAirdrop, updateAirdrop, deleteAirdrop } from "@/actions/admin-actions";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { RichTextEditor } from "@/components/admin/RichTextEditor";
 
 type Airdrop = {
     id: number;
@@ -20,6 +21,7 @@ type Airdrop = {
     campaign_start?: Date | null;
     campaign_end?: Date | null;
     campaign_requirement?: string | null;
+    blockchain?: string | null;
     translations: Array<{
         id: number;
         locale: string;
@@ -48,6 +50,7 @@ export default function AirdropsPage() {
         campaign_start: "",
         campaign_end: "",
         campaign_requirement: "",
+        blockchain: "",
         translations: LOCALES.map((locale) => ({
             locale,
             name: "",
@@ -102,6 +105,7 @@ export default function AirdropsPage() {
             campaign_start: "",
             campaign_end: "",
             campaign_requirement: "",
+            blockchain: "",
             translations: LOCALES.map((locale) => ({
                 locale,
                 name: "",
@@ -125,6 +129,7 @@ export default function AirdropsPage() {
             campaign_start: airdrop.campaign_start ? new Date(airdrop.campaign_start).toISOString().slice(0, 16) : "",
             campaign_end: airdrop.campaign_end ? new Date(airdrop.campaign_end).toISOString().slice(0, 16) : "",
             campaign_requirement: airdrop.campaign_requirement || "",
+            blockchain: airdrop.blockchain || "",
             translations: LOCALES.map((locale) => {
                 const existing = airdrop.translations.find((t) => t.locale === locale);
                 return {
@@ -372,6 +377,38 @@ export default function AirdropsPage() {
                                         />
                                     </div>
                                 </div>
+                                <div className="col-span-2">
+                                    <label className="block text-sm font-medium mb-1">Blockchain</label>
+                                    <div className="space-y-2">
+                                        <div className="flex flex-wrap gap-2 mb-2">
+                                            {["Ethereum", "Solana", "BSC", "Polygon", "Arbitrum", "Optimism", "Avalanche", "Fantom", "Cosmos", "Polkadot", "Other"].map((chain) => (
+                                                <label key={chain} className="inline-flex items-center">
+                                                    <input
+                                                        type="checkbox"
+                                                        checked={formData.blockchain?.split(",").map(c => c.trim()).includes(chain) || false}
+                                                        onChange={(e) => {
+                                                            const current = formData.blockchain ? formData.blockchain.split(",").map(c => c.trim()) : [];
+                                                            if (e.target.checked) {
+                                                                setFormData({ ...formData, blockchain: [...current, chain].join(", ") });
+                                                            } else {
+                                                                setFormData({ ...formData, blockchain: current.filter(c => c !== chain).join(", ") });
+                                                            }
+                                                        }}
+                                                        className="mr-1"
+                                                    />
+                                                    <span className="text-sm">{chain}</span>
+                                                </label>
+                                            ))}
+                                        </div>
+                                        <textarea
+                                            value={formData.blockchain}
+                                            onChange={(e) => setFormData({ ...formData, blockchain: e.target.value })}
+                                            className="w-full px-3 py-2 border rounded-md"
+                                            rows={2}
+                                            placeholder="Or enter custom blockchains (comma-separated)"
+                                        />
+                                    </div>
+                                </div>
                             </div>
 
                             <div className="border-t pt-4">
@@ -397,16 +434,14 @@ export default function AirdropsPage() {
                                                 </div>
                                                 <div>
                                                     <label className="block text-sm mb-1">Description</label>
-                                                    <textarea
+                                                    <RichTextEditor
                                                         value={translation.description}
-                                                        onChange={(e) => {
+                                                        onChange={(value) => {
                                                             const newTranslations = [...formData.translations];
-                                                            newTranslations[index].description = e.target.value;
+                                                            newTranslations[index].description = value;
                                                             setFormData({ ...formData, translations: newTranslations });
                                                         }}
-                                                        required
-                                                        className="w-full px-3 py-2 border rounded-md"
-                                                        rows={2}
+                                                        placeholder="Enter description..."
                                                     />
                                                 </div>
                                             </div>
