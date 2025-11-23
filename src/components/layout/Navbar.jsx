@@ -70,20 +70,23 @@ export function Navbar() {
           className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-full shadow-sm px-6 py-3 flex items-center justify-between"
         >
           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center gap-3">
             <motion.div
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
-              className="flex items-center space-x-2"
+              className="flex items-center gap-3"
             >
               <Image
                 src="/logo.png"
                 alt="AirdropScan Logo"
-                width={120}
-                height={32}
-                className="h-24 w-auto"
+                width={40}
+                height={40}
+                className="h-10 w-10"
                 priority={true}
               />
+              <span className="text-xl font-bold text-midnight hidden sm:block">
+                {t('siteName')}
+              </span>
             </motion.div>
           </Link>
 

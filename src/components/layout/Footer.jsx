@@ -98,8 +98,9 @@ export function Footer() {
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.2 }}
               >
-                <Link href="/" className="flex items-center gap-2">
-                  <Image src="/logo.png" alt="AirdropScan Logo" width={120} height={32} />
+                <Link href="/" className="flex items-center gap-3">
+                  <Image src="/logo.png" alt="AirdropScan Logo" width={48} height={48} />
+                  <span className="text-2xl font-bold text-midnight">{tNav('siteName')}</span>
                 </Link>
               </motion.div>
 

@@ -1,5 +1,6 @@
 {
     "Navbar": {
+        "siteName": "Airdrop Scan",
         "home": "首页",
         "airdrops": "空投",
         "blog": "博客",
@@ -8,7 +9,7 @@
         "submitAirdrop": "提交空投"
     },
     "Metadata": {
-        "title": "Airdrop Scan - 发现经过验证的加密空投。快速",
+        "title": "Airdrop Scan - 快速发现经过验证的加密空投",
         "description": "发现最新的加密货币空投和空投耕作机会。我们要介绍精心策划的空投，助您保持领先。"
     },
     "Header": {

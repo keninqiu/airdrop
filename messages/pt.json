@@ -1,5 +1,6 @@
 {
     "Navbar": {
+        "siteName": "Airdrop Scan",
         "home": "Início",
         "airdrops": "Airdrops",
         "blog": "Blog",

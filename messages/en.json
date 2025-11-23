@@ -1,5 +1,6 @@
 {
     "Navbar": {
+        "siteName": "Airdrop Scan",
         "home": "Home",
         "airdrops": "Airdrops",
         "blog": "Blog",
@@ -85,7 +86,7 @@
     },
     "AirdropList": {
         "heading": "Featured Airdrops",
-        "description": "Handpicked for their value and potential, don’t miss out on these quality airdrops.",
+        "description": "Handpicked for their value and potential, don't miss out on these quality airdrops.",
         "viewAll": "View All Airdrops",
         "value": "Value",
         "status": {
