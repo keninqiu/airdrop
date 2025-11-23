@@ -1,5 +1,6 @@
 import prisma from '../../lib/db';
 import { RSSSource } from './sources/rss-source';
+import { BaseSource } from './sources/base-source';
 import { DataNormalizer } from './processors/data-normalizer';
 import { NormalizedAirdropData } from './sources/base-source';
 import { crawlerConfig } from '../../config/crawler.config';
@@ -8,7 +9,7 @@ import { createLogger } from './utils/logger';
 const logger = createLogger('NewsCrawler');
 
 export class AirdropCrawler {
-    private sources: any[];
+    private sources: BaseSource[];
     private normalizer: DataNormalizer;
 
     constructor() {

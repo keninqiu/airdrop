@@ -441,7 +441,6 @@ export default function AirdropsPage() {
                                                             newTranslations[index].description = value;
                                                             setFormData({ ...formData, translations: newTranslations });
                                                         }}
-                                                        placeholder="Enter description..."
                                                     />
                                                 </div>
                                             </div>

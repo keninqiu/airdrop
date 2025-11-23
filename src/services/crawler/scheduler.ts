@@ -1,4 +1,4 @@
-import cron from 'node-cron';
+import cron, { ScheduledTask } from 'node-cron';
 import { AirdropCrawler } from './airdrop-crawler';
 import { crawlerConfig } from '../../config/crawler.config';
 import { createLogger } from './utils/logger';
@@ -6,7 +6,7 @@ import { createLogger } from './utils/logger';
 const logger = createLogger('Scheduler');
 
 export class CrawlerScheduler {
-    private task: cron.ScheduledTask | null = null;
+    private task: ScheduledTask | null = null;
     private crawler: AirdropCrawler;
 
     constructor() {

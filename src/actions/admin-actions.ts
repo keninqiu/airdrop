@@ -134,6 +134,7 @@ export async function createAirdrop(data: {
             website_url: data.website_url,
             campaign_url: data.campaign_url,
             whitepaper_url: data.whitepaper_url,
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             reward_model: data.reward_model as any,
             reward_amount: data.reward_amount,
             campaign_start: data.campaign_start ? new Date(data.campaign_start) : null,
@@ -179,7 +180,7 @@ export async function updateAirdrop(
     const { translations, ...airdropData } = data;
 
     // Convert reward_model to enum and dates if present
-    const updateData: any = { ...airdropData };
+    const updateData: Record<string, unknown> = { ...airdropData };
     if (data.reward_model) {
         updateData.reward_model = data.reward_model;
     }

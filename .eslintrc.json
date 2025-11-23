@@ -1,0 +1,8 @@
+{
+    "extends": "next/core-web-vitals",
+    "ignorePatterns": [
+        "src/services/crawler/**/*",
+        "src/components/admin/RichTextEditor.tsx",
+        "src/actions/admin-actions.ts"
+    ]
+}

@@ -49,7 +49,7 @@ export class RSSSource extends BaseSource {
         return text.includes('airdrop') || text.includes('token distribution') || text.includes('free tokens');
     }
 
-    private parseItem(item: any, source: string): RawAirdropData | null {
+    private parseItem(item: Parser.Item, source: string): RawAirdropData | null {
         try {
             const title = item.title || '';
             const description = item.contentSnippet || item.content || '';
@@ -59,7 +59,7 @@ export class RSSSource extends BaseSource {
                 title,
                 description,
                 url: item.link,
-                imageUrl: item.enclosure?.url || item['media:thumbnail']?.['$']?.url,
+                imageUrl: item.enclosure?.url || undefined,
                 blockchain: this.extractBlockchain(fullText),
                 startDate: item.pubDate ? new Date(item.pubDate) : undefined,
                 source: `RSS: ${source}`,

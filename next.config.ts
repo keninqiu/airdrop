@@ -72,6 +72,13 @@ const nextConfig = {
             },
         ],
     },
+    eslint: {
+        ignoreDuringBuilds: false,
+        dirs: ['src'],
+    },
+    typescript: {
+        ignoreBuildErrors: false,
+    },
 };
 
 export default withNextIntl(nextConfig);

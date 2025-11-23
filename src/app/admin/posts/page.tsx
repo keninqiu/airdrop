@@ -235,7 +235,6 @@ export default function PostsPage() {
                                                             newTranslations[index].description = value;
                                                             setFormData({ ...formData, translations: newTranslations });
                                                         }}
-                                                        placeholder="Enter description..."
                                                     />
                                                 </div>
                                             </div>
