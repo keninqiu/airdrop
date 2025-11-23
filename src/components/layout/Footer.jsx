@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Link } from "@/i18n/routing";
-import { Twitter, Github, Linkedin, Send, BookText, ChartCandlestick } from "lucide-react";
+import { Twitter, Github, Linkedin, Send, Facebook, Instagram, Youtube } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -13,28 +13,36 @@ export function Footer() {
   const tNav = useTranslations('Navbar');
   const socialLinks = [
     {
+      title: "Telegram",
+      href: process.env.NEXT_PUBLIC_TELEGRAM_URL || "https://t.me/yourhandle",
+      Icon: Send,
+    },
+    {
       title: "Twitter",
-      href: process.env.NEXT_PUBLIC_TWITTER_URL,
+      href: process.env.NEXT_PUBLIC_TWITTER_URL || "https://twitter.com/yourhandle",
       Icon: Twitter,
     },
     {
+      title: "Facebook",
+      href: process.env.NEXT_PUBLIC_FACEBOOK_URL || "https://facebook.com/yourpage",
+      Icon: Facebook,
+    },
+    {
+      title: "Instagram",
+      href: process.env.NEXT_PUBLIC_INSTAGRAM_URL || "https://instagram.com/yourhandle",
+      Icon: Instagram,
+    },
+    {
+      title: "YouTube",
+      href: process.env.NEXT_PUBLIC_YOUTUBE_URL || "https://youtube.com/@yourchannel",
+      Icon: Youtube,
+    },
+    {
       title: "LinkedIn",
-      href: process.env.NEXT_PUBLIC_LINKEDIN_URL,
+      href: process.env.NEXT_PUBLIC_LINKEDIN_URL || "https://linkedin.com/company/yourcompany",
       Icon: Linkedin,
     },
-    {
-      title: "Telegram",
-      href: process.env.NEXT_PUBLIC_TELEGRAM_URL,
-      Icon: Send,
-    },
-    { title: "Github", href: process.env.NEXT_PUBLIC_GITHUB_URL, Icon: Github },
-    { title: "Docs", href: process.env.NEXT_PUBLIC_DOCS_URL, Icon: BookText },
-    {
-      title: "DexScreener",
-      href: process.env.NEXT_PUBLIC_DEXSCREENER_URL,
-      Icon: ChartCandlestick,
-    },
-  ].filter((l) => !!l.href);
+  ];
 
   const quickLinks = [
     { label: tNav('home'), href: "#home" },
