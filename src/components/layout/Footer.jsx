@@ -18,10 +18,11 @@ export function Footer() {
       Icon: Send,
     },
     {
-      title: "Twitter",
+      title: "X",
       href: process.env.NEXT_PUBLIC_TWITTER_URL || "https://twitter.com/yourhandle",
       Icon: Twitter,
     },
+    /*
     {
       title: "Facebook",
       href: process.env.NEXT_PUBLIC_FACEBOOK_URL || "https://facebook.com/yourpage",
@@ -32,16 +33,19 @@ export function Footer() {
       href: process.env.NEXT_PUBLIC_INSTAGRAM_URL || "https://instagram.com/yourhandle",
       Icon: Instagram,
     },
+    */
     {
       title: "YouTube",
       href: process.env.NEXT_PUBLIC_YOUTUBE_URL || "https://youtube.com/@yourchannel",
       Icon: Youtube,
     },
+    /*
     {
       title: "LinkedIn",
       href: process.env.NEXT_PUBLIC_LINKEDIN_URL || "https://linkedin.com/company/yourcompany",
       Icon: Linkedin,
     },
+    */
   ];
 
   const quickLinks = [
