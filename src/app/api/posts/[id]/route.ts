@@ -3,16 +3,18 @@ import db from "@/lib/db";
 
 export async function GET(
     req: Request,
-    { params }: { params: { id: string } }
+    { params }: { params: Promise<{ id: string }> }
 ) {
     try {
-        if (!params.id) {
+        const { id } = await params;
+
+        if (!id) {
             return new NextResponse("Post ID is required", { status: 400 });
         }
 
         const post = await db.post.findUnique({
             where: {
-                id: parseInt(params.id),
+                id: parseInt(id),
             },
             include: {
                 translations: true,
