@@ -1,0 +1,14 @@
+{
+  "appTitle": "エアドロップアプリ",
+  "airdrops": "エアドロップ",
+  "posts": "投稿",
+  "settings": "設定",
+  "language": "言語",
+  "loading": "読み込み中...",
+  "error": "データの読み込みエラー",
+  "statusActive": "アクティブ",
+  "statusUpcoming": "近日公開",
+  "statusEnded": "終了",
+  "value": "価値",
+  "platform": "プラットフォーム"
+}

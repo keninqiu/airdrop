@@ -1,0 +1,14 @@
+{
+  "appTitle": "Airdrop App",
+  "airdrops": "Airdrops",
+  "posts": "Posts",
+  "settings": "Settings",
+  "language": "Language",
+  "loading": "Loading...",
+  "error": "Error loading data",
+  "statusActive": "Active",
+  "statusUpcoming": "Upcoming",
+  "statusEnded": "Ended",
+  "value": "Value",
+  "platform": "Platform"
+}

@@ -1,0 +1,14 @@
+{
+  "appTitle": "Application Airdrop",
+  "airdrops": "Airdrops",
+  "posts": "Articles",
+  "settings": "Paramètres",
+  "language": "Langue",
+  "loading": "Chargement...",
+  "error": "Erreur de chargement des données",
+  "statusActive": "Actif",
+  "statusUpcoming": "À venir",
+  "statusEnded": "Terminé",
+  "value": "Valeur",
+  "platform": "Plateforme"
+}

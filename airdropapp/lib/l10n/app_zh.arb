@@ -1,0 +1,14 @@
+{
+  "appTitle": "空投应用",
+  "airdrops": "空投",
+  "posts": "文章",
+  "settings": "设置",
+  "language": "语言",
+  "loading": "加载中...",
+  "error": "加载数据出错",
+  "statusActive": "进行中",
+  "statusUpcoming": "即将开始",
+  "statusEnded": "已结束",
+  "value": "价值",
+  "platform": "平台"
+}

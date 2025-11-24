@@ -1,0 +1,14 @@
+{
+  "appTitle": "에어드랍 앱",
+  "airdrops": "에어드랍",
+  "posts": "게시물",
+  "settings": "설정",
+  "language": "언어",
+  "loading": "로딩 중...",
+  "error": "데이터 로드 오류",
+  "statusActive": "진행 중",
+  "statusUpcoming": "예정",
+  "statusEnded": "종료됨",
+  "value": "가치",
+  "platform": "플랫폼"
+}
