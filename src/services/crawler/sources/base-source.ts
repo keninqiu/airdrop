@@ -1,3 +1,5 @@
+import { createLogger } from '../utils/logger';
+
 export interface RawAirdropData {
     title: string;
     description?: string;
@@ -38,14 +40,11 @@ export interface NormalizedAirdropData {
 
 export abstract class BaseSource {
     public name: string;
-    protected logger!: ReturnType<typeof import('../utils/logger').createLogger>;
+    protected logger: ReturnType<typeof createLogger>;
 
     constructor(name: string) {
         this.name = name;
-        // Dynamic import to avoid circular dependency
-        import('../utils/logger').then(({ createLogger }) => {
-            this.logger = createLogger(name);
-        });
+        this.logger = createLogger(name);
     }
 
     abstract fetch(): Promise<RawAirdropData[]>;
