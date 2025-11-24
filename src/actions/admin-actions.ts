@@ -1,11 +1,9 @@
 "use server";
 
 import { auth } from "@/auth";
-import { PrismaClient } from "@prisma/client";
+import db from "@/lib/db";
 import bcrypt from "bcryptjs";
 import { revalidatePath } from "next/cache";
-
-const prisma = new PrismaClient();
 
 // Check if user is admin
 async function checkAdmin() {
@@ -20,7 +18,7 @@ async function checkAdmin() {
 
 export async function getUsers() {
     await checkAdmin();
-    return await prisma.user.findMany({
+    return await db.user.findMany({
         select: {
             id: true,
             email: true,
@@ -42,7 +40,7 @@ export async function createUser(data: {
 
     const hashedPassword = await bcrypt.hash(data.password, 10);
 
-    const user = await prisma.user.create({
+    const user = await db.user.create({
         data: {
             email: data.email,
             password: hashedPassword,
@@ -72,7 +70,7 @@ export async function updateUser(
         updateData.password = await bcrypt.hash(data.password, 10);
     }
 
-    const user = await prisma.user.update({
+    const user = await db.user.update({
         where: { id },
         data: updateData,
     });
@@ -84,7 +82,7 @@ export async function updateUser(
 export async function deleteUser(id: number) {
     await checkAdmin();
 
-    await prisma.user.delete({
+    await db.user.delete({
         where: { id },
     });
 
@@ -95,7 +93,7 @@ export async function deleteUser(id: number) {
 
 export async function getAirdrops() {
     await checkAdmin();
-    return await prisma.airdrop.findMany({
+    return await db.airdrop.findMany({
         include: {
             translations: true,
         },
@@ -125,7 +123,7 @@ export async function createAirdrop(data: {
 }) {
     await checkAdmin();
 
-    const airdrop = await prisma.airdrop.create({
+    const airdrop = await db.airdrop.create({
         data: {
             logo: data.logo,
             value: data.value,
@@ -191,18 +189,18 @@ export async function updateAirdrop(
         updateData.campaign_end = new Date(data.campaign_end);
     }
 
-    const airdrop = await prisma.airdrop.update({
+    const airdrop = await db.airdrop.update({
         where: { id },
         data: updateData,
     });
 
     if (translations) {
         // Delete existing translations and create new ones
-        await prisma.airdropTranslation.deleteMany({
+        await db.airdropTranslation.deleteMany({
             where: { airdropId: id },
         });
 
-        await prisma.airdropTranslation.createMany({
+        await db.airdropTranslation.createMany({
             data: translations.map((t) => ({
                 ...t,
                 airdropId: id,
@@ -218,7 +216,7 @@ export async function updateAirdrop(
 export async function deleteAirdrop(id: number) {
     await checkAdmin();
 
-    await prisma.airdrop.delete({
+    await db.airdrop.delete({
         where: { id },
     });
 
@@ -230,7 +228,7 @@ export async function deleteAirdrop(id: number) {
 
 export async function getPosts() {
     await checkAdmin();
-    return await prisma.post.findMany({
+    return await db.post.findMany({
         include: {
             translations: true,
         },
@@ -249,7 +247,7 @@ export async function createPost(data: {
 }) {
     await checkAdmin();
 
-    const post = await prisma.post.create({
+    const post = await db.post.create({
         data: {
             image: data.image,
             link: data.link,
@@ -280,18 +278,18 @@ export async function updatePost(
 
     const { translations, ...postData } = data;
 
-    const post = await prisma.post.update({
+    const post = await db.post.update({
         where: { id },
         data: postData,
     });
 
     if (translations) {
         // Delete existing translations and create new ones
-        await prisma.postTranslation.deleteMany({
+        await db.postTranslation.deleteMany({
             where: { postId: id },
         });
 
-        await prisma.postTranslation.createMany({
+        await db.postTranslation.createMany({
             data: translations.map((t) => ({
                 ...t,
                 postId: id,
@@ -307,7 +305,7 @@ export async function updatePost(
 export async function deletePost(id: number) {
     await checkAdmin();
 
-    await prisma.post.delete({
+    await db.post.delete({
         where: { id },
     });
 
