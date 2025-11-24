@@ -3,7 +3,11 @@ import Credentials from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
 import db from "@/lib/db";
 
+
 export const { handlers, signIn, signOut, auth } = NextAuth({
+    secret: process.env.AUTH_SECRET,
+    debug: process.env.NODE_ENV === 'development',
+    trustHost: true, // Trust the host from the request headers
     providers: [
         Credentials({
             credentials: {
