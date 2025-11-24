@@ -231,6 +231,7 @@ export default function AirdropsPage() {
                                                     alt="Logo preview"
                                                     fill
                                                     className="object-contain"
+                                                    unoptimized={formData.logo.startsWith('/uploads/')}
                                                 />
                                             </div>
                                         )}
@@ -479,6 +480,7 @@ export default function AirdropsPage() {
                                             alt={airdrop.translations.find((t) => t.locale === "en")?.name || "Airdrop logo"}
                                             fill
                                             className="object-contain"
+                                            unoptimized={airdrop.logo.startsWith('/uploads/')}
                                         />
                                     </div>
                                     <div>

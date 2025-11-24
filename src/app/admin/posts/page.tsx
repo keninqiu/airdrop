@@ -187,6 +187,7 @@ export default function PostsPage() {
                                                     alt="Image preview"
                                                     fill
                                                     className="object-cover rounded"
+                                                    unoptimized={formData.image.startsWith('/uploads/')}
                                                 />
                                             </div>
                                         )}
@@ -271,6 +272,7 @@ export default function PostsPage() {
                                     alt={post.translations.find((t) => t.locale === "en")?.title || "Post image"}
                                     fill
                                     className="object-cover rounded"
+                                    unoptimized={post.image.startsWith('/uploads/')}
                                 />
                             </div>
                             <h3 className="font-semibold mb-1">
