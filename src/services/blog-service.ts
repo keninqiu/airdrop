@@ -2,6 +2,9 @@ import db from '@/lib/db';
 
 export async function getPosts(locale: string) {
     const posts = await db.post.findMany({
+        where: {
+            published: true,
+        },
         include: {
             translations: {
                 where: { locale },

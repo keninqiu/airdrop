@@ -239,6 +239,7 @@ export async function getPosts() {
 export async function createPost(data: {
     image: string;
     link: string;
+    published?: boolean;
     translations: Array<{
         locale: string;
         title: string;
@@ -251,6 +252,7 @@ export async function createPost(data: {
         data: {
             image: data.image,
             link: data.link,
+            published: data.published ?? true,
             translations: {
                 create: data.translations,
             },
@@ -267,6 +269,7 @@ export async function updatePost(
     data: {
         image?: string;
         link?: string;
+        published?: boolean;
         translations?: Array<{
             locale: string;
             title: string;

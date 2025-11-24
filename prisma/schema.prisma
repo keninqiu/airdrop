@@ -62,6 +62,7 @@ model Post {
   id           Int      @id @default(autoincrement())
   image        String
   link         String
+  published    Boolean  @default(true)
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
   translations PostTranslation[]

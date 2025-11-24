@@ -11,6 +11,7 @@ type Post = {
     id: number;
     image: string;
     link: string;
+    published: boolean;
     translations: Array<{
         id: number;
         locale: string;
@@ -29,6 +30,7 @@ export default function PostsPage() {
     const [formData, setFormData] = useState({
         image: "",
         link: "",
+        published: true,
         translations: LOCALES.map((locale) => ({
             locale,
             title: "",
@@ -73,6 +75,7 @@ export default function PostsPage() {
         setFormData({
             image: "",
             link: "",
+            published: true,
             translations: LOCALES.map((locale) => ({
                 locale,
                 title: "",
@@ -86,6 +89,7 @@ export default function PostsPage() {
         setFormData({
             image: post.image,
             link: post.link,
+            published: post.published,
             translations: LOCALES.map((locale) => {
                 const existing = post.translations.find((t) => t.locale === locale);
                 return {
@@ -203,6 +207,17 @@ export default function PostsPage() {
                                         className="w-full px-3 py-2 border rounded-md"
                                         placeholder="https://example.com"
                                     />
+                                </div>
+                                <div>
+                                    <label className="flex items-center gap-2 cursor-pointer">
+                                        <input
+                                            type="checkbox"
+                                            checked={formData.published}
+                                            onChange={(e) => setFormData({ ...formData, published: e.target.checked })}
+                                            className="w-4 h-4"
+                                        />
+                                        <span className="text-sm font-medium">Published (visible to public)</span>
+                                    </label>
                                 </div>
                             </div>
 
