@@ -117,5 +117,11 @@
             "description": "에어드랍 캠페인을 설명하세요...",
             "estimatedValue": "$100"
         }
+    },
+    "AirdropDetail": {
+        "howToParticipate": "How to Participate",
+        "participateNow": "Participate Now",
+        "about": "About this Airdrop",
+        "estimatedValue": "Estimated Value"
     }
 }

@@ -117,5 +117,11 @@
             "description": "Beschreiben Sie Ihre Airdrop-Kampagne...",
             "estimatedValue": "$100"
         }
+    },
+    "AirdropDetail": {
+        "howToParticipate": "How to Participate",
+        "participateNow": "Participate Now",
+        "about": "About this Airdrop",
+        "estimatedValue": "Estimated Value"
     }
 }

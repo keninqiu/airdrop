@@ -117,5 +117,11 @@
             "description": "描述您的空投活动...",
             "estimatedValue": "$100"
         }
+    },
+    "AirdropDetail": {
+        "howToParticipate": "如何参与",
+        "participateNow": "立即参与",
+        "about": "关于此空投",
+        "estimatedValue": "预估价值"
     }
 }
