@@ -39,5 +39,6 @@ export async function getAirdropById(id: number, locale: string) {
         ...airdrop,
         name: translation.name || 'Unknown',
         description: translation.description || '',
+        steps: translation.steps || '',
     };
 }

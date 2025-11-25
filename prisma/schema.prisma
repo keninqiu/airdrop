@@ -53,6 +53,7 @@ model AirdropTranslation {
   locale      String
   name        String
   description String   @db.Text
+  steps       String?  @db.Text
   airdrop     Airdrop  @relation(fields: [airdropId], references: [id], onDelete: Cascade)
 
   @@unique([airdropId, locale])

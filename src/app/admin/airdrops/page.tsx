@@ -27,6 +27,7 @@ type Airdrop = {
         locale: string;
         name: string;
         description: string;
+        steps?: string | null;
     }>;
 };
 
@@ -55,6 +56,7 @@ export default function AirdropsPage() {
             locale,
             name: "",
             description: "",
+            steps: "",
         })),
     });
 
@@ -110,6 +112,7 @@ export default function AirdropsPage() {
                 locale,
                 name: "",
                 description: "",
+                steps: "",
             })),
         });
     };
@@ -136,6 +139,7 @@ export default function AirdropsPage() {
                     locale,
                     name: existing?.name || "",
                     description: existing?.description || "",
+                    steps: existing?.steps || "",
                 };
             }),
         });
@@ -440,6 +444,17 @@ export default function AirdropsPage() {
                                                         onChange={(value) => {
                                                             const newTranslations = [...formData.translations];
                                                             newTranslations[index].description = value;
+                                                            setFormData({ ...formData, translations: newTranslations });
+                                                        }}
+                                                    />
+                                                </div>
+                                                <div>
+                                                    <label className="block text-sm mb-1">How to Participate (Steps)</label>
+                                                    <RichTextEditor
+                                                        value={translation.steps || ""}
+                                                        onChange={(value) => {
+                                                            const newTranslations = [...formData.translations];
+                                                            newTranslations[index].steps = value;
                                                             setFormData({ ...formData, translations: newTranslations });
                                                         }}
                                                     />

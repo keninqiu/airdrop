@@ -119,6 +119,7 @@ export async function createAirdrop(data: {
         locale: string;
         name: string;
         description: string;
+        steps?: string;
     }>;
 }) {
     await checkAdmin();
@@ -170,6 +171,7 @@ export async function updateAirdrop(
             locale: string;
             name: string;
             description: string;
+            steps?: string;
         }>;
     }
 ) {

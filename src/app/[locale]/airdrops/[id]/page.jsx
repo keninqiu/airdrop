@@ -82,12 +82,19 @@ export default async function AirdropDetailsPage({ params }) {
 
                                 <div className="bg-blue-50 rounded-xl p-6 border border-blue-100 mb-8">
                                     <h4 className="font-semibold text-blue-900 mb-2">How to Participate</h4>
-                                    <ul className="list-disc list-inside text-blue-800 space-y-2">
-                                        <li>Visit the official project website</li>
-                                        <li>Connect your wallet</li>
-                                        <li>Complete the required tasks</li>
-                                        <li>Wait for the distribution date</li>
-                                    </ul>
+                                    {airdrop.steps ? (
+                                        <div
+                                            className="text-blue-800 space-y-2 prose-ul:list-disc prose-ul:list-inside"
+                                            dangerouslySetInnerHTML={{ __html: airdrop.steps }}
+                                        />
+                                    ) : (
+                                        <ul className="list-disc list-inside text-blue-800 space-y-2">
+                                            <li>Visit the official project website</li>
+                                            <li>Connect your wallet</li>
+                                            <li>Complete the required tasks</li>
+                                            <li>Wait for the distribution date</li>
+                                        </ul>
+                                    )}
                                 </div>
 
                                 <button className="inline-flex items-center justify-center bg-primary hover:bg-primary-700 text-white px-8 py-4 text-lg font-medium rounded-full transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
