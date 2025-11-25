@@ -45,6 +45,7 @@ export default async function AirdropDetailsPage({ params }) {
                                             alt={airdrop.name}
                                             fill
                                             className="object-contain p-2"
+                                            unoptimized={airdrop.logo?.startsWith('/uploads/')}
                                         />
                                     </div>
                                     <div>
@@ -64,10 +65,12 @@ export default async function AirdropDetailsPage({ params }) {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="text-left md:text-right">
-                                    <p className="text-sm text-gray-500 mb-1">Estimated Value</p>
-                                    <p className="text-3xl font-bold text-gray-900">{airdrop.value}</p>
-                                </div>
+                                {parseFloat(airdrop.value?.replace(/[^0-9.]/g, '') || '0') > 0 && (
+                                    <div className="text-left md:text-right">
+                                        <p className="text-sm text-gray-500 mb-1">Estimated Value</p>
+                                        <p className="text-3xl font-bold text-gray-900">{airdrop.value}</p>
+                                    </div>
+                                )}
                             </div>
 
                             <div className="prose max-w-none">

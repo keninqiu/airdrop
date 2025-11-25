@@ -20,6 +20,7 @@ const AirdropCard = ({ airdrop, t }) => {
                         alt={airdrop.name}
                         fill
                         className="object-contain p-2"
+                        unoptimized={airdrop.logo?.startsWith('/uploads/')}
                     />
                 </div>
                 <span
@@ -35,13 +36,16 @@ const AirdropCard = ({ airdrop, t }) => {
             </div>
 
             <h3 className="text-lg font-semibold text-gray-900 mb-1">{airdrop.name}</h3>
-            <p className="text-sm text-gray-500 mb-4 line-clamp-2">{airdrop.description}</p>
 
             <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                <div className="flex flex-col">
-                    <span className="text-xs text-gray-400">{t('value')}</span>
-                    <span className="text-sm font-medium text-gray-900">{airdrop.value}</span>
-                </div>
+                {parseFloat(airdrop.value?.replace(/[^0-9.]/g, '') || '0') > 0 ? (
+                    <div className="flex flex-col">
+                        <span className="text-xs text-gray-400">{t('value')}</span>
+                        <span className="text-sm font-medium text-gray-900">{airdrop.value}</span>
+                    </div>
+                ) : (
+                    <div></div>
+                )}
                 <Link
                     href={`/airdrops/${airdrop.id}`}
                     className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors"

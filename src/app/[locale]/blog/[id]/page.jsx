@@ -42,6 +42,7 @@ export default async function BlogPostPage({ params }) {
                                 fill
                                 className="object-cover"
                                 priority
+                                unoptimized={post.image?.startsWith('/uploads/')}
                             />
                         </div>
 
