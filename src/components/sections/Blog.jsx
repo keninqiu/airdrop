@@ -122,21 +122,6 @@ export function Blog({ posts = [] }) {
                       {post.title}
                     </motion.h3>
                   </Link>
-                  <motion.p
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 0.3 }}
-                    viewport={{ once: true }}
-                    className="text-body md:text-body-lg text-gray-600 leading-relaxed"
-                  >
-                    {post.description}{" "}
-                    <Link
-                      href={`/blog/${post.id}`}
-                      className="text-primary hover:underline font-normal"
-                    >
-                      {t('readMore')}
-                    </Link>
-                  </motion.p>
                 </CardContent>
               </Card>
             </motion.div>

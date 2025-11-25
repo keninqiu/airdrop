@@ -1,0 +1,223 @@
+🟦 1. Monad (MON) — Confirmed Airdrop
+
+Type: Layer-1 blockchain
+Token: MON (confirmed)
+Status: Ongoing + future farming
+Quality: ⭐⭐⭐⭐⭐ (Paradigm-backed)
+
+How to qualify
+
+Bridge assets to Monad
+
+Provide liquidity in Monad DEXs
+
+Interact with official Monad ecosystem dApps
+
+Hold/bridge ETH → Monad
+
+Participate in testnet tasks
+
+Reward Type
+
+Guaranteed allocation for eligible users (10B MON unlocked)
+
+🟦 2. EigenLayer Points → EIGEN Retrodrop (Wave 2 ongoing)
+
+Type: Restaking protocol
+Token: EIGEN
+Quality: ⭐⭐⭐⭐⭐ (Top 3 TVL project)
+
+How to qualify
+
+Restake ETH / stETH / mETH
+
+Delegate to Operators
+
+Join Eigen DA testnet
+
+Earn operator-assigned tasks
+
+Reward Type
+
+Points → token conversion
+
+🟦 3. LayerZero (ZRO) — Airdrop Season 2 Expected
+
+Type: Cross-chain messaging
+Quality: ⭐⭐⭐⭐⭐
+
+How to qualify
+
+Bridge using Stargate / LayerZero apps
+
+Interact with cross-chain DEXs
+
+Use L0-supported games / omnichain NFTs
+
+Avoid “Sybil-like” spam patterns
+
+Reward Type
+
+Season 2 token distribution (season 1 was millions)
+
+🟦 4. zkSync — ZK Token Future Incentives
+
+Type: ZK-rollup
+Quality: ⭐⭐⭐⭐⭐ (Matter Labs)
+
+How to qualify
+
+Bridge ETH to zkSync Era
+
+Swap, add liquidity
+
+Use ecosystem dApps (SyncSwap, Mute, SpaceFi)
+
+Complete zkSync quests (Galxe/Layer3)
+
+Reward Type
+
+Retroactive airdrop + ecosystem incentives
+
+🟦 5. Celestia — TIA Delegator Drops
+
+Type: Modular DA layer
+Quality: ⭐⭐⭐⭐⭐
+
+How to qualify
+
+Stake or delegate TIA
+
+Interact with TIA ecosystem rollups
+
+Bridge assets to modular chains
+
+Use modular stack apps early
+
+Reward Type
+
+Staker airdrops (many already distributed)
+
+🟦 6. Berachain (BGT / HONEY) — Airdrop + Points
+
+Type: EVM L1 with native AMM & stablecoins
+Quality: ⭐⭐⭐⭐⭐
+
+How to qualify
+
+Use Berachain testnet
+
+Provide liquidity in BEX
+
+Participate in quests
+
+Bridge testnet assets
+
+Reward Type
+
+Points → Token allocation
+
+🟦 7. Fuel — Mainnet Incoming
+
+Type: Modular execution layer
+Quality: ⭐⭐⭐⭐⭐ (top VC backed)
+
+How to qualify
+
+Use testnet bridge
+
+Try SwaySwap
+
+Deploy testnet contracts
+
+Use Fuel Wallet
+
+Reward Type
+
+High-value retrodrop expected
+
+🟦 8. Blast (Season 2 airdrop)
+
+Type: L2 with yield
+Quality: ⭐⭐⭐⭐
+
+How to qualify
+
+Bridge ETH to Blast
+
+Deposit into Blast dApps
+
+Points Farming
+
+Use Blast-exclusive apps (Pacmoon, Juice, Fantasy)
+
+Reward Type
+
+Blast Points → Token rewards
+
+🟦 9. Scroll — Ecosystem “Wave 2” Airdrops
+
+Type: zk rollup
+Quality: ⭐⭐⭐⭐
+
+How to qualify
+
+Bridge to Scroll
+
+Complete ecosystem quests
+
+Use Scroll-native swaps and farms
+
+Reward Type
+
+Retrodrop + ecosystem incentives
+
+🟦 10. Linea (Consensys) — Campaign Airdrops
+
+Type: zk rollup
+Quality: ⭐⭐⭐⭐
+
+How to qualify
+
+Participate in Linea Voyage missions
+
+Use ecosystem AMMs
+
+Bridge assets to Linea
+
+Galxe tasks
+
+Reward Type
+
+Campaign-based token distribution
+
+🟩 Optional: Medium-Risk, High-Reward Airdrops (Alpha Plays)
+
+These are not guaranteed, but historically these types of early projects pay very well:
+
+🟢 Layer-3 chains
+
+Degen L3
+
+Xai
+
+Zora
+Often reward early transactions.
+
+🟢 SocialFi
+
+UXLINK
+
+Tomo
+
+Warswap
+Social airdrops have historically paid a lot.
+
+🟢 Gaming projects
+
+Parallel
+
+Illuvium
+
+Shrapnel
+Games often reward early testers.
