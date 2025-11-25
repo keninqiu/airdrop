@@ -6,14 +6,18 @@ import { getAirdropById } from "@/services/airdrop-service";
 import Image from "next/image";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { Link } from "@/i18n/routing";
+import { getTranslations } from "next-intl/server";
 
 export default async function AirdropDetailsPage({ params }) {
     const { id, locale } = await params;
     const airdrop = await getAirdropById(parseInt(id), locale);
+    const t = await getTranslations('AirdropDetail');
 
     if (!airdrop) {
         notFound();
     }
+
+    const participateUrl = airdrop.campaign_url || airdrop.website_url || '#';
 
     // We can't use useTranslations directly in an async server component for the component body
     // But we can pass it down or use getTranslations if we needed server-side translations
@@ -67,21 +71,21 @@ export default async function AirdropDetailsPage({ params }) {
                                 </div>
                                 {parseFloat(airdrop.value?.replace(/[^0-9.]/g, '') || '0') > 0 && (
                                     <div className="text-left md:text-right">
-                                        <p className="text-sm text-gray-500 mb-1">Estimated Value</p>
+                                        <p className="text-sm text-gray-500 mb-1">{t('estimatedValue')}</p>
                                         <p className="text-3xl font-bold text-gray-900">{airdrop.value}</p>
                                     </div>
                                 )}
                             </div>
 
                             <div className="prose max-w-none">
-                                <h3 className="text-xl font-semibold text-gray-900 mb-4">About this Airdrop</h3>
+                                <h3 className="text-xl font-semibold text-gray-900 mb-4">{t('about')}</h3>
                                 <div
                                     className="text-gray-600 text-lg leading-relaxed mb-8"
                                     dangerouslySetInnerHTML={{ __html: airdrop.description }}
                                 />
 
                                 <div className="bg-blue-50 rounded-xl p-6 border border-blue-100 mb-8">
-                                    <h4 className="font-semibold text-blue-900 mb-2">How to Participate</h4>
+                                    <h4 className="font-semibold text-blue-900 mb-2">{t('howToParticipate')}</h4>
                                     {airdrop.steps ? (
                                         <div
                                             className="text-blue-800 space-y-2 prose-ul:list-disc prose-ul:list-inside"
@@ -97,9 +101,14 @@ export default async function AirdropDetailsPage({ params }) {
                                     )}
                                 </div>
 
-                                <button className="inline-flex items-center justify-center bg-primary hover:bg-primary-700 text-white px-8 py-4 text-lg font-medium rounded-full transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
-                                    Participate Now <ExternalLink className="w-5 h-5 ml-2" />
-                                </button>
+                                <a
+                                    href={participateUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center justify-center bg-primary hover:bg-primary-700 text-white px-8 py-4 text-lg font-medium rounded-full transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                                >
+                                    {t('participateNow')} <ExternalLink className="w-5 h-5 ml-2" />
+                                </a>
                             </div>
                         </div>
                     </div>
