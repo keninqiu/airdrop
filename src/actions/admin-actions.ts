@@ -184,11 +184,11 @@ export async function updateAirdrop(
     if (data.reward_model) {
         updateData.reward_model = data.reward_model;
     }
-    if (data.campaign_start) {
-        updateData.campaign_start = new Date(data.campaign_start);
+    if (typeof data.campaign_start === 'string') {
+        updateData.campaign_start = data.campaign_start ? new Date(data.campaign_start) : null;
     }
-    if (data.campaign_end) {
-        updateData.campaign_end = new Date(data.campaign_end);
+    if (typeof data.campaign_end === 'string') {
+        updateData.campaign_end = data.campaign_end ? new Date(data.campaign_end) : null;
     }
 
     const airdrop = await db.airdrop.update({
