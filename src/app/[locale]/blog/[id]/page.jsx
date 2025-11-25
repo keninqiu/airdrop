@@ -57,7 +57,7 @@ export default async function BlogPostPage({ params }) {
                             </h1>
 
                             <div className="prose prose-lg max-w-none text-gray-600 leading-relaxed">
-                                <p>{post.description}</p>
+                                <div dangerouslySetInnerHTML={{ __html: post.description }} />
                                 {/* Placeholder for more content if it existed */}
                                 <p className="mt-4">
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

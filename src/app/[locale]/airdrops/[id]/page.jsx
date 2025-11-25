@@ -75,9 +75,10 @@ export default async function AirdropDetailsPage({ params }) {
 
                             <div className="prose max-w-none">
                                 <h3 className="text-xl font-semibold text-gray-900 mb-4">About this Airdrop</h3>
-                                <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                                    {airdrop.description}
-                                </p>
+                                <div
+                                    className="text-gray-600 text-lg leading-relaxed mb-8"
+                                    dangerouslySetInnerHTML={{ __html: airdrop.description }}
+                                />
 
                                 <div className="bg-blue-50 rounded-xl p-6 border border-blue-100 mb-8">
                                     <h4 className="font-semibold text-blue-900 mb-2">How to Participate</h4>
