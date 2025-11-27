@@ -2,15 +2,17 @@ import React from "react";
 import { notFound } from "next/navigation";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { getAirdropById } from "@/services/airdrop-service";
+import { getAirdropById, getPreviousAirdrop, getNextAirdrop } from "@/services/airdrop-service";
 import Image from "next/image";
-import { ArrowLeft, ExternalLink } from "lucide-react";
+import { ArrowLeft, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "@/i18n/routing";
 import { getTranslations } from "next-intl/server";
 
 export default async function AirdropDetailsPage({ params }) {
     const { id, locale } = await params;
     const airdrop = await getAirdropById(parseInt(id), locale);
+    const previousAirdrop = await getPreviousAirdrop(parseInt(id), locale);
+    const nextAirdrop = await getNextAirdrop(parseInt(id), locale);
     const t = await getTranslations('AirdropDetail');
 
     if (!airdrop) {
@@ -111,6 +113,39 @@ export default async function AirdropDetailsPage({ params }) {
                                 </a>
                             </div>
                         </div>
+                    </div>
+
+                    {/* Navigation Buttons */}
+                    <div className="flex justify-between items-center gap-4 mt-8">
+                        {previousAirdrop ? (
+                            <Link
+                                href={`/airdrops/${previousAirdrop.id}`}
+                                className="flex items-center gap-2 px-6 py-3 bg-white hover:bg-gray-50 border border-gray-200 rounded-full transition-all shadow-sm hover:shadow-md group"
+                            >
+                                <ChevronLeft className="w-5 h-5 text-gray-600 group-hover:text-primary transition-colors" />
+                                <div className="text-left">
+                                    <div className="text-xs text-gray-500">{t('previous')}</div>
+                                    <div className="text-sm font-medium text-gray-900 truncate max-w-[150px]">{previousAirdrop.name}</div>
+                                </div>
+                            </Link>
+                        ) : (
+                            <div className="flex-1"></div>
+                        )}
+
+                        {nextAirdrop ? (
+                            <Link
+                                href={`/airdrops/${nextAirdrop.id}`}
+                                className="flex items-center gap-2 px-6 py-3 bg-white hover:bg-gray-50 border border-gray-200 rounded-full transition-all shadow-sm hover:shadow-md group"
+                            >
+                                <div className="text-right">
+                                    <div className="text-xs text-gray-500">{t('next')}</div>
+                                    <div className="text-sm font-medium text-gray-900 truncate max-w-[150px]">{nextAirdrop.name}</div>
+                                </div>
+                                <ChevronRight className="w-5 h-5 text-gray-600 group-hover:text-primary transition-colors" />
+                            </Link>
+                        ) : (
+                            <div className="flex-1"></div>
+                        )}
                     </div>
                 </div>
             </main>

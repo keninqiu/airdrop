@@ -135,10 +135,14 @@
         "howToParticipate": "How to Participate",
         "participateNow": "Participate Now",
         "about": "About this Airdrop",
-        "estimatedValue": "Estimated Value"
+        "estimatedValue": "Estimated Value",
+        "previous": "Назад",
+        "next": "Далее"
     },
     "BlogDetail": {
         "backToBlog": "Вернуться к Блогу",
-        "readOriginalSource": "Читать Оригинальный Источник"
+        "readOriginalSource": "Читать Оригинальный Источник",
+        "previous": "Назад",
+        "next": "Далее"
     }
 }

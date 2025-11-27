@@ -135,10 +135,14 @@
         "howToParticipate": "How to Participate",
         "participateNow": "Participate Now",
         "about": "About this Airdrop",
-        "estimatedValue": "Estimated Value"
+        "estimatedValue": "Estimated Value",
+        "previous": "前へ",
+        "next": "次へ"
     },
     "BlogDetail": {
         "backToBlog": "ブログに戻る",
-        "readOriginalSource": "元の記事を読む"
+        "readOriginalSource": "元の記事を読む",
+        "previous": "前へ",
+        "next": "次へ"
     }
 }

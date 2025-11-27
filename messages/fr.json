@@ -135,10 +135,14 @@
         "howToParticipate": "How to Participate",
         "participateNow": "Participate Now",
         "about": "About this Airdrop",
-        "estimatedValue": "Estimated Value"
+        "estimatedValue": "Estimated Value",
+        "previous": "Précédent",
+        "next": "Suivant"
     },
     "BlogDetail": {
         "backToBlog": "Retour au Blog",
-        "readOriginalSource": "Lire la Source Originale"
+        "readOriginalSource": "Lire la Source Originale",
+        "previous": "Précédent",
+        "next": "Suivant"
     }
 }

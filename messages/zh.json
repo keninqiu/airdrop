@@ -135,10 +135,14 @@
         "howToParticipate": "如何参与",
         "participateNow": "立即参与",
         "about": "关于此空投",
-        "estimatedValue": "预估价值"
+        "estimatedValue": "预估价值",
+        "previous": "上一页",
+        "next": "下一页"
     },
     "BlogDetail": {
         "backToBlog": "返回博客",
-        "readOriginalSource": "阅读原文"
+        "readOriginalSource": "阅读原文",
+        "previous": "上一页",
+        "next": "下一页"
     }
 }

@@ -2,15 +2,17 @@ import React from "react";
 import { notFound } from "next/navigation";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { getPostById } from "@/services/blog-service";
+import { getPostById, getPreviousPost, getNextPost } from "@/services/blog-service";
 import Image from "next/image";
-import { ArrowLeft, ExternalLink, Calendar } from "lucide-react";
+import { ArrowLeft, ExternalLink, Calendar, ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "@/i18n/routing";
 import { getTranslations } from 'next-intl/server';
 
 export default async function BlogPostPage({ params }) {
     const { id, locale } = await params;
     const post = await getPostById(parseInt(id), locale);
+    const previousPost = await getPreviousPost(parseInt(id), locale);
+    const nextPost = await getNextPost(parseInt(id), locale);
     const t = await getTranslations('BlogDetail');
 
     if (!post) {
@@ -74,6 +76,39 @@ export default async function BlogPostPage({ params }) {
                             </div>
                         </div>
                     </article>
+
+                    {/* Navigation Buttons */}
+                    <div className="flex justify-between items-center gap-4 mt-8">
+                        {previousPost ? (
+                            <Link
+                                href={`/blog/${previousPost.id}`}
+                                className="flex items-center gap-2 px-6 py-3 bg-white hover:bg-gray-50 border border-gray-200 rounded-full transition-all shadow-sm hover:shadow-md group"
+                            >
+                                <ChevronLeft className="w-5 h-5 text-gray-600 group-hover:text-primary transition-colors" />
+                                <div className="text-left">
+                                    <div className="text-xs text-gray-500">{t('previous')}</div>
+                                    <div className="text-sm font-medium text-gray-900 truncate max-w-[150px]">{previousPost.title}</div>
+                                </div>
+                            </Link>
+                        ) : (
+                            <div className="flex-1"></div>
+                        )}
+
+                        {nextPost ? (
+                            <Link
+                                href={`/blog/${nextPost.id}`}
+                                className="flex items-center gap-2 px-6 py-3 bg-white hover:bg-gray-50 border border-gray-200 rounded-full transition-all shadow-sm hover:shadow-md group"
+                            >
+                                <div className="text-right">
+                                    <div className="text-xs text-gray-500">{t('next')}</div>
+                                    <div className="text-sm font-medium text-gray-900 truncate max-w-[150px]">{nextPost.title}</div>
+                                </div>
+                                <ChevronRight className="w-5 h-5 text-gray-600 group-hover:text-primary transition-colors" />
+                            </Link>
+                        ) : (
+                            <div className="flex-1"></div>
+                        )}
+                    </div>
                 </div>
             </main>
             <Footer />

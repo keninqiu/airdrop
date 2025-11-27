@@ -88,3 +88,53 @@ export async function getPostById(id: number, locale: string) {
         description: translation.description || '',
     };
 }
+
+export async function getPreviousPost(id: number, locale: string) {
+    const post = await db.post.findFirst({
+        where: {
+            id: { lt: id },
+            published: true,
+        },
+        orderBy: {
+            id: 'desc',
+        },
+        include: {
+            translations: {
+                where: { locale },
+            },
+        },
+    });
+
+    if (!post) return null;
+
+    const translation = post.translations[0] || {};
+    return {
+        id: post.id,
+        title: translation.title || 'Untitled',
+    };
+}
+
+export async function getNextPost(id: number, locale: string) {
+    const post = await db.post.findFirst({
+        where: {
+            id: { gt: id },
+            published: true,
+        },
+        orderBy: {
+            id: 'asc',
+        },
+        include: {
+            translations: {
+                where: { locale },
+            },
+        },
+    });
+
+    if (!post) return null;
+
+    const translation = post.translations[0] || {};
+    return {
+        id: post.id,
+        title: translation.title || 'Untitled',
+    };
+}
