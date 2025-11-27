@@ -57,8 +57,17 @@
     },
     "Blog": {
         "heading": "Blog",
-        "description": "See how airdrop shines by enabling AI Agent collaboration.",
-        "readMore": "Read More"
+        "description": "Uncover the highlights of the airdrop.",
+        "readMore": "Read More",
+        "viewAll": "View All Blogs"
+    },
+    "AllBlogs": {
+        "heading": "All Blog Posts",
+        "description": "Explore all our latest insights and updates",
+        "backToHome": "Back to Home",
+        "previous": "Previous",
+        "next": "Next",
+        "page": "Page {current} of {total}"
     },
     "FAQ": {
         "heading": "Frequently Asked Questions",

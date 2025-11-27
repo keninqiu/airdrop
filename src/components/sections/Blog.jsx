@@ -127,9 +127,27 @@ export function Blog({ posts = [] }) {
             </motion.div>
           ))}
         </motion.div>
+
+        {/* View All Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="mt-12 text-center"
+        >
+          <Link href="/blogs">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center justify-center px-8 py-4 text-base md:text-lg font-medium text-white bg-primary hover:bg-primary/90 rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+            >
+              {t('viewAll')}
+            </motion.button>
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
 }
-
 

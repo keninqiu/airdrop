@@ -308,6 +308,18 @@ export default function PostsPage() {
                                 <Button size="sm" variant="outline" onClick={() => handleEdit(post)}>
                                     Edit
                                 </Button>
+                                <Button
+                                    size="sm"
+                                    variant="outline"
+                                    onClick={() => {
+                                        const title = post.translations.find((t) => t.locale === "en")?.title || "Blog Post";
+                                        const url = `${window.location.origin}/blog/${post.id}`;
+                                        const text = `${title}`;
+                                        window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
+                                    }}
+                                >
+                                    Post to X
+                                </Button>
                                 <Button size="sm" variant="outline" onClick={() => handleDelete(post.id)}>
                                     Delete
                                 </Button>

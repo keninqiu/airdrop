@@ -60,8 +60,17 @@
     },
     "Blog": {
         "heading": "블로그",
-        "description": "AI 에이전트 협업을 통해 에어드랍이 어떻게 빛나는지 확인하세요.",
-        "readMore": "더 읽기"
+        "description": "에어드랍의 하이라이트를 발견하세요.",
+        "readMore": "더 읽기",
+        "viewAll": "모든 블로그 보기"
+    },
+    "AllBlogs": {
+        "heading": "모든 블로그 게시물",
+        "description": "최신 인사이트 및 업데이트 모두 살펴보기",
+        "backToHome": "홈으로 돌아가기",
+        "previous": "이전",
+        "next": "다음",
+        "page": "페이지 {current} / {total}"
     },
     "FAQ": {
         "heading": "자주 묻는 질문",

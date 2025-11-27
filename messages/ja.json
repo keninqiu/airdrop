@@ -60,8 +60,17 @@
     },
     "Blog": {
         "heading": "ブログ",
-        "description": "AIエージェントのコラボレーションを可能にすることで、エアドロップがどのように輝くかをご覧ください。",
-        "readMore": "続きを読む"
+        "description": "エアドロップのハイライトを発見しましょう。",
+        "readMore": "続きを読む",
+        "viewAll": "すべてのブログを表示"
+    },
+    "AllBlogs": {
+        "heading": "すべてのブログ記事",
+        "description": "最新の洞察とアップデートをすべて探索",
+        "backToHome": "ホームに戻る",
+        "previous": "前へ",
+        "next": "次へ",
+        "page": "ページ {current} / {total}"
     },
     "FAQ": {
         "heading": "よくある質問",

@@ -60,8 +60,17 @@
     },
     "Blog": {
         "heading": "博客",
-        "description": "了解空投如何通过启用AI代理协作而大放异彩。",
-        "readMore": "阅读更多"
+        "description": "发现空投的亮点。",
+        "readMore": "阅读更多",
+        "viewAll": "查看所有博客"
+    },
+    "AllBlogs": {
+        "heading": "所有博客文章",
+        "description": "探索我们所有最新的见解和更新",
+        "backToHome": "返回首页",
+        "previous": "上一页",
+        "next": "下一页",
+        "page": "第 {current} 页，共 {total} 页"
     },
     "FAQ": {
         "heading": "常见问题",

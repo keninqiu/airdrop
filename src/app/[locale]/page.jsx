@@ -12,7 +12,7 @@ import { getPosts } from "@/services/blog-service";
 export default async function Page({ params }) {
   const { locale } = await params;
   const airdrops = await getAirdrops(locale);
-  const posts = await getPosts(locale);
+  const posts = await getPosts(locale, 3);
 
   return (
     <div>

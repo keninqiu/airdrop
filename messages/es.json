@@ -60,8 +60,17 @@
     },
     "Blog": {
         "heading": "Blog",
-        "description": "Mira cómo airdrop brilla al permitir la colaboración de Agentes de IA.",
-        "readMore": "Leer Más"
+        "description": "Descubre lo más destacado del airdrop.",
+        "readMore": "Leer Más",
+        "viewAll": "Ver Todos los Blogs"
+    },
+    "AllBlogs": {
+        "heading": "Todos los Artículos del Blog",
+        "description": "Explora todas nuestras últimas ideas y actualizaciones",
+        "backToHome": "Volver al Inicio",
+        "previous": "Anterior",
+        "next": "Siguiente",
+        "page": "Página {current} de {total}"
     },
     "FAQ": {
         "heading": "Preguntas Frecuentes",

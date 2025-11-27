@@ -518,6 +518,18 @@ export default function AirdropsPage() {
                                 <Button size="sm" variant="outline" onClick={() => handleEdit(airdrop)}>
                                     Edit
                                 </Button>
+                                <Button
+                                    size="sm"
+                                    variant="outline"
+                                    onClick={() => {
+                                        const name = airdrop.translations.find((t) => t.locale === "en")?.name || "Airdrop";
+                                        const url = `${window.location.origin}/airdrops/${airdrop.id}`;
+                                        const text = `Check out ${name}! ${airdrop.value ? `Value: ${airdrop.value}` : ''}`;
+                                        window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
+                                    }}
+                                >
+                                    Post to X
+                                </Button>
                                 <Button size="sm" variant="outline" onClick={() => handleDelete(airdrop.id)}>
                                     Delete
                                 </Button>

@@ -60,8 +60,17 @@
     },
     "Blog": {
         "heading": "Blog",
-        "description": "Sehen Sie, wie Airdrop durch die Zusammenarbeit von KI-Agenten glänzt.",
-        "readMore": "Mehr lesen"
+        "description": "Entdecken Sie die Highlights des Airdrops.",
+        "readMore": "Mehr lesen",
+        "viewAll": "Alle Blogs Anzeigen"
+    },
+    "AllBlogs": {
+        "heading": "Alle Blog-Beiträge",
+        "description": "Entdecken Sie alle unsere neuesten Erkenntnisse und Updates",
+        "backToHome": "Zurück zur Startseite",
+        "previous": "Zurück",
+        "next": "Weiter",
+        "page": "Seite {current} von {total}"
     },
     "FAQ": {
         "heading": "Häufig gestellte Fragen",
