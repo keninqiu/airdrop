@@ -27,6 +27,7 @@ export default function PostsPage() {
     const [loading, setLoading] = useState(true);
     const [showForm, setShowForm] = useState(false);
     const [editingPost, setEditingPost] = useState<Post | null>(null);
+    const [translating, setTranslating] = useState(false);
     const [formData, setFormData] = useState({
         image: "",
         link: "",
@@ -111,6 +112,67 @@ export default function PostsPage() {
         } catch (error) {
             console.error("Failed to delete post:", error);
             alert("Failed to delete post");
+        }
+    };
+
+    const handleAutoTranslate = async () => {
+        const enTranslation = formData.translations.find(t => t.locale === 'en');
+
+        if (!enTranslation?.title || !enTranslation?.description) {
+            alert('Please fill in the English (EN) title and description first');
+            return;
+        }
+
+        // Check if any translations already exist
+        const hasExistingTranslations = formData.translations.some(
+            t => t.locale !== 'en' && (t.title || t.description)
+        );
+
+        if (hasExistingTranslations) {
+            if (!confirm('Some translations already exist. Do you want to overwrite them?')) {
+                return;
+            }
+        }
+
+        setTranslating(true);
+        try {
+            const newTranslations = [...formData.translations];
+
+            // Translate for each non-English locale
+            for (let i = 0; i < newTranslations.length; i++) {
+                if (newTranslations[i].locale === 'en') continue;
+
+                const targetLocale = newTranslations[i].locale;
+
+                // Translate in batch (title and description together)
+                const response = await fetch('/api/translate', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        texts: [enTranslation.title, enTranslation.description],
+                        targetLocale,
+                        sourceLocale: 'en',
+                    }),
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Translation failed for ${targetLocale}`);
+                }
+
+                const data = await response.json();
+                const [translatedTitle, translatedDescription] = data.translations;
+
+                newTranslations[i].title = translatedTitle;
+                newTranslations[i].description = translatedDescription;
+            }
+
+            setFormData({ ...formData, translations: newTranslations });
+            alert('Translations completed successfully!');
+        } catch (error) {
+            console.error('Auto-translate error:', error);
+            alert(`Translation failed: ${error instanceof Error ? error.message : 'Unknown error'}`);
+        } finally {
+            setTranslating(false);
         }
     };
 
@@ -222,7 +284,18 @@ export default function PostsPage() {
                             </div>
 
                             <div className="border-t pt-4">
-                                <h3 className="font-semibold mb-3">Translations</h3>
+                                <div className="flex justify-between items-center mb-3">
+                                    <h3 className="font-semibold">Translations</h3>
+                                    <Button
+                                        type="button"
+                                        variant="outline"
+                                        size="sm"
+                                        onClick={handleAutoTranslate}
+                                        disabled={translating}
+                                    >
+                                        {translating ? 'Translating...' : 'Auto-Translate from EN'}
+                                    </Button>
+                                </div>
                                 <div className="space-y-4">
                                     {formData.translations.map((translation, index) => (
                                         <div key={translation.locale} className="border p-4 rounded-md">

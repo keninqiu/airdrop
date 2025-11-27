@@ -38,6 +38,7 @@ export default function AirdropsPage() {
     const [loading, setLoading] = useState(true);
     const [showForm, setShowForm] = useState(false);
     const [editingAirdrop, setEditingAirdrop] = useState<Airdrop | null>(null);
+    const [translating, setTranslating] = useState(false);
     const [formData, setFormData] = useState({
         logo: "",
         value: "",
@@ -155,6 +156,80 @@ export default function AirdropsPage() {
         } catch (error) {
             console.error("Failed to delete airdrop:", error);
             alert("Failed to delete airdrop");
+        }
+    };
+
+    const handleAutoTranslate = async () => {
+        const enTranslation = formData.translations.find(t => t.locale === 'en');
+
+        if (!enTranslation?.name || !enTranslation?.description) {
+            alert('Please fill in the English (EN) name and description first');
+            return;
+        }
+
+        // Check if any translations already exist
+        const hasExistingTranslations = formData.translations.some(
+            t => t.locale !== 'en' && (t.name || t.description || t.steps)
+        );
+
+        if (hasExistingTranslations) {
+            if (!confirm('Some translations already exist. Do you want to overwrite them?')) {
+                return;
+            }
+        }
+
+        setTranslating(true);
+        try {
+            const newTranslations = [...formData.translations];
+
+            // Translate for each non-English locale
+            for (let i = 0; i < newTranslations.length; i++) {
+                if (newTranslations[i].locale === 'en') continue;
+
+                const targetLocale = newTranslations[i].locale;
+
+                // Prepare texts to translate (name, description, and steps if available)
+                const textsToTranslate = [
+                    enTranslation.name,
+                    enTranslation.description,
+                ];
+
+                // Add steps if available
+                if (enTranslation.steps) {
+                    textsToTranslate.push(enTranslation.steps);
+                }
+
+                const response = await fetch('/api/translate', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        texts: textsToTranslate,
+                        targetLocale,
+                        sourceLocale: 'en',
+                    }),
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Translation failed for ${targetLocale}`);
+                }
+
+                const data = await response.json();
+                const translations = data.translations;
+
+                newTranslations[i].name = translations[0];
+                newTranslations[i].description = translations[1];
+                if (enTranslation.steps && translations[2]) {
+                    newTranslations[i].steps = translations[2];
+                }
+            }
+
+            setFormData({ ...formData, translations: newTranslations });
+            alert('Translations completed successfully!');
+        } catch (error) {
+            console.error('Auto-translate error:', error);
+            alert(`Translation failed: ${error instanceof Error ? error.message : 'Unknown error'}`);
+        } finally {
+            setTranslating(false);
         }
     };
 
@@ -417,7 +492,18 @@ export default function AirdropsPage() {
                             </div>
 
                             <div className="border-t pt-4">
-                                <h3 className="font-semibold mb-3">Translations</h3>
+                                <div className="flex justify-between items-center mb-3">
+                                    <h3 className="font-semibold">Translations</h3>
+                                    <Button
+                                        type="button"
+                                        variant="outline"
+                                        size="sm"
+                                        onClick={handleAutoTranslate}
+                                        disabled={translating}
+                                    >
+                                        {translating ? 'Translating...' : 'Auto-Translate from EN'}
+                                    </Button>
+                                </div>
                                 <div className="space-y-4">
                                     {formData.translations.map((translation, index) => (
                                         <div key={translation.locale} className="border p-4 rounded-md">
