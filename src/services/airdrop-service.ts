@@ -1,6 +1,6 @@
 import db from '@/lib/db';
 
-export async function getAirdrops(locale: string) {
+export async function getAirdrops(locale: string, limit?: number) {
     const airdrops = await db.airdrop.findMany({
         include: {
             translations: {
@@ -10,6 +10,7 @@ export async function getAirdrops(locale: string) {
         orderBy: {
             createdAt: 'desc',
         },
+        ...(limit && { take: limit }),
     });
 
     return airdrops.map((airdrop) => {
