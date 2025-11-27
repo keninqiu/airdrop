@@ -127,10 +127,18 @@
             "estimatedValue": "$100"
         }
     },
+    "AllAirdropsPage": {
+        "heading": "Все Аирдропы",
+        "description": "Просмотрите наш полный список крипто-аирдропов и возможностей фарминга."
+    },
     "AirdropDetail": {
         "howToParticipate": "How to Participate",
         "participateNow": "Participate Now",
         "about": "About this Airdrop",
         "estimatedValue": "Estimated Value"
+    },
+    "BlogDetail": {
+        "backToBlog": "Вернуться к Блогу",
+        "readOriginalSource": "Читать Оригинальный Источник"
     }
 }

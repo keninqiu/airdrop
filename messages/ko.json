@@ -127,10 +127,18 @@
             "estimatedValue": "$100"
         }
     },
+    "AllAirdropsPage": {
+        "heading": "모든 에어드랍",
+        "description": "암호화폐 에어드랍과 파밍 기회의 전체 목록을 둘러보세요."
+    },
     "AirdropDetail": {
         "howToParticipate": "How to Participate",
         "participateNow": "Participate Now",
         "about": "About this Airdrop",
         "estimatedValue": "Estimated Value"
+    },
+    "BlogDetail": {
+        "backToBlog": "블로그로 돌아가기",
+        "readOriginalSource": "원본 소스 읽기"
     }
 }

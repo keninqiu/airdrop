@@ -127,10 +127,18 @@
             "estimatedValue": "$100"
         }
     },
+    "AllAirdropsPage": {
+        "heading": "すべてのエアドロップ",
+        "description": "暗号資産エアドロップとファーミング機会の完全なリストを閲覧してください。"
+    },
     "AirdropDetail": {
         "howToParticipate": "How to Participate",
         "participateNow": "Participate Now",
         "about": "About this Airdrop",
         "estimatedValue": "Estimated Value"
+    },
+    "BlogDetail": {
+        "backToBlog": "ブログに戻る",
+        "readOriginalSource": "元の記事を読む"
     }
 }

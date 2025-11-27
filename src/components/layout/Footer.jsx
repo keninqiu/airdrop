@@ -49,10 +49,10 @@ export function Footer() {
   ];
 
   const quickLinks = [
-    { label: tNav('home'), href: "#home" },
-    { label: tNav('airdrops'), href: "#airdrops" },
-    { label: tNav('blog'), href: "#blog" },
-    { label: tNav('faq'), href: "#faq" },
+    { label: tNav('home'), href: "/" },
+    { label: tNav('airdrops'), href: "/airdrops" },
+    { label: tNav('blog'), href: "/blogs" },
+    { label: tNav('faq'), href: "/#faq" },
     { label: t('submitAirdrop'), href: "/submit-airdrop" },
   ];
 

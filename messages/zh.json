@@ -127,10 +127,18 @@
             "estimatedValue": "$100"
         }
     },
+    "AllAirdropsPage": {
+        "heading": "所有空投",
+        "description": "浏览我们完整的加密货币空投和耕作机会列表。"
+    },
     "AirdropDetail": {
         "howToParticipate": "如何参与",
         "participateNow": "立即参与",
         "about": "关于此空投",
         "estimatedValue": "预估价值"
+    },
+    "BlogDetail": {
+        "backToBlog": "返回博客",
+        "readOriginalSource": "阅读原文"
     }
 }

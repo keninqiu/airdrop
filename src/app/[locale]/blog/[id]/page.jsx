@@ -6,10 +6,12 @@ import { getPostById } from "@/services/blog-service";
 import Image from "next/image";
 import { ArrowLeft, ExternalLink, Calendar } from "lucide-react";
 import { Link } from "@/i18n/routing";
+import { getTranslations } from 'next-intl/server';
 
 export default async function BlogPostPage({ params }) {
     const { id, locale } = await params;
     const post = await getPostById(parseInt(id), locale);
+    const t = await getTranslations('BlogDetail');
 
     if (!post) {
         notFound();
@@ -27,11 +29,11 @@ export default async function BlogPostPage({ params }) {
             <main className="flex-grow pt-24 pb-16">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
                     <Link
-                        href="/#blog"
+                        href="/blogs"
                         className="inline-flex items-center text-gray-600 hover:text-primary mb-8 transition-colors"
                     >
                         <ArrowLeft className="w-4 h-4 mr-2" />
-                        Back to Blog
+                        {t('backToBlog')}
                     </Link>
 
                     <article className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden">
@@ -74,7 +76,7 @@ export default async function BlogPostPage({ params }) {
                                     rel="noopener noreferrer"
                                     className="inline-flex items-center justify-center bg-gray-900 hover:bg-gray-800 text-white px-8 py-4 text-lg font-medium rounded-full transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                                 >
-                                    Read Original Source <ExternalLink className="w-5 h-5 ml-2" />
+                                    {t('readOriginalSource')} <ExternalLink className="w-5 h-5 ml-2" />
                                 </a>
                             </div>
                         </div>

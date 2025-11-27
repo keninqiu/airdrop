@@ -127,10 +127,18 @@
             "estimatedValue": "$100"
         }
     },
+    "AllAirdropsPage": {
+        "heading": "Todos os Airdrops",
+        "description": "Navegue nossa lista completa de airdrops de criptomoedas e oportunidades de farming."
+    },
     "AirdropDetail": {
         "howToParticipate": "How to Participate",
         "participateNow": "Participate Now",
         "about": "About this Airdrop",
         "estimatedValue": "Estimated Value"
+    },
+    "BlogDetail": {
+        "backToBlog": "Voltar ao Blog",
+        "readOriginalSource": "Ler Fonte Original"
     }
 }
