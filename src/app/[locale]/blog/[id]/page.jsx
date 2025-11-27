@@ -60,13 +60,6 @@ export default async function BlogPostPage({ params }) {
 
                             <div className="prose prose-lg max-w-none text-gray-600 leading-relaxed">
                                 <div dangerouslySetInnerHTML={{ __html: post.description }} />
-                                {/* Placeholder for more content if it existed */}
-                                <p className="mt-4">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                </p>
-                                <p className="mt-4">
-                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                </p>
                             </div>
 
                             <div className="mt-12 pt-8 border-t border-gray-100">
