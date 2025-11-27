@@ -88,7 +88,7 @@ export default async function AirdropDetailsPage({ params }) {
                                     <h4 className="font-semibold text-blue-900 mb-2">{t('howToParticipate')}</h4>
                                     {airdrop.steps ? (
                                         <div
-                                            className="text-blue-800 space-y-2 prose-ul:list-disc prose-ul:list-inside"
+                                            className="text-blue-800 space-y-2 prose-ul:list-disc prose-ul:list-inside [&_li_p]:m-0 [&_li_p]:inline"
                                             dangerouslySetInnerHTML={{ __html: airdrop.steps }}
                                         />
                                     ) : (
