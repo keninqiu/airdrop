@@ -610,8 +610,9 @@ export default function AirdropsPage() {
                                     variant="outline"
                                     onClick={() => {
                                         const name = airdrop.translations.find((t) => t.locale === "en")?.name || "Airdrop";
+                                        const description = airdrop.translations.find((t) => t.locale === "en")?.description || "Airdrop";
                                         const url = `${window.location.origin}/airdrops/${airdrop.id}`;
-                                        const text = `Check out ${name}! ${airdrop.value ? `Value: ${airdrop.value}` : ''}`;
+                                        const text = `Check out ${name}! ${description}`;
                                         window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
                                     }}
                                 >
