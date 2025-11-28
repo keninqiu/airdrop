@@ -247,6 +247,7 @@ export default function AirdropsPage() {
                         setEditingAirdrop(null);
                         resetForm();
                     }}
+                    className="text-white"
                 >
                     Add Airdrop
                 </Button>
@@ -552,7 +553,7 @@ export default function AirdropsPage() {
                             </div>
 
                             <div className="flex gap-2">
-                                <Button type="submit">Save</Button>
+                                <Button type="submit" className="text-white">Save</Button>
                                 <Button
                                     type="button"
                                     variant="outline"

@@ -1,12 +1,13 @@
 "use client";
 
-import { signIn } from "next-auth/react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import Link from "next/link";
 
-export default function LoginPage() {
+export default function RegisterPage() {
+    const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
@@ -19,17 +20,23 @@ export default function LoginPage() {
         setLoading(true);
 
         try {
-            const result = await signIn("credentials", {
-                email,
-                password,
-                redirect: false,
+            const res = await fetch("/api/register", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    name,
+                    email,
+                    password,
+                }),
             });
 
-            if (result?.error) {
-                setError("Invalid email or password");
+            if (res.ok) {
+                router.push("/login?registered=true");
             } else {
-                router.push("/admin");
-                router.refresh();
+                const data = await res.json();
+                setError(data.message || "Registration failed");
             }
         } catch {
             setError("An error occurred. Please try again.");
@@ -42,13 +49,27 @@ export default function LoginPage() {
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-50 to-white p-4">
             <Card className="w-full max-w-md">
                 <CardHeader className="space-y-1">
-                    <CardTitle className="text-2xl font-bold text-center">Admin Login</CardTitle>
+                    <CardTitle className="text-2xl font-bold text-center">Create an Account</CardTitle>
                     <CardDescription className="text-center">
-                        Enter your credentials to access the admin dashboard
+                        Enter your details to create a new account
                     </CardDescription>
                 </CardHeader>
                 <CardContent>
                     <form onSubmit={handleSubmit} className="space-y-4">
+                        <div className="space-y-2">
+                            <label htmlFor="name" className="text-sm font-medium">
+                                Name
+                            </label>
+                            <input
+                                id="name"
+                                type="text"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                required
+                                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                placeholder="John Doe"
+                            />
+                        </div>
                         <div className="space-y-2">
                             <label htmlFor="email" className="text-sm font-medium">
                                 Email
@@ -60,7 +81,7 @@ export default function LoginPage() {
                                 onChange={(e) => setEmail(e.target.value)}
                                 required
                                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                placeholder="admin@example.com"
+                                placeholder="john@example.com"
                             />
                         </div>
                         <div className="space-y-2">
@@ -85,15 +106,15 @@ export default function LoginPage() {
                             className="w-full text-white"
                             disabled={loading}
                         >
-                            {loading ? "Signing in..." : "Sign In"}
+                            {loading ? "Creating account..." : "Sign Up"}
                         </Button>
+                        <div className="text-center text-sm">
+                            Already have an account?{" "}
+                            <Link href="/login" className="text-blue-600 hover:underline">
+                                Sign in
+                            </Link>
+                        </div>
                     </form>
-                    <div className="mt-4 text-center text-sm">
-                        Don&apos;t have an account?{" "}
-                        <a href="/register" className="text-blue-600 hover:underline">
-                            Sign up
-                        </a>
-                    </div>
                 </CardContent>
             </Card>
         </div>

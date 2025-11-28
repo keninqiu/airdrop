@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import "./[locale]/globals.css";
+import AuthProvider from "@/components/AuthProvider";
 
 export const metadata: Metadata = {
     title: "Airdrop Platform",
@@ -28,7 +29,11 @@ export default function RootLayout({
                     `}
                 </Script>
             </head>
-            <body suppressHydrationWarning>{children}</body>
+            <body suppressHydrationWarning>
+                <AuthProvider>
+                    {children}
+                </AuthProvider>
+            </body>
         </html>
     );
 }

@@ -190,6 +190,7 @@ export default function PostsPage() {
                         setEditingPost(null);
                         resetForm();
                     }}
+                    className="text-white"
                 >
                     Add Post
                 </Button>
@@ -333,7 +334,7 @@ export default function PostsPage() {
                             </div>
 
                             <div className="flex gap-2">
-                                <Button type="submit">Save</Button>
+                                <Button type="submit" className="text-white">Save</Button>
                                 <Button
                                     type="button"
                                     variant="outline"

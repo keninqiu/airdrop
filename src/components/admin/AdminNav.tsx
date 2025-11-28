@@ -12,6 +12,7 @@ export function AdminNav({ children }: { children?: React.ReactNode }) {
         { href: "/admin", label: "Dashboard" },
         { href: "/admin/users", label: "Users" },
         { href: "/admin/airdrops", label: "Airdrops" },
+        { href: "/admin/submissions", label: "Submissions" },
         { href: "/admin/posts", label: "Posts" },
     ];
 
@@ -49,8 +50,8 @@ export function AdminNav({ children }: { children?: React.ReactNode }) {
                                 key={item.href}
                                 href={item.href}
                                 className={`block px-4 py-2 rounded-md text-sm font-medium transition-colors ${pathname === item.href
-                                        ? "bg-blue-50 text-blue-700"
-                                        : "text-gray-700 hover:bg-gray-50"
+                                    ? "bg-blue-50 text-blue-700"
+                                    : "text-gray-700 hover:bg-gray-50"
                                     }`}
                             >
                                 {item.label}

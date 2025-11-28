@@ -15,6 +15,7 @@ model User {
   role      String   @default("USER") // USER, ADMIN
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  submissions UserAirdropListing[]
 }
 
 enum RewardModel {
@@ -78,4 +79,44 @@ model PostTranslation {
   post        Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
 
   @@unique([postId, locale])
+}
+
+model UserAirdropListing {
+  id             Int      @id @default(autoincrement())
+  userId         Int
+  user           User     @relation(fields: [userId], references: [id])
+  
+  // Core fields matching Airdrop model but for user submission
+  logo           String?  // Optional for user submission, maybe they provide a URL
+  value          String?
+  status         String   @default("Pending") // Pending, Approved, Rejected
+  type           String?
+  website_url    String?
+  campaign_url   String?
+  whitepaper_url String?
+  reward_model   RewardModel?
+  reward_amount  String?
+  campaign_start DateTime?
+  campaign_end   DateTime?
+  campaign_requirement String? @db.Text
+  blockchain     String? @db.Text
+  
+  // Admin fields
+  rejection_reason String? @db.Text
+  
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+  translations   UserAirdropListingTranslation[]
+}
+
+model UserAirdropListingTranslation {
+  id          Int      @id @default(autoincrement())
+  listingId   Int
+  locale      String
+  name        String
+  description String   @db.Text
+  steps       String?  @db.Text
+  listing     UserAirdropListing @relation(fields: [listingId], references: [id], onDelete: Cascade)
+
+  @@unique([listingId, locale])
 }
