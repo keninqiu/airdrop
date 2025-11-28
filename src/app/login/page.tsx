@@ -1,10 +1,12 @@
 "use client";
 
-import { signIn } from "next-auth/react";
 import { useState } from "react";
+import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 
 export default function LoginPage() {
     const [email, setEmail] = useState("");
@@ -90,9 +92,9 @@ export default function LoginPage() {
                     </form>
                     <div className="mt-4 text-center text-sm">
                         Don&apos;t have an account?{" "}
-                        <a href="/register" className="text-blue-600 hover:underline">
+                        <Link href="/register" className="text-blue-600 hover:underline">
                             Sign up
-                        </a>
+                        </Link>
                     </div>
                 </CardContent>
             </Card>

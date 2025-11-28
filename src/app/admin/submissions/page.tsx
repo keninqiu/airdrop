@@ -7,10 +7,24 @@ import { Badge } from "@/components/ui/badge";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
+type Submission = {
+    id: number;
+    status: string;
+    website_url: string;
+    value: string;
+    user: {
+        email: string;
+    };
+    translations: Array<{
+        name: string;
+        description: string;
+    }>;
+};
+
 export default function AdminSubmissionsPage() {
     const { data: session, status } = useSession();
     const router = useRouter();
-    const [submissions, setSubmissions] = useState([]);
+    const [submissions, setSubmissions] = useState<Submission[]>([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -68,7 +82,7 @@ export default function AdminSubmissionsPage() {
                 {submissions.length === 0 ? (
                     <p className="text-gray-500">No pending submissions.</p>
                 ) : (
-                    submissions.map((submission: any) => (
+                    submissions.map((submission) => (
                         <Card key={submission.id}>
                             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                                 <CardTitle className="text-xl font-bold">
