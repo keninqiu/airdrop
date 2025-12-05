@@ -2,7 +2,7 @@ export const crawlerConfig = {
     // Scheduling
     schedule: {
         enabled: process.env.CRAWLER_ENABLED === 'true',
-        interval: process.env.CRAWLER_INTERVAL || '0 */6 * * *', // Every 6 hours by default
+        interval: process.env.CRAWLER_INTERVAL || '0 */24 * * *', // Every 6 hours by default
     },
 
     // Data sources

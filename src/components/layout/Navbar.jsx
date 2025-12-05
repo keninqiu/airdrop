@@ -111,7 +111,7 @@ export function Navbar() {
               transition={{ duration: 0.4, delay: 0.25 }}
             >
               <Link
-                href="/#airdrops"
+                href="/airdrops"
                 onClick={(e) => handleNavClick(e, "airdrops")}
                 className="text-body font-normal text-gray-700 hover:text-gray-900 transition-colors"
               >
@@ -124,7 +124,7 @@ export function Navbar() {
               transition={{ duration: 0.4, delay: 0.3 }}
             >
               <Link
-                href="/#blog"
+                href="/blogs"
                 onClick={(e) => handleNavClick(e, "blog")}
                 className="text-body font-normal text-gray-700 hover:text-gray-900 transition-colors"
               >
