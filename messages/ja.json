@@ -3,10 +3,11 @@
         "siteName": "Airdrop Scan",
         "home": "ホーム",
         "airdrops": "エアドロップ",
+        "exchanges": "取引所",
         "blog": "ブログ",
-        "faq": "よくある質問",
+        "faq": "FAQ",
         "about": "約",
-        "submitAirdrop": "エアドロップを送信"
+        "submitAirdrop": "エアドロップを提出"
     },
     "Metadata": {
         "title": "Airdrop Scan - 検証済みの暗号資産エアドロップを発見。高速",
@@ -138,6 +139,13 @@
         "estimatedValue": "Estimated Value",
         "previous": "前へ",
         "next": "次へ"
+    },
+    "Exchanges": {
+        "heading": "暗号資産取引所",
+        "description": "信頼できる暗号資産取引所を見つけて、資産を安全に取引・保管しましょう。",
+        "visitExchange": "取引所を訪問",
+        "kycRequired": "KYC必須",
+        "noKyc": "KYC不要"
     },
     "BlogDetail": {
         "backToBlog": "ブログに戻る",

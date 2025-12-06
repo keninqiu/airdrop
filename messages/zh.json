@@ -3,6 +3,7 @@
         "siteName": "Airdrop Scan",
         "home": "首页",
         "airdrops": "空投",
+        "exchanges": "交易所",
         "blog": "博客",
         "faq": "常见问题",
         "about": "关于",
@@ -138,6 +139,13 @@
         "estimatedValue": "预估价值",
         "previous": "上一页",
         "next": "下一页"
+    },
+    "Exchanges": {
+        "heading": "加密货币交易所",
+        "description": "寻找值得信赖的加密货币交易所，安全地交易和存储您的资产。",
+        "visitExchange": "访问交易所",
+        "kycRequired": "需要KYC",
+        "noKyc": "无需KYC"
     },
     "BlogDetail": {
         "backToBlog": "返回博客",

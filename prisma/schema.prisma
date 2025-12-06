@@ -120,3 +120,30 @@ model UserAirdropListingTranslation {
 
   @@unique([listingId, locale])
 }
+
+model Exchange {
+  id              Int      @id @default(autoincrement())
+  name            String
+  logo            String
+  url             String
+  affiliateUrl    String?
+  features        String?  @db.Text // JSON array of features
+  tradingVolume   String?
+  kycRequired     Boolean  @default(false)
+  rating          Float?
+  sortOrder       Int      @default(0)
+  published       Boolean  @default(true)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  translations    ExchangeTranslation[]
+}
+
+model ExchangeTranslation {
+  id          Int      @id @default(autoincrement())
+  exchangeId  Int
+  locale      String
+  description String   @db.Text
+  exchange    Exchange @relation(fields: [exchangeId], references: [id], onDelete: Cascade)
+
+  @@unique([exchangeId, locale])
+}

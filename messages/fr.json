@@ -3,6 +3,7 @@
         "siteName": "Airdrop Scan",
         "home": "Accueil",
         "airdrops": "Airdrops",
+        "exchanges": "Échanges",
         "blog": "Blog",
         "faq": "FAQ",
         "about": "À propos",
@@ -138,6 +139,13 @@
         "estimatedValue": "Estimated Value",
         "previous": "Précédent",
         "next": "Suivant"
+    },
+    "Exchanges": {
+        "heading": "Échanges de Cryptomonnaies",
+        "description": "Trouvez des bourses de cryptomonnaies de confiance pour échanger et stocker vos actifs en toute sécurité.",
+        "visitExchange": "Visiter l'Échange",
+        "kycRequired": "KYC Requis",
+        "noKyc": "Pas de KYC"
     },
     "BlogDetail": {
         "backToBlog": "Retour au Blog",

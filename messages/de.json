@@ -3,9 +3,10 @@
         "siteName": "Airdrop Scan",
         "home": "Startseite",
         "airdrops": "Airdrops",
+        "exchanges": "Börsen",
         "blog": "Blog",
         "faq": "FAQ",
-        "about": "Über uns",
+        "about": "Über",
         "submitAirdrop": "Airdrop einreichen"
     },
     "Metadata": {
@@ -137,7 +138,14 @@
         "about": "About this Airdrop",
         "estimatedValue": "Estimated Value",
         "previous": "Zurück",
-        "next": "Weiter"
+        "next": "Nächste"
+    },
+    "Exchanges": {
+        "heading": "Kryptowährungsbörsen",
+        "description": "Finden Sie vertrauenswürdige Kryptobörsen, um Ihre Vermögenswerte sicher zu handeln und zu speichern.",
+        "visitExchange": "Börse besuchen",
+        "kycRequired": "KYC erforderlich",
+        "noKyc": "Kein KYC"
     },
     "BlogDetail": {
         "backToBlog": "Zurück zum Blog",

@@ -3,6 +3,7 @@
         "siteName": "Airdrop Scan",
         "home": "Главная",
         "airdrops": "Аирдропы",
+        "exchanges": "Биржи",
         "blog": "Блог",
         "faq": "FAQ",
         "about": "О нас",
@@ -137,7 +138,14 @@
         "about": "About this Airdrop",
         "estimatedValue": "Estimated Value",
         "previous": "Назад",
-        "next": "Далее"
+        "next": "Следующий"
+    },
+    "Exchanges": {
+        "heading": "Криптовалютные Биржи",
+        "description": "Найдите надежные криптовалютные биржи для торговли и безопасного хранения ваших активов.",
+        "visitExchange": "Посетить Биржу",
+        "kycRequired": "Требуется KYC",
+        "noKyc": "Без KYC"
     },
     "BlogDetail": {
         "backToBlog": "Вернуться к Блогу",

@@ -12,6 +12,7 @@ export function AdminNav({ children }: { children?: React.ReactNode }) {
         { href: "/admin", label: "Dashboard" },
         { href: "/admin/users", label: "Users" },
         { href: "/admin/airdrops", label: "Airdrops" },
+        { href: "/admin/exchanges", label: "Exchanges" },
         { href: "/admin/submissions", label: "Submissions" },
         { href: "/admin/posts", label: "Posts" },
     ];

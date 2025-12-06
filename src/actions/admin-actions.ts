@@ -317,3 +317,119 @@ export async function deletePost(id: number) {
     revalidatePath("/admin/posts");
     revalidatePath("/");
 }
+
+// ============ EXCHANGE ACTIONS ============
+
+export async function getExchanges() {
+    await checkAdmin();
+    return await db.exchange.findMany({
+        include: {
+            translations: true,
+        },
+        orderBy: { sortOrder: "asc" },
+    });
+}
+
+export async function createExchange(data: {
+    name: string;
+    logo: string;
+    url: string;
+    affiliateUrl?: string;
+    features?: string[];
+    tradingVolume?: string;
+    kycRequired: boolean;
+    rating?: number;
+    sortOrder?: number;
+    published?: boolean;
+    translations: Array<{
+        locale: string;
+        description: string;
+    }>;
+}) {
+    await checkAdmin();
+
+    const exchange = await db.exchange.create({
+        data: {
+            name: data.name,
+            logo: data.logo,
+            url: data.url,
+            affiliateUrl: data.affiliateUrl,
+            features: data.features ? JSON.stringify(data.features) : null,
+            tradingVolume: data.tradingVolume,
+            kycRequired: data.kycRequired,
+            rating: data.rating,
+            sortOrder: data.sortOrder ?? 0,
+            published: data.published ?? true,
+            translations: {
+                create: data.translations,
+            },
+        },
+    });
+
+    revalidatePath("/admin/exchanges");
+    revalidatePath("/exchanges");
+    return exchange;
+}
+
+export async function updateExchange(
+    id: number,
+    data: {
+        name?: string;
+        logo?: string;
+        url?: string;
+        affiliateUrl?: string;
+        features?: string[];
+        tradingVolume?: string;
+        kycRequired?: boolean;
+        rating?: number;
+        sortOrder?: number;
+        published?: boolean;
+        translations?: Array<{
+            locale: string;
+            description: string;
+        }>;
+    }
+) {
+    await checkAdmin();
+
+    const { translations, features, ...exchangeData } = data;
+
+    const updateData: Record<string, unknown> = { ...exchangeData };
+    if (features !== undefined) {
+        updateData.features = features ? JSON.stringify(features) : null;
+    }
+
+    const exchange = await db.exchange.update({
+        where: { id },
+        data: updateData,
+    });
+
+    if (translations) {
+        // Delete existing translations and create new ones
+        await db.exchangeTranslation.deleteMany({
+            where: { exchangeId: id },
+        });
+
+        await db.exchangeTranslation.createMany({
+            data: translations.map((t) => ({
+                ...t,
+                exchangeId: id,
+            })),
+        });
+    }
+
+    revalidatePath("/admin/exchanges");
+    revalidatePath("/exchanges");
+    return exchange;
+}
+
+export async function deleteExchange(id: number) {
+    await checkAdmin();
+
+    await db.exchange.delete({
+        where: { id },
+    });
+
+    revalidatePath("/admin/exchanges");
+    revalidatePath("/exchanges");
+}

@@ -124,6 +124,18 @@ export function Navbar() {
               transition={{ duration: 0.4, delay: 0.3 }}
             >
               <Link
+                href="/exchanges"
+                className="text-body font-normal text-gray-700 hover:text-gray-900 transition-colors"
+              >
+                {t('exchanges')}
+              </Link>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.35 }}
+            >
+              <Link
                 href="/blogs"
                 onClick={(e) => handleNavClick(e, "blog")}
                 className="text-body font-normal text-gray-700 hover:text-gray-900 transition-colors"
@@ -134,7 +146,7 @@ export function Navbar() {
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.35 }}
+              transition={{ duration: 0.4, delay: 0.4 }}
             >
               <Link
                 href="/#faq"
@@ -244,6 +256,18 @@ export function Navbar() {
                 transition={{ duration: 0.3, delay: 0.2 }}
               >
                 <Link
+                  href="/exchanges"
+                  className="block py-2 text-body font-normal text-gray-900 hover:text-gray-600"
+                >
+                  {t('exchanges')}
+                </Link>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.3, delay: 0.25 }}
+              >
+                <Link
                   href="/#blog"
                   onClick={(e) => handleNavClick(e, "blog")}
                   className="block py-2 text-body font-normal text-gray-900 hover:text-gray-600"
@@ -254,7 +278,7 @@ export function Navbar() {
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: 0.25 }}
+                transition={{ duration: 0.3, delay: 0.3 }}
               >
                 <Link
                   href="/#faq"

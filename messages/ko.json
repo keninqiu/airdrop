@@ -3,8 +3,9 @@
         "siteName": "Airdrop Scan",
         "home": "홈",
         "airdrops": "에어드랍",
+        "exchanges": "거래소",
         "blog": "블로그",
-        "faq": "자주 묻는 질문",
+        "faq": "FAQ",
         "about": "소개",
         "submitAirdrop": "에어드랍 제출"
     },
@@ -138,6 +139,13 @@
         "estimatedValue": "Estimated Value",
         "previous": "이전",
         "next": "다음"
+    },
+    "Exchanges": {
+        "heading": "암호화폐 거래소",
+        "description": "신뢰할 수 있는 암호화폐 거래소를 찾아 자산을 안전하게 거래하고 보관하세요.",
+        "visitExchange": "거래소 방문",
+        "kycRequired": "KYC 필요",
+        "noKyc": "KYC 불필요"
     },
     "BlogDetail": {
         "backToBlog": "블로그로 돌아가기",

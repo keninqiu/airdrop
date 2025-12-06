@@ -51,6 +51,7 @@ export function Footer() {
   const quickLinks = [
     { label: tNav('home'), href: "/" },
     { label: tNav('airdrops'), href: "/airdrops" },
+    { label: tNav('exchanges'), href: "/exchanges" },
     { label: tNav('blog'), href: "/blogs" },
     { label: tNav('faq'), href: "/#faq" },
     { label: t('submitAirdrop'), href: "/submit-airdrop" },
