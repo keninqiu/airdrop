@@ -134,7 +134,7 @@ export async function createAirdrop(data: {
             campaign_url: data.campaign_url,
             whitepaper_url: data.whitepaper_url,
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            reward_model: data.reward_model as any,
+            reward_model: data.reward_model ? (data.reward_model as any) : null,
             reward_amount: data.reward_amount,
             campaign_start: data.campaign_start ? new Date(data.campaign_start) : null,
             campaign_end: data.campaign_end ? new Date(data.campaign_end) : null,
