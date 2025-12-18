@@ -6,6 +6,7 @@ import { getAirdrops, createAirdrop, updateAirdrop, deleteAirdrop } from "@/acti
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { RichTextEditor } from "@/components/admin/RichTextEditor";
+import { stripHtml } from "@/lib/utils";
 
 type Airdrop = {
     id: number;
@@ -612,7 +613,7 @@ export default function AirdropsPage() {
                                         const name = airdrop.translations.find((t) => t.locale === "en")?.name || "Airdrop";
                                         const description = airdrop.translations.find((t) => t.locale === "en")?.description || "Airdrop";
                                         const url = `${window.location.origin}/airdrops/${airdrop.id}`;
-                                        const text = `Check out ${name}! ${description}`;
+                                        const text = stripHtml(`Check out ${name}! ${description}`);
                                         window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
                                     }}
                                 >

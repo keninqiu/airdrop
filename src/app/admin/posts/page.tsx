@@ -6,6 +6,7 @@ import { getPosts, createPost, updatePost, deletePost } from "@/actions/admin-ac
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { RichTextEditor } from "@/components/admin/RichTextEditor";
+import { stripHtml } from "@/lib/utils";
 
 type Post = {
     id: number;
@@ -388,7 +389,7 @@ export default function PostsPage() {
                                     onClick={() => {
                                         const title = post.translations.find((t) => t.locale === "en")?.title || "Blog Post";
                                         const url = `${window.location.origin}/blog/${post.id}`;
-                                        const text = `${title}`;
+                                        const text = stripHtml(`${title}`);
                                         window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`, '_blank');
                                     }}
                                 >
