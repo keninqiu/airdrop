@@ -364,24 +364,52 @@ export default function PostsPage() {
                                     className="object-cover rounded"
                                     unoptimized={post.image.startsWith('/uploads/')}
                                 />
+                                <div className="absolute top-2 right-2">
+                                    <span
+                                        className={`px-2 py-1 text-xs font-semibold rounded-full ${post.published
+                                                ? "bg-green-100 text-green-800"
+                                                : "bg-gray-100 text-gray-800"
+                                            }`}
+                                    >
+                                        {post.published ? "Published" : "Draft"}
+                                    </span>
+                                </div>
                             </div>
-                            <h3 className="font-semibold mb-1">
+                            <h3 className="font-semibold mb-1 lg:h-12 lg:overflow-hidden">
                                 {post.translations.find((t) => t.locale === "en")?.title}
                             </h3>
-                            <p className="text-sm text-gray-500 mb-3 line-clamp-2">
+                            <p className="text-sm text-gray-500 mb-3 line-clamp-2 lg:h-10">
                                 {post.translations.find((t) => t.locale === "en")?.description}
                             </p>
                             <a
                                 href={post.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-sm text-blue-600 hover:underline block mb-3"
+                                className="text-sm text-blue-600 hover:underline block mb-3 truncate"
                             >
                                 {post.link}
                             </a>
-                            <div className="flex gap-2">
+                            <div className="flex flex-wrap gap-2">
                                 <Button size="sm" variant="outline" onClick={() => handleEdit(post)}>
                                     Edit
+                                </Button>
+                                <Button
+                                    size="sm"
+                                    variant={post.published ? "default" : "secondary"}
+                                    className={post.published ? "bg-green-600 hover:bg-green-700" : ""}
+                                    onClick={async () => {
+                                        try {
+                                            await updatePost(post.id, {
+                                                published: !post.published
+                                            });
+                                            loadPosts();
+                                        } catch (error) {
+                                            console.error("Failed to update status:", error);
+                                            alert("Failed to update status");
+                                        }
+                                    }}
+                                >
+                                    {post.published ? "Unpublish" : "Publish"}
                                 </Button>
                                 <Button
                                     size="sm"
@@ -395,7 +423,7 @@ export default function PostsPage() {
                                 >
                                     Post to X
                                 </Button>
-                                <Button size="sm" variant="outline" onClick={() => handleDelete(post.id)}>
+                                <Button size="sm" variant="destructive" onClick={() => handleDelete(post.id)}>
                                     Delete
                                 </Button>
                             </div>

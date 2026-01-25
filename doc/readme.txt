@@ -1,5 +1,7 @@
 npm run crawler:once
 
+ALTER TABLE Post
+MODIFY published TINYINT(1) NOT NULL DEFAULT 0;
 
 1. Visit the Gatbits Airdrop page. (Mandatory)
 Complete all tasks from the airdrop page and provide your referral link as proof. Make sure to submit your information to the airdrop page!
